@@ -1,73 +1,104 @@
-type Flat = "b";
-type Sharp = "#";
-type Natural = "♮";
-type Accidentals = Flat | Sharp | Natural;
+type Accidentals = "b" | "#" | "♮";
 
-export class Accidental {
-  static FLAT: Flat = "b";
-  static SHARP: Sharp = "#";
-  static NATURAL: Natural = "♮";
-  value: Accidentals;
-
+export abstract class Accidental {
   public static flat() {
-    return new Accidental(this.FLAT);
+    return new Flat();
   }
   public static sharp() {
-    return new Accidental(this.SHARP);
+    return new Sharp();
   }
   public static natural() {
-    return new Accidental(this.NATURAL);
+    return new Natural();
   }
 
-  constructor(value?: string) {
-    this.value = this.parse(value);
-  }
-
-  public isFlat(): boolean {
-    return this.value === Accidental.FLAT;
-  }
-
-  public isSharp(): boolean {
-    return this.value === Accidental.SHARP;
-  }
-
-  public isNatural(): boolean {
-    return this.value === Accidental.NATURAL;
-  }
-
-  public getValue(): string {
-    if (this.isNatural()) {
-      return "";
-    }
-
-    return this.value;
-  }
-
-  public getKeyOffset(): number {
-    switch (this.value) {
-      case Accidental.FLAT:
-        return -1;
-      case Accidental.SHARP:
-        return 1;
-      case Accidental.NATURAL:
+  public static for(value?: string) {
+    const res = this.parse(value);
+    switch (res) {
+      case Sharp.value:
+        return new Sharp();
+      case Flat.value:
+        return new Flat();
+      case Natural.value:
       default:
-        return 0;
+        return new Natural();
     }
   }
 
-  private parse(value?: string): Accidentals {
+  public isFlat() {
+    return false;
+  }
+
+  public isSharp() {
+    return false;
+  }
+
+  public isNatural() {
+    return false;
+  }
+
+  public abstract getValue(): string;
+
+  public abstract getKeyOffset(): number;
+
+  private static parse(value?: string): Accidentals {
     if (!value || !this.isValid(value)) {
-      return Accidental.NATURAL;
+      return Natural.value as Accidentals;
     }
 
     return value as Accidentals;
   }
 
-  private isValid(value: string) {
+  private static isValid(value: string) {
     return (
-      value === Accidental.FLAT ||
-      value === Accidental.SHARP ||
-      value === Accidental.NATURAL
+      value === Flat.value || value === Sharp.value || value === Natural.value
     );
+  }
+}
+
+export class Flat extends Accidental {
+  static value = "b";
+
+  public isFlat() {
+    return true;
+  }
+
+  public getValue() {
+    return Flat.value;
+  }
+
+  public getKeyOffset(): number {
+    return -1;
+  }
+}
+
+export class Natural extends Accidental {
+  static value = "♮";
+
+  public isNatural() {
+    return true;
+  }
+
+  public getValue() {
+    return "";
+  }
+
+  public getKeyOffset(): number {
+    return 0;
+  }
+}
+
+export class Sharp extends Accidental {
+  static value = "#";
+
+  public isSharp() {
+    return true;
+  }
+
+  public getValue() {
+    return Sharp.value;
+  }
+
+  public getKeyOffset(): number {
+    return 1;
   }
 }

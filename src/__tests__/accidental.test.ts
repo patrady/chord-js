@@ -3,15 +3,15 @@ import { Accidental } from "../accidental";
 describe("#new", () => {
   describe("with a valid accidental", () => {
     it("returns an accidental", () => {
-      expect(new Accidental("b")).toEqual(Accidental.flat());
-      expect(new Accidental("#")).toEqual(Accidental.sharp());
-      expect(new Accidental("♮")).toEqual(Accidental.natural());
+      expect(Accidental.for("b")).toEqual(Accidental.flat());
+      expect(Accidental.for("#")).toEqual(Accidental.sharp());
+      expect(Accidental.for("♮")).toEqual(Accidental.natural());
     });
   });
 
   describe("with no value", () => {
     it("returns a natural", () => {
-      expect(new Accidental()).toEqual(Accidental.natural());
+      expect(Accidental.for()).toEqual(Accidental.natural());
     });
   });
 });
@@ -19,19 +19,19 @@ describe("#new", () => {
 describe("#isFlat", () => {
   describe("with a flat", () => {
     it("returns true", () => {
-      expect(new Accidental("b").isFlat()).toBeTruthy();
+      expect(Accidental.for("b").isFlat()).toBeTruthy();
     });
   });
 
   describe("with a sharp", () => {
     it("returns false", () => {
-      expect(new Accidental("#").isFlat()).toBeFalsy();
+      expect(Accidental.for("#").isFlat()).toBeFalsy();
     });
   });
 
   describe("with a neutral", () => {
     it("returns false", () => {
-      expect(new Accidental("♮").isFlat()).toBeFalsy();
+      expect(Accidental.for("♮").isFlat()).toBeFalsy();
     });
   });
 });
@@ -39,19 +39,19 @@ describe("#isFlat", () => {
 describe("#isSharp", () => {
   describe("with a flat", () => {
     it("returns true", () => {
-      expect(new Accidental("b").isSharp()).toBeFalsy();
+      expect(Accidental.for("b").isSharp()).toBeFalsy();
     });
   });
 
   describe("with a sharp", () => {
     it("returns false", () => {
-      expect(new Accidental("#").isSharp()).toBeTruthy();
+      expect(Accidental.for("#").isSharp()).toBeTruthy();
     });
   });
 
   describe("with a neutral", () => {
     it("returns false", () => {
-      expect(new Accidental("♮").isSharp()).toBeFalsy();
+      expect(Accidental.for("♮").isSharp()).toBeFalsy();
     });
   });
 });
@@ -59,19 +59,19 @@ describe("#isSharp", () => {
 describe("#isNatural", () => {
   describe("with a flat", () => {
     it("returns true", () => {
-      expect(new Accidental("b").isNatural()).toBeFalsy();
+      expect(Accidental.for("b").isNatural()).toBeFalsy();
     });
   });
 
   describe("with a sharp", () => {
     it("returns false", () => {
-      expect(new Accidental("#").isNatural()).toBeFalsy();
+      expect(Accidental.for("#").isNatural()).toBeFalsy();
     });
   });
 
   describe("with a neutral", () => {
     it("returns false", () => {
-      expect(new Accidental("♮").isNatural()).toBeTruthy();
+      expect(Accidental.for("♮").isNatural()).toBeTruthy();
     });
   });
 });
@@ -79,19 +79,19 @@ describe("#isNatural", () => {
 describe("#getKeyOffset", () => {
   describe("with a sharp", () => {
     it("returns 1", () => {
-      expect(new Accidental("#").getKeyOffset()).toEqual(1);
+      expect(Accidental.for("#").getKeyOffset()).toEqual(1);
     });
   });
 
   describe("with a flat", () => {
     it("returns -1", () => {
-      expect(new Accidental("b").getKeyOffset()).toEqual(-1);
+      expect(Accidental.for("b").getKeyOffset()).toEqual(-1);
     });
   });
 
   describe("with a natural", () => {
     it("returns 0", () => {
-      expect(new Accidental("♮").getKeyOffset()).toEqual(0);
+      expect(Accidental.for("♮").getKeyOffset()).toEqual(0);
     });
   });
 });
@@ -99,37 +99,19 @@ describe("#getKeyOffset", () => {
 describe("#getValue", () => {
   describe("with a sharp", () => {
     it("returns a sharp", () => {
-      expect(new Accidental("#").getValue()).toEqual("#");
+      expect(Accidental.for("#").getValue()).toEqual("#");
     });
   });
 
   describe("with a flat", () => {
     it("returns a flat", () => {
-      expect(new Accidental("b").getValue()).toEqual("b");
+      expect(Accidental.for("b").getValue()).toEqual("b");
     });
   });
 
   describe("with a natural", () => {
     it("returns an empty string", () => {
-      expect(new Accidental("♮").getValue()).toEqual("");
+      expect(Accidental.for("♮").getValue()).toEqual("");
     });
-  });
-});
-
-describe(".flat", () => {
-  it("has a value of 'b'", () => {
-    expect(Accidental.flat().value).toEqual("b");
-  });
-});
-
-describe(".sharp", () => {
-  it("has a value of '#'", () => {
-    expect(Accidental.sharp().value).toEqual("#");
-  });
-});
-
-describe(".natural", () => {
-  it("has a value of '♮'", () => {
-    expect(Accidental.natural().value).toEqual("♮");
   });
 });

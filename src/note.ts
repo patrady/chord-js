@@ -15,7 +15,7 @@ export class Note {
 
     const [, name, accidental, octave] = result;
     this.name = new Name(name);
-    this.accidental = new Accidental(accidental);
+    this.accidental = Accidental.for(accidental);
     this.octave = new Octave(octave);
   }
 
