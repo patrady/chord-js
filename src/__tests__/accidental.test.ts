@@ -76,6 +76,46 @@ describe("#isNatural", () => {
   });
 });
 
+describe("#getKeyOffset", () => {
+  describe("with a sharp", () => {
+    it("returns 1", () => {
+      expect(new Accidental("#").getKeyOffset()).toEqual(1);
+    });
+  });
+
+  describe("with a flat", () => {
+    it("returns -1", () => {
+      expect(new Accidental("b").getKeyOffset()).toEqual(-1);
+    });
+  });
+
+  describe("with a natural", () => {
+    it("returns 0", () => {
+      expect(new Accidental("♮").getKeyOffset()).toEqual(0);
+    });
+  });
+});
+
+describe("#getValue", () => {
+  describe("with a sharp", () => {
+    it("returns a sharp", () => {
+      expect(new Accidental("#").getValue()).toEqual("#");
+    });
+  });
+
+  describe("with a flat", () => {
+    it("returns a flat", () => {
+      expect(new Accidental("b").getValue()).toEqual("b");
+    });
+  });
+
+  describe("with a natural", () => {
+    it("returns an empty string", () => {
+      expect(new Accidental("♮").getValue()).toEqual("");
+    });
+  });
+});
+
 describe(".flat", () => {
   it("has a value of 'b'", () => {
     expect(Accidental.flat().value).toEqual("b");

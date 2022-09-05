@@ -20,7 +20,7 @@ export class Note {
   }
 
   public getName() {
-    return this.name.value;
+    return `${this.name.value}${this.accidental.getValue()}`;
   }
 
   public isFlat() {
@@ -51,28 +51,48 @@ export class Note {
 
   public getKeyNumber() {
     if (this.octave.isSubContra()) {
-      switch (this.name.value) {
+      switch (this.getName()) {
         case "A":
           return 1;
+        case "A#":
+        case "Bb":
+          return 2;
         case "B":
           return 3;
+        case "B#":
+          return 4;
       }
     }
 
-    return 4 + (this.getOctave() - 1) * 12 + this.name.getKeyIndex();
+    return (
+      4 +
+      (this.getOctave() - 1) * 12 +
+      this.name.getKeyIndex() +
+      this.accidental.getKeyOffset()
+    );
   }
 
   public getMidiValue() {
     if (this.octave.isSubContra()) {
-      switch (this.name.value) {
+      switch (this.getName()) {
         case "A":
           return 21;
+        case "A#":
+        case "Bb":
+          return 22;
         case "B":
           return 23;
+        case "B#":
+          return 24;
       }
     }
 
-    return 24 + (this.getOctave() - 1) * 12 + this.name.getKeyIndex();
+    return (
+      24 +
+      (this.getOctave() - 1) * 12 +
+      this.name.getKeyIndex() +
+      this.accidental.getKeyOffset() 
+    );
   }
 
   private parse(value: string) {

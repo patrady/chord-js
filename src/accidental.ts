@@ -35,6 +35,26 @@ export class Accidental {
     return this.value === Accidental.NATURAL;
   }
 
+  public getValue(): string {
+    if (this.isNatural()) {
+      return "";
+    }
+
+    return this.value;
+  }
+
+  public getKeyOffset(): number {
+    switch (this.value) {
+      case Accidental.FLAT:
+        return -1;
+      case Accidental.SHARP:
+        return 1;
+      case Accidental.NATURAL:
+      default:
+        return 0;
+    }
+  }
+
   private parse(value?: string): Accidentals {
     if (!value || !this.isValid(value)) {
       return Accidental.NATURAL;
