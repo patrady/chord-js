@@ -168,6 +168,107 @@ describe("#isMajor", () => {
   });
 });
 
+describe("#isMajor", () => {
+  describe("with a minor 2nd", () => {
+    describe("and there are 1 semitone between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "Db").isMinor(2)).toBeTruthy();
+        expect(Interval.between("C#", "D").isMinor(2)).toBeTruthy();
+        expect(Interval.between("D", "Eb").isMinor(2)).toBeTruthy();
+        expect(Interval.between("E", "F").isMinor(2)).toBeTruthy();
+        expect(Interval.between("F", "F#").isMinor(2)).toBeTruthy();
+        expect(Interval.between("F#", "G").isMinor(2)).toBeTruthy();
+        expect(Interval.between("G", "G#").isMinor(2)).toBeTruthy();
+        expect(Interval.between("G#", "A").isMinor(2)).toBeTruthy();
+        expect(Interval.between("A", "Bb").isMinor(2)).toBeTruthy();
+        expect(Interval.between("B", "C").isMinor(2)).toBeTruthy();
+      });
+    });
+
+    describe("and there are not 1 semitone between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "D" ).isMinor(2)).toBeFalsy();
+      });
+    });
+  });
+
+  describe("with a minor 3rd", () => {
+    describe("and there are 3 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "Eb").isMinor(3)).toBeTruthy();
+        expect(Interval.between("C#", "E").isMinor(3)).toBeTruthy();
+        expect(Interval.between("Db", "Fb").isMinor(3)).toBeTruthy();
+        expect(Interval.between("D", "F").isMinor(3)).toBeTruthy();
+        expect(Interval.between("D#", "F#").isMinor(3)).toBeTruthy();
+        expect(Interval.between("Eb", "Gb").isMinor(3)).toBeTruthy();
+        expect(Interval.between("E", "G").isMinor(3)).toBeTruthy();
+        expect(Interval.between("F", "Ab").isMinor(3)).toBeTruthy();
+        expect(Interval.between("F#", "A").isMinor(3)).toBeTruthy();
+        expect(Interval.between("G", "Bb").isMinor(3)).toBeTruthy();
+        expect(Interval.between("G#", "B").isMinor(3)).toBeTruthy();
+        expect(Interval.between("Ab", "Cb").isMinor(3)).toBeTruthy();
+        expect(Interval.between("A", "C").isMinor(3)).toBeTruthy();
+        expect(Interval.between("Bb", "Db").isMinor(3)).toBeTruthy();
+        expect(Interval.between("B", "D").isMinor(3)).toBeTruthy();
+      });
+    });
+
+    describe("and there are not 3 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "D").isMinor(3)).toBeFalsy();
+      });
+    });
+  });
+
+  describe("with a minor 6th", () => {
+    describe("and there are 8 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "Ab").isMinor(6)).toBeTruthy();
+        expect(Interval.between("Db", "A").isMinor(6)).toBeTruthy();
+        expect(Interval.between("D", "Bb").isMinor(6)).toBeTruthy();
+        expect(Interval.between("Eb", "Cb").isMinor(6)).toBeTruthy();
+        expect(Interval.between("E", "C").isMinor(6)).toBeTruthy();
+        expect(Interval.between("F", "Db").isMinor(6)).toBeTruthy();
+        expect(Interval.between("F#", "D").isMinor(6)).toBeTruthy();
+        expect(Interval.between("G", "Eb").isMinor(6)).toBeTruthy();
+        expect(Interval.between("Ab", "Fb").isMinor(6)).toBeTruthy();
+        expect(Interval.between("A", "F").isMinor(6)).toBeTruthy();
+        expect(Interval.between("Bb", "Gb").isMinor(6)).toBeTruthy();
+      });
+    });
+
+    describe("and there are not 8 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "F").isMinor(6)).toBeFalsy();
+      });
+    });
+  });
+
+  describe("with a minor 7th", () => {
+    describe("and there are 10 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "Bb").isMinor(7)).toBeTruthy();
+        expect(Interval.between("Db", "Cb").isMinor(7)).toBeTruthy();
+        expect(Interval.between("D", "C").isMinor(7)).toBeTruthy();
+        expect(Interval.between("Eb", "Db").isMinor(7)).toBeTruthy();
+        expect(Interval.between("E", "D").isMinor(7)).toBeTruthy();
+        expect(Interval.between("F", "Eb").isMinor(7)).toBeTruthy();
+        expect(Interval.between("F#", "E").isMinor(7)).toBeTruthy();
+        expect(Interval.between("G", "F").isMinor(7)).toBeTruthy();
+        expect(Interval.between("Ab", "Gb").isMinor(7)).toBeTruthy();
+        expect(Interval.between("A", "G").isMinor(7)).toBeTruthy();
+        expect(Interval.between("Bb", "Ab").isMinor(7)).toBeTruthy();
+      });
+    });
+
+    describe("and there are not 10 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "A").isMinor(7)).toBeFalsy();
+      });
+    });
+  });
+});
+
 describe("#isPerfect", () => {
   describe("with a major 4th", () => {
     describe("and there are 5 semitones between the notes", () => {

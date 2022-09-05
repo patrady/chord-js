@@ -34,6 +34,19 @@ class DefinedInterval {
     }
   }
 
+  public isMinor(interval: 2 | 3 | 6 | 7) {
+    switch (interval) {
+      case 2:
+        return this.toSemitones() === 1;
+      case 3:
+        return this.toSemitones() === 3;
+      case 6:
+        return this.toSemitones() === 8;
+      case 7:
+        return this.toSemitones() === 10;
+    }
+  }
+
   public isPerfect(interval: 4 | 5) {
     switch (interval) {
       case 4:
