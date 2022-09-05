@@ -38,7 +38,7 @@ export abstract class Accidental {
 
   public abstract getValue(): string;
 
-  public abstract getKeyOffset(): number;
+  public abstract getKeyIndex(): number;
 
   private static parse(value?: string): Accidentals {
     if (!value || !this.isValid(value)) {
@@ -66,7 +66,7 @@ export class Flat extends Accidental {
     return Flat.value;
   }
 
-  public getKeyOffset(): number {
+  public getKeyIndex(): number {
     return -1;
   }
 }
@@ -82,7 +82,7 @@ export class Natural extends Accidental {
     return "";
   }
 
-  public getKeyOffset(): number {
+  public getKeyIndex(): number {
     return 0;
   }
 }
@@ -98,7 +98,7 @@ export class Sharp extends Accidental {
     return Sharp.value;
   }
 
-  public getKeyOffset(): number {
+  public getKeyIndex(): number {
     return 1;
   }
 }

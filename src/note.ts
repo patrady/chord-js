@@ -64,12 +64,11 @@ export class Note {
       }
     }
 
-    return (
-      4 +
-      (this.getOctave() - 1) * 12 +
-      this.name.getKeyIndex() +
-      this.accidental.getKeyOffset()
-    );
+    return 4 + (this.getOctave() - 1) * 12 + this.getKeyIndex();
+  }
+
+  public getKeyIndex() {
+    return this.name.getKeyIndex() + this.accidental.getKeyIndex();
   }
 
   public getMidiValue() {
@@ -87,12 +86,19 @@ export class Note {
       }
     }
 
-    return (
-      24 +
-      (this.getOctave() - 1) * 12 +
-      this.name.getKeyIndex() +
-      this.accidental.getKeyOffset() 
-    );
+    return 24 + (this.getOctave() - 1) * 12 + this.getKeyIndex();
+  }
+
+  public minus(note: Note) {
+    if (this.isLessThan(note)) {
+      return this.getKeyIndex() - note.getKeyIndex() + 12;
+    }
+
+    return this.getKeyIndex() - note.getKeyIndex();
+  }
+
+  private isLessThan(note: Note) {
+    return this.getKeyIndex() < note.getKeyIndex();
   }
 
   private parse(value: string) {

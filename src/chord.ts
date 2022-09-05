@@ -1,8 +1,29 @@
-export class Chord {
-  static regex =
-    /[A-G](b|#)?(maj|min|m|M|\+|-|dim|aug)?[0-9]*(sus)?[0-9]*(\/[A-G](b|#)?)?/g;
+import { Interval } from "./interval";
+import { Note } from "./note";
 
-  static for(notes: string) {
-    return "C Major";
+export class Chord {
+  notes: Note[];
+
+  constructor(notes: string) {
+    this.notes = this.parse(notes);
+  }
+
+  public getName() {
+    if (this.isMajor()) {
+      return this.notes[0].getName() + " Major";
+    }
+
+    return "";
+  }
+
+  isMajor() {
+    return (
+      Interval.between(this.notes[0], this.notes[1]).isMajor(3) &&
+      Interval.between(this.notes[0], this.notes[2]).isPerfect(5)
+    );
+  }
+
+  private parse(notes: string): Note[] {
+    return notes.split(" ").map((note) => new Note(note));
   }
 }

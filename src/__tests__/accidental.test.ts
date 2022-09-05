@@ -76,22 +76,22 @@ describe("#isNatural", () => {
   });
 });
 
-describe("#getKeyOffset", () => {
+describe("#getKeyIndex", () => {
   describe("with a sharp", () => {
     it("returns 1", () => {
-      expect(Accidental.for("#").getKeyOffset()).toEqual(1);
+      expect(Accidental.for("#").getKeyIndex()).toEqual(1);
     });
   });
 
   describe("with a flat", () => {
     it("returns -1", () => {
-      expect(Accidental.for("b").getKeyOffset()).toEqual(-1);
+      expect(Accidental.for("b").getKeyIndex()).toEqual(-1);
     });
   });
 
   describe("with a natural", () => {
     it("returns 0", () => {
-      expect(Accidental.for("♮").getKeyOffset()).toEqual(0);
+      expect(Accidental.for("♮").getKeyIndex()).toEqual(0);
     });
   });
 });
