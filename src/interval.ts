@@ -55,4 +55,22 @@ class DefinedInterval {
         return this.toSemitones() === 7;
     }
   }
+
+  public isAugmented(interval: 4 | 5) {
+    switch (interval) {
+      case 4:
+        return this.toSemitones() === 6;
+      case 5:
+        return this.toSemitones() === 8;
+    }
+  }
+
+  public isDiminished(interval: 4 | 5) {
+    switch (interval) {
+      case 4:
+        return this.toSemitones() === 4;
+      case 5:
+        return this.toSemitones() === 6;
+    }
+  }
 }

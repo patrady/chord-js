@@ -1,9 +1,5 @@
 import { Interval } from "../interval";
 
-it("works", () => {
-  //   expect(Interval.between("C", "E").isMinor(3)).toBeTruthy();
-});
-
 describe("#toSemitones", () => {
   it("returns the number of half steps between two notes", () => {
     expect(Interval.between("C", "C").toSemitones()).toEqual(0);
@@ -168,7 +164,7 @@ describe("#isMajor", () => {
   });
 });
 
-describe("#isMajor", () => {
+describe("#isMinor", () => {
   describe("with a minor 2nd", () => {
     describe("and there are 1 semitone between the notes", () => {
       it("returns true", () => {
@@ -318,6 +314,114 @@ describe("#isPerfect", () => {
     describe("and there is not 4 semitones between the notes", () => {
       it("returns false", () => {
         expect(Interval.between("C", "D").isPerfect(5)).toBeFalsy();
+      });
+    });
+  });
+});
+
+describe("#isAugmented", () => {
+  describe("with an augmented 4th", () => {
+    describe("and there are 6 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "F#").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("C#", "G").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("Db", "G").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("D", "G#").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("Eb", "A").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("E", "A#").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("F", "B").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("F#", "C").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("G", "C#").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("G#", "D").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("Ab", "D").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("A", "D#").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("Bb", "E").isAugmented(4)).toBeTruthy();
+        expect(Interval.between("B", "F").isAugmented(4)).toBeTruthy();
+      });
+    });
+
+    describe("and there are not 6 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "E").isAugmented(4)).toBeFalsy();
+      });
+    });
+  });
+
+  describe("with an augmented 5th", () => {
+    describe("and there are 8 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "G#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("Db", "A").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("D", "A#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("Eb", "B").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("E", "B#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("F", "C#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("F#", "D").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("G", "D#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("Ab", "E").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("A", "E#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("Bb", "F#").isAugmented(5)).toBeTruthy();
+        expect(Interval.between("B", "G").isAugmented(5)).toBeTruthy();
+      });
+    });
+
+    describe("and there is not 8 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "D").isAugmented(5)).toBeFalsy();
+      });
+    });
+  });
+});
+
+describe("#isDiminished", () => {
+  describe("with a diminished 4th", () => {
+    describe("and there are 4 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "Fb").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("C#", "F").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("Db", "F").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("D", "F#").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("Eb", "G").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("E", "G#").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("F", "A").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("F#", "A#").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("G", "Cb").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("G#", "C").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("Ab", "C").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("A", "Db").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("Bb", "D").isDiminished(4)).toBeTruthy();
+        expect(Interval.between("B", "D#").isDiminished(4)).toBeTruthy();
+      });
+    });
+
+    describe("and there are not 4 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "F").isDiminished(4)).toBeFalsy();
+      });
+    });
+  });
+
+  describe("with an diminished 5th", () => {
+    describe("and there are 6 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "Gb").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("Db", "G").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("D", "G#").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("Eb", "A").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("E", "Bb").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("F", "B").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("F#", "C").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("G", "C#").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("Ab", "D").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("A", "D#").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("Bb", "E").isDiminished(5)).toBeTruthy();
+        expect(Interval.between("B", "F").isDiminished(5)).toBeTruthy();
+      });
+    });
+
+    describe("and there is not 6 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "D").isDiminished(5)).toBeFalsy();
       });
     });
   });
