@@ -38,3 +38,38 @@ describe("Minor Chords", () => {
     expect(Chord.for("B D F#")?.getName()).toEqual("B minor");
   });
 });
+
+describe("Inverted Major Chords", () => {
+  it("returns the name of the inverted major chord", () => {
+    expect(Chord.for("E G C")?.getName()).toEqual("C/E");
+    expect(Chord.for("G C E")?.getName()).toEqual("C/G");
+    expect(Chord.for("G# C# E#")?.getName()).toEqual("C#/G#");
+    expect(Chord.for("E# G# C#")?.getName()).toEqual("C#/E#");
+    expect(Chord.for("F Ab Db")?.getName()).toEqual("Db/F");
+    expect(Chord.for("Ab Db F")?.getName()).toEqual("Db/Ab");
+    expect(Chord.for("A D F#")?.getName()).toEqual("D/A");
+    expect(Chord.for("F# A D")?.getName()).toEqual("D/F#");
+    expect(Chord.for("G Bb Eb")?.getName()).toEqual("Eb/G");
+    expect(Chord.for("Bb Eb G")?.getName()).toEqual("Eb/Bb");
+    expect(Chord.for("G# B E")?.getName()).toEqual("E/G#");
+    expect(Chord.for("B E G#")?.getName()).toEqual("E/B");
+    expect(Chord.for("A C F")?.getName()).toEqual("F/A");
+    expect(Chord.for("C F A")?.getName()).toEqual("F/C");
+    expect(Chord.for("A# C# F#")?.getName()).toEqual("F#/A#");
+    expect(Chord.for("C# F# A#")?.getName()).toEqual("F#/C#");
+    expect(Chord.for("Bb Db Gb")?.getName()).toEqual("Gb/Bb");
+    expect(Chord.for("Db Gb Bb")?.getName()).toEqual("Gb/Db");
+    expect(Chord.for("B D G")?.getName()).toEqual("G/B");
+    expect(Chord.for("D G B")?.getName()).toEqual("G/D");
+    expect(Chord.for("B# D# G#")?.getName()).toEqual("G#/B#");
+    expect(Chord.for("D# G# B#")?.getName()).toEqual("G#/D#");
+    expect(Chord.for("C Eb Ab")?.getName()).toEqual("Ab/C");
+    expect(Chord.for("Eb Ab C")?.getName()).toEqual("Ab/Eb");
+    expect(Chord.for("C# E A")?.getName()).toEqual("A/C#");
+    expect(Chord.for("E A C#")?.getName()).toEqual("A/E");
+    expect(Chord.for("D F Bb")?.getName()).toEqual("Bb/D");
+    expect(Chord.for("F Bb D")?.getName()).toEqual("Bb/F");
+    expect(Chord.for("D# F# B")?.getName()).toEqual("B/D#");
+    expect(Chord.for("F# B D#")?.getName()).toEqual("B/F#");
+  });
+});

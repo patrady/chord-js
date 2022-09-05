@@ -1,5 +1,6 @@
 import { Interval } from "./interval";
 import { Note } from "./note";
+import { invertArray } from "./utils";
 
 interface IChord {
   isMatch(): boolean;
@@ -21,6 +22,30 @@ class MajorChord implements IChord {
   }
 }
 
+class InvertedMajorChord implements IChord {
+  base: Note;
+
+  constructor(public notes: Note[]) {
+    this.base = notes[0];
+  }
+
+  public getName(): string {
+    return `${this.base.getName()}/${this.notes[0].getName()}`;
+  }
+
+  public isMatch(): boolean {
+    let index = 1;
+    do {
+      if (new MajorChord(invertArray(this.notes, index)).isMatch()) {
+        this.base = this.notes[index];
+        return true;
+      }
+    } while (index++ < this.notes.length);
+
+    return false;
+  }
+}
+
 class MinorChord implements IChord {
   constructor(public notes: Note[]) {}
 
@@ -37,7 +62,7 @@ class MinorChord implements IChord {
 }
 
 export abstract class Chord {
-  static strategies = [MajorChord, MinorChord];
+  static strategies = [MajorChord, MinorChord, InvertedMajorChord];
 
   public static for(notes: string): IChord | undefined {
     const chordNotes = this.parse(notes);
