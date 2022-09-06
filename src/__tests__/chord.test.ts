@@ -20,25 +20,6 @@ describe("Major Chords", () => {
   });
 });
 
-describe("Minor Chords", () => {
-  it("returns the name of the minor chord", () => {
-    expect(Chord.for("C Eb G")?.getName()).toEqual("Cm");
-    expect(Chord.for("C# E G#")?.getName()).toEqual("C#m");
-    expect(Chord.for("Db Fb Ab")?.getName()).toEqual("Dbm");
-    expect(Chord.for("D F A")?.getName()).toEqual("Dm");
-    expect(Chord.for("Eb Gb Bb")?.getName()).toEqual("Ebm");
-    expect(Chord.for("E G B")?.getName()).toEqual("Em");
-    expect(Chord.for("F Ab C")?.getName()).toEqual("Fm");
-    expect(Chord.for("F# A C#")?.getName()).toEqual("F#m");
-    expect(Chord.for("G Bb D")?.getName()).toEqual("Gm");
-    expect(Chord.for("G# B D#")?.getName()).toEqual("G#m");
-    expect(Chord.for("Ab Cb Eb")?.getName()).toEqual("Abm");
-    expect(Chord.for("A C E")?.getName()).toEqual("Am");
-    expect(Chord.for("Bb Db F")?.getName()).toEqual("Bbm");
-    expect(Chord.for("B D F#")?.getName()).toEqual("Bm");
-  });
-});
-
 describe("Inverted Major Chords", () => {
   it("returns the name of the inverted major chord", () => {
     expect(Chord.for("E G C")?.getName()).toEqual("C/E");
@@ -71,6 +52,25 @@ describe("Inverted Major Chords", () => {
     expect(Chord.for("F Bb D")?.getName()).toEqual("Bb/F");
     expect(Chord.for("D# F# B")?.getName()).toEqual("B/D#");
     expect(Chord.for("F# B D#")?.getName()).toEqual("B/F#");
+  });
+});
+
+describe("Minor Chords", () => {
+  it("returns the name of the minor chord", () => {
+    expect(Chord.for("C Eb G")?.getName()).toEqual("Cm");
+    expect(Chord.for("C# E G#")?.getName()).toEqual("C#m");
+    expect(Chord.for("Db Fb Ab")?.getName()).toEqual("Dbm");
+    expect(Chord.for("D F A")?.getName()).toEqual("Dm");
+    expect(Chord.for("Eb Gb Bb")?.getName()).toEqual("Ebm");
+    expect(Chord.for("E G B")?.getName()).toEqual("Em");
+    expect(Chord.for("F Ab C")?.getName()).toEqual("Fm");
+    expect(Chord.for("F# A C#")?.getName()).toEqual("F#m");
+    expect(Chord.for("G Bb D")?.getName()).toEqual("Gm");
+    expect(Chord.for("G# B D#")?.getName()).toEqual("G#m");
+    expect(Chord.for("Ab Cb Eb")?.getName()).toEqual("Abm");
+    expect(Chord.for("A C E")?.getName()).toEqual("Am");
+    expect(Chord.for("Bb Db F")?.getName()).toEqual("Bbm");
+    expect(Chord.for("B D F#")?.getName()).toEqual("Bm");
   });
 });
 
@@ -124,15 +124,34 @@ describe("Suspended Chords", () => {
   });
 });
 
+describe("Inverted Suspended Chords", () => {
+  it("returns the name of the inverted suspended chord", () => {
+    expect(Chord.for("G C F")?.getName()).toEqual("Csus/G");
+    expect(Chord.for("G# C# F#")?.getName()).toEqual("C#sus/G#");
+    expect(Chord.for("Ab Db Gb")?.getName()).toEqual("Dbsus/Ab");
+    expect(Chord.for("Bb Eb Ab")?.getName()).toEqual("Ebsus/Bb");
+    expect(Chord.for("B E A")?.getName()).toEqual("Esus/B");
+    expect(Chord.for("C F Bb")?.getName()).toEqual("Fsus/C");
+    expect(Chord.for("C# F# B")?.getName()).toEqual("F#sus/C#");
+    expect(Chord.for("D G C")?.getName()).toEqual("Gsus/D");
+    expect(Chord.for("Eb Ab Db")?.getName()).toEqual("Absus/Eb");
+    expect(Chord.for("E A D")?.getName()).toEqual("Asus/E");
+    expect(Chord.for("F Bb Eb")?.getName()).toEqual("Bbsus/F");
+    expect(Chord.for("F# B E")?.getName()).toEqual("Bsus/F#");
+  });
+});
+
 describe("Suspended Second Chords", () => {
-  it("returns the name of the suspended chord", () => {
+  it("returns the name of the suspended second chord", () => {
     expect(Chord.for("C D G")?.getName()).toEqual("Csus2");
     expect(Chord.for("C# D# G#")?.getName()).toEqual("C#sus2");
     expect(Chord.for("Db Eb Ab")?.getName()).toEqual("Dbsus2");
+    expect(Chord.for("D E A")?.getName()).toEqual("Dsus2");
     expect(Chord.for("Eb F Bb")?.getName()).toEqual("Ebsus2");
     expect(Chord.for("E F# B")?.getName()).toEqual("Esus2");
     expect(Chord.for("F G C")?.getName()).toEqual("Fsus2");
     expect(Chord.for("F# G# C#")?.getName()).toEqual("F#sus2");
+    expect(Chord.for("Gb Ab Db")?.getName()).toEqual("Gbsus2");
     expect(Chord.for("G A D")?.getName()).toEqual("Gsus2");
     expect(Chord.for("Ab Bb Eb")?.getName()).toEqual("Absus2");
     expect(Chord.for("A B E")?.getName()).toEqual("Asus2");
