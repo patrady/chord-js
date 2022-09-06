@@ -3,15 +3,22 @@ import { Note } from "./note";
 import { invertArray } from "./utils";
 
 interface IChord {
+  getNotes(): Note[];
   isMatch(): boolean;
   getName(): string;
 }
+
+type Strategy<T = IChord> = { new (notes: Note[]): T };
 
 class MajorChord implements IChord {
   constructor(public notes: Note[]) {}
 
   public getName(): string {
-    return `${this.notes[0].getName()} Major`;
+    return this.notes[0].getName();
+  }
+
+  public getNotes(): Note[] {
+    return this.notes;
   }
 
   public isMatch() {
@@ -22,46 +29,39 @@ class MajorChord implements IChord {
   }
 }
 
-abstract class InvertedChord implements IChord {
-  base: Note;
+class InvertedChord implements IChord {
+  DecoratedClass: Strategy;
+  baseNote: Note;
+  chord: IChord;
 
-  constructor(public notes: Note[]) {
-    this.base = notes[0];
+  constructor(decoratedClass: Strategy, chord: IChord) {
+    this.DecoratedClass = decoratedClass;
+    this.chord = chord;
+    this.baseNote = chord.getNotes()[0];
   }
 
-  public abstract getName(): string;
-  public abstract isInversionMatch(index: number): boolean;
+  public getName(): string {
+    return `${this.chord.getName()}/${this.baseNote.getName()}`;
+  }
+
+  public getNotes(): Note[] {
+    return this.chord.getNotes();
+  }
 
   public isMatch() {
     let index = 1;
     do {
-      if (this.isInversionMatch(index)) {
-        this.base = this.notes[index];
+      const invertedChord = new this.DecoratedClass(
+        invertArray(this.chord.getNotes(), index)
+      );
+
+      if (invertedChord.isMatch()) {
+        this.chord = invertedChord;
         return true;
       }
-    } while (index++ < this.notes.length);
+    } while (index++ < this.chord.getNotes().length);
 
     return false;
-  }
-}
-
-class InvertedMajorChord extends InvertedChord {
-  public getName(): string {
-    return `${this.base.getName()}/${this.notes[0].getName()}`;
-  }
-
-  public isInversionMatch(index: number): boolean {
-    return new MajorChord(invertArray(this.notes, index)).isMatch();
-  }
-}
-
-class InvertedMinorChord extends InvertedChord {
-  public getName(): string {
-    return `${this.base.getName()}m/${this.notes[0].getName()}`;
-  }
-
-  public isInversionMatch(index: number): boolean {
-    return new MinorChord(invertArray(this.notes, index)).isMatch();
   }
 }
 
@@ -69,7 +69,11 @@ class MinorChord implements IChord {
   constructor(public notes: Note[]) {}
 
   public getName(): string {
-    return `${this.notes[0].getName()} minor`;
+    return `${this.notes[0].getName()}m`;
+  }
+
+  public getNotes(): Note[] {
+    return this.notes;
   }
 
   public isMatch() {
@@ -87,6 +91,10 @@ class SuspendedChord implements IChord {
     return `${this.notes[0].getName()}sus`;
   }
 
+  public getNotes(): Note[] {
+    return this.notes;
+  }
+
   public isMatch() {
     return (
       Interval.between(this.notes[0], this.notes[1]).isPerfect(4) &&
@@ -100,6 +108,10 @@ class SuspendedSecondChord implements IChord {
 
   public getName(): string {
     return `${this.notes[0].getName()}sus2`;
+  }
+
+  public getNotes(): Note[] {
+    return this.notes;
   }
 
   public isMatch() {
@@ -117,6 +129,10 @@ class AugmentedChord implements IChord {
     return `${this.notes[0].getName()}aug`;
   }
 
+  public getNotes(): Note[] {
+    return this.notes;
+  }
+
   public isMatch() {
     return (
       Interval.between(this.notes[0], this.notes[1]).isMajor(3) &&
@@ -132,6 +148,10 @@ class DiminishedChord implements IChord {
     return `${this.notes[0].getName()}dim`;
   }
 
+  public getNotes(): Note[] {
+    return this.notes;
+  }
+
   public isMatch() {
     return (
       Interval.between(this.notes[0], this.notes[1]).isMinor(3) &&
@@ -141,22 +161,30 @@ class DiminishedChord implements IChord {
 }
 
 export abstract class Chord {
-  static strategies = [
+  static strategies: Strategy[] = [
     MajorChord,
     MinorChord,
     SuspendedChord,
     SuspendedSecondChord,
-    InvertedMajorChord,
-    InvertedMinorChord,
     AugmentedChord,
-    DiminishedChord
+    DiminishedChord,
   ];
 
   public static for(notes: string): IChord | undefined {
     const chordNotes = this.parse(notes);
 
+    return this.getChord(chordNotes) || this.getInvertedChord(chordNotes);
+  }
+
+  private static getChord(notes: Note[]): IChord | undefined {
     return this.strategies
-      .map((chordClass) => new chordClass(chordNotes))
+      .map((klass) => new klass(notes))
+      .filter((chord) => chord.isMatch())[0];
+  }
+
+  private static getInvertedChord(notes: Note[]): IChord | undefined {
+    return this.strategies
+      .map((klass) => new InvertedChord(klass, new klass(notes)))
       .filter((chord) => chord.isMatch())[0];
   }
 
