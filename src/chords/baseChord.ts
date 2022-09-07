@@ -7,6 +7,10 @@ export abstract class BaseChord {
     return this.notes;
   }
 
+  public root() {
+    return this.getNotes()[0];
+  }
+
   public isTriad(): boolean {
     return this.getNotes().length === 3;
   }

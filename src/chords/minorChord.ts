@@ -3,14 +3,14 @@ import { BaseChord } from "./baseChord";
 
 export class MinorChord extends BaseChord {
   public getName(): string {
-    return `${this.notes[0].getName()}m`;
+    return `${this.root().getName()}m`;
   }
 
   public isMatch() {
     return (
       this.isTriad() &&
-      Interval.between(this.notes[0], this.notes[1]).isMinor(3) &&
-      Interval.between(this.notes[0], this.notes[2]).isPerfect(5)
+      Interval.between(this.root(), this.notes[1]).isMinor(3) &&
+      Interval.between(this.root(), this.notes[2]).isPerfect(5)
     );
   }
 }

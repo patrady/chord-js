@@ -14,7 +14,7 @@ export class InvertedChord extends BaseChord {
 
     this.DecoratedClass = decoratedClass;
     this.chord = chord;
-    this.baseNote = chord.getNotes()[0];
+    this.baseNote = this.root();
   }
 
   public getName(): string {
