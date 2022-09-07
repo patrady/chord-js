@@ -198,3 +198,20 @@ describe("Diminished Chords", () => {
     expect(Chord.for("B D F")?.getName()).toEqual("Bdim");
   });
 });
+
+describe("Dominant Sevenths", () => {
+  it("returns the name of the dominant seventh", () => {
+    expect(Chord.for("C E G Bb")?.getName()).toEqual("C7");
+    expect(Chord.for("Db F Ab Cb")?.getName()).toEqual("Db7");
+    expect(Chord.for("D F# A C")?.getName()).toEqual("D7");
+    expect(Chord.for("Eb G Bb Db")?.getName()).toEqual("Eb7");
+    expect(Chord.for("E G# B D")?.getName()).toEqual("E7");
+    expect(Chord.for("F A C Eb")?.getName()).toEqual("F7");
+    expect(Chord.for("Gb Bb Db Fb")?.getName()).toEqual("Gb7");
+    expect(Chord.for("G B D F")?.getName()).toEqual("G7");
+    expect(Chord.for("Ab C Eb Gb")?.getName()).toEqual("Ab7");
+    expect(Chord.for("A C# E G")?.getName()).toEqual("A7");
+    expect(Chord.for("Bb D F Ab")?.getName()).toEqual("Bb7");
+    expect(Chord.for("B D# F# A")?.getName()).toEqual("B7");
+  });
+});

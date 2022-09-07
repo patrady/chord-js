@@ -1,20 +1,14 @@
 import { Interval } from "../interval";
-import { Note } from "../note";
-import { IChord } from "./types";
+import { BaseChord } from "./baseChord";
 
-export class SuspendedChord implements IChord {
-  constructor(public notes: Note[]) {}
-
+export class SuspendedChord extends BaseChord {
   public getName(): string {
     return `${this.notes[0].getName()}sus`;
   }
 
-  public getNotes(): Note[] {
-    return this.notes;
-  }
-
   public isMatch() {
     return (
+      this.isTriad() &&
       Interval.between(this.notes[0], this.notes[1]).isPerfect(4) &&
       Interval.between(this.notes[0], this.notes[2]).isPerfect(5)
     );

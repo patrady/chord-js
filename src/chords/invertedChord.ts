@@ -1,13 +1,17 @@
 import { Note } from "../note";
 import { invertArray } from "../utils";
-import { IChord, Strategy } from "./types";
+import { BaseChord } from "./baseChord";
 
-export class InvertedChord implements IChord {
-  DecoratedClass: Strategy;
+export type Strategy = { new (notes: Note[]): BaseChord };
+
+export class InvertedChord extends BaseChord {
+  DecoratedClass: { new (notes: Note[]): BaseChord };
   baseNote: Note;
-  chord: IChord;
+  chord: BaseChord;
 
-  constructor(decoratedClass: Strategy, chord: IChord) {
+  constructor(decoratedClass: Strategy, chord: BaseChord) {
+    super(chord.getNotes());
+
     this.DecoratedClass = decoratedClass;
     this.chord = chord;
     this.baseNote = chord.getNotes()[0];
