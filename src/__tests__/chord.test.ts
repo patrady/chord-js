@@ -215,3 +215,25 @@ describe("Dominant Sevenths", () => {
     expect(Chord.for("B D# F# A")?.getName()).toEqual("B7");
   });
 });
+
+describe("Major Sevenths Sevenths", () => {
+  it("returns the name of the dominant seventh", () => {
+    expect(Chord.for("C E G B")?.getName()).toEqual("Cmaj7");
+    expect(Chord.for("C# E# G# B#")?.getName()).toEqual("C#maj7");
+    expect(Chord.for("Db F Ab C")?.getName()).toEqual("Dbmaj7");
+    expect(Chord.for("D F# A C#")?.getName()).toEqual("Dmaj7");
+    expect(Chord.for("D# F## A# C##")?.getName()).toEqual("D#maj7");
+    expect(Chord.for("Eb G Bb D")?.getName()).toEqual("Ebmaj7");
+    expect(Chord.for("E G# B D#")?.getName()).toEqual("Emaj7");
+    expect(Chord.for("F A C E")?.getName()).toEqual("Fmaj7");
+    expect(Chord.for("F# A# C# E#")?.getName()).toEqual("F#maj7");
+    expect(Chord.for("Gb Bb Db F")?.getName()).toEqual("Gbmaj7");
+    expect(Chord.for("G B D F#")?.getName()).toEqual("Gmaj7");
+    expect(Chord.for("G# B# D# F##")?.getName()).toEqual("G#maj7");
+    expect(Chord.for("Ab C Eb G")?.getName()).toEqual("Abmaj7");
+    expect(Chord.for("A C# E G#")?.getName()).toEqual("Amaj7");
+    expect(Chord.for("A# C## E# G##")?.getName()).toEqual("A#maj7");
+    expect(Chord.for("Bb D F A")?.getName()).toEqual("Bbmaj7");
+    expect(Chord.for("B D# F# A#")?.getName()).toEqual("Bmaj7");
+  });
+});
