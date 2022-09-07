@@ -4,6 +4,7 @@ import { DominantSeventhChord } from "./dominantSeventhChord";
 import { MajorChord } from "./majorChord";
 import { MajorSeventhChord } from "./majorSeventhChord";
 import { MinorChord } from "./minorChord";
+import { MinorSeventhChord } from "./minorSeventhChord";
 import { SuspendedChord } from "./suspendedChord";
 import { SuspendedSecondChord } from "./suspendedSecondChord";
 
@@ -16,4 +17,5 @@ export const strategies = [
   DiminishedChord,
   DominantSeventhChord,
   MajorSeventhChord,
+  MinorSeventhChord,
 ];
