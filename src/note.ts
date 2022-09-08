@@ -24,18 +24,6 @@ export class Note {
     return `${this.name.value}${this.accidental.getValue()}`;
   }
 
-  public isFlat() {
-    return this.accidental.isFlat();
-  }
-
-  public isSharp() {
-    return this.accidental.isSharp();
-  }
-
-  public isNatural() {
-    return this.accidental.isNatural();
-  }
-
   public getScientificName() {
     return `${this.getName()}${this.getOctave()}`;
   }

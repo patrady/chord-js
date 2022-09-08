@@ -57,6 +57,6 @@ export abstract class Accidental {
   }
 
   private static isValid(value: string) {
-    return this.accidentals.some((accidental) => accidental === value);
+    return this.accidentals.includes(value);
   }
 }
