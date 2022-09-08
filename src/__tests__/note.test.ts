@@ -43,6 +43,7 @@ describe("#getKeyNumber", () => {
     expect(new Note("Bb0").getKeyNumber()).toEqual(2);
     expect(new Note("A##0").getKeyNumber()).toEqual(3);
     expect(new Note("B0").getKeyNumber()).toEqual(3);
+    expect(new Note("B#0").getKeyNumber()).toEqual(4);
 
     expect(new Note("C1").getKeyNumber()).toEqual(4);
     expect(new Note("Dbb1").getKeyNumber()).toEqual(4);

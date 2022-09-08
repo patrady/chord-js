@@ -20,34 +20,6 @@ export class Octave {
     return this.value === 0;
   }
 
-  public isContra() {
-    return this.value === 1;
-  }
-
-  public isGreat() {
-    return this.value === 2;
-  }
-
-  public isSmall() {
-    return this.value === 3;
-  }
-
-  public isOneLine() {
-    return this.value === 4;
-  }
-
-  public isTwoLine() {
-    return this.value === 5;
-  }
-
-  public isThreeLine() {
-    return this.value === 6;
-  }
-
-  public isFourLine() {
-    return this.value === 7;
-  }
-
   public isFiveLine() {
     return this.value === 8;
   }
