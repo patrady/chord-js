@@ -4,7 +4,7 @@ import { MajorChord } from "./majorChord";
 
 export class DominantSeventhChord extends BaseChord {
   public getName(): string {
-    return this.root().getName() + "7";
+    return `${this.root().getName()}7`;
   }
 
   public isMatch() {

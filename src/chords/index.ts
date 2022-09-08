@@ -2,6 +2,7 @@ export * from "./augmentedChord";
 export * from './baseChord';
 export * from "./dominantSeventhChord";
 export * from "./diminishedChord";
+export * from "./diminishedSeventhChord";
 export * from "./majorChord";
 export * from "./majorSeventhChord";
 export * from "./minorChord";

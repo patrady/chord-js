@@ -425,4 +425,28 @@ describe("#isDiminished", () => {
       });
     });
   });
+
+  describe("with an diminished 7th", () => {
+    describe("and there are 9 semitones between the notes", () => {
+      it("returns true", () => {
+        expect(Interval.between("C", "A").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("Db", "Bb").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("D", "B").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("Eb", "C").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("E", "C#").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("F", "D").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("F#", "D#").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("G", "E").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("Ab", "F").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("A", "F#").isDiminished(7)).toBeTruthy();
+        expect(Interval.between("Bb", "G").isDiminished(7)).toBeTruthy();
+      });
+    });
+
+    describe("and there is not 9 semitones between the notes", () => {
+      it("returns false", () => {
+        expect(Interval.between("C", "D").isDiminished(7)).toBeFalsy();
+      });
+    });
+  });
 });

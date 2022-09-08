@@ -186,16 +186,21 @@ describe("Diminished Chords", () => {
     expect(Chord.for("C# E G")?.getName()).toEqual("C#dim");
     expect(Chord.for("Db Fb Abb")?.getName()).toEqual("Dbdim");
     expect(Chord.for("D F Ab")?.getName()).toEqual("Ddim");
+    expect(Chord.for("D# F# A")?.getName()).toEqual("D#dim");
     expect(Chord.for("Eb Gb Bbb")?.getName()).toEqual("Ebdim");
     expect(Chord.for("E G Bb")?.getName()).toEqual("Edim");
+    expect(Chord.for("E# G# B")?.getName()).toEqual("E#dim");
     expect(Chord.for("F Ab Cb")?.getName()).toEqual("Fdim");
     expect(Chord.for("F# A C")?.getName()).toEqual("F#dim");
+    expect(Chord.for("Gb Bbb Dbb")?.getName()).toEqual("Gbdim");
     expect(Chord.for("G Bb Db")?.getName()).toEqual("Gdim");
     expect(Chord.for("G# B D")?.getName()).toEqual("G#dim");
     expect(Chord.for("Ab Cb Ebb")?.getName()).toEqual("Abdim");
     expect(Chord.for("A C Eb")?.getName()).toEqual("Adim");
+    expect(Chord.for("A# C# E")?.getName()).toEqual("A#dim");
     expect(Chord.for("Bb Db Fb")?.getName()).toEqual("Bbdim");
     expect(Chord.for("B D F")?.getName()).toEqual("Bdim");
+    expect(Chord.for("B# D# F#")?.getName()).toEqual("B#dim");
   });
 });
 
@@ -257,5 +262,29 @@ describe("Minor Sevenths", () => {
     expect(Chord.for("A# C# E# G#")?.getName()).toEqual("A#m7");
     expect(Chord.for("Bb Db F Ab")?.getName()).toEqual("Bbm7");
     expect(Chord.for("B D F# A")?.getName()).toEqual("Bm7");
+  });
+});
+
+describe("Diminished Seventh Chords", () => {
+  it("returns the name of the diminished seventh chord", () => {
+    expect(Chord.for("C Eb Gb Bbb")?.getName()).toEqual("Cdim7");
+    expect(Chord.for("C# E G Bb")?.getName()).toEqual("C#dim7");
+    expect(Chord.for("Db Fb Abb Cbb")?.getName()).toEqual("Dbdim7");
+    expect(Chord.for("D F Ab Cb")?.getName()).toEqual("Ddim7");
+    expect(Chord.for("D# F# A C")?.getName()).toEqual("D#dim7");
+    expect(Chord.for("Eb Gb Bbb Dbb")?.getName()).toEqual("Ebdim7");
+    expect(Chord.for("E G Bb Db")?.getName()).toEqual("Edim7");
+    expect(Chord.for("E# G# B D")?.getName()).toEqual("E#dim7");
+    expect(Chord.for("F Ab Cb Ebb")?.getName()).toEqual("Fdim7");
+    expect(Chord.for("F# A C Eb")?.getName()).toEqual("F#dim7");
+    expect(Chord.for("Gb Bbb Dbb Fbb")?.getName()).toEqual("Gbdim7");
+    expect(Chord.for("G Bb Db Fb")?.getName()).toEqual("Gdim7");
+    expect(Chord.for("G# B D F")?.getName()).toEqual("G#dim7");
+    expect(Chord.for("Ab Cb Ebb Gbb")?.getName()).toEqual("Abdim7");
+    expect(Chord.for("A C Eb Gb")?.getName()).toEqual("Adim7");
+    expect(Chord.for("A# C# E G")?.getName()).toEqual("A#dim7");
+    expect(Chord.for("Bb Db Fb Abb")?.getName()).toEqual("Bbdim7");
+    expect(Chord.for("B D F Ab")?.getName()).toEqual("Bdim7");
+    expect(Chord.for("B# D# F# A")?.getName()).toEqual("B#dim7");
   });
 });
