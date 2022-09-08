@@ -1,11 +1,11 @@
 import { Accidental } from "./accidental";
-import { Base } from "./accidentals/base";
+import { IAccidental } from "./accidentals/IAccidental";
 import { Name } from "./name";
 import { Octave } from "./octave";
 
 export class Note {
   public name: Name;
-  public accidental: Base;
+  public accidental: IAccidental;
   public octave: Octave;
 
   constructor(value: string) {

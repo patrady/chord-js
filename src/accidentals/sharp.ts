@@ -1,6 +1,6 @@
-import { Base } from ".";
+import { IAccidental } from ".";
 
-export class Sharp extends Base {
+export class Sharp implements IAccidental {
   static value = "#";
 
   public getValue() {

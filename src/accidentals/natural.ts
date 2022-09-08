@@ -1,6 +1,6 @@
-import { Base } from ".";
+import { IAccidental } from ".";
 
-export class Natural extends Base {
+export class Natural implements IAccidental {
   static value = "♮";
 
   public getValue() {

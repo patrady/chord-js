@@ -1,6 +1,6 @@
-import { Base } from ".";
+import { IAccidental } from ".";
 
-export class DoubleSharp extends Base {
+export class DoubleSharp implements IAccidental {
   static value = "##";
 
   public getValue() {
