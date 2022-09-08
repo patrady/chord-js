@@ -10,7 +10,7 @@ export class DiminishedSeventhChord extends BaseChord {
   public isMatch() {
     return (
       this.isTetrad() &&
-      new DiminishedChord(this.getTriad()).isMatch() &&
+      DiminishedChord.isMatch(this.getTriad()) &&
       Interval.between(this.root(), this.fourth()).isDiminished(7)
     );
   }
