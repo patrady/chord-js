@@ -11,7 +11,7 @@ export class DominantSeventhChord extends BaseChord {
     return (
       this.isTetrad() &&
       MajorChord.isMatch(this.getTriad()) &&
-      Interval.between(this.root(), this.fourth()).isMinor(7)
+      Interval.between(this.root(), this.fourth()).isMinor7th()
     );
   }
 }

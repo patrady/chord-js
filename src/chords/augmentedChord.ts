@@ -9,8 +9,8 @@ export class AugmentedChord extends BaseChord {
   public isMatch() {
     return (
       this.isTriad() &&
-      Interval.between(this.root(), this.second()).isMajor(3) &&
-      Interval.between(this.root(), this.third()).isAugmented(5)
+      Interval.between(this.root(), this.second()).isMajor3rd() &&
+      Interval.between(this.root(), this.third()).isAugmented5th()
     );
   }
 }

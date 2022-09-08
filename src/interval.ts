@@ -15,64 +15,73 @@ export class Interval {
 }
 
 class DefinedInterval {
-  constructor(public note1: Note, public note2: Note) {}
+  private semitones: number;
 
-  public toSemitones(): number {
-    return this.note2.minus(this.note1);
+  constructor(public note1: Note, public note2: Note) {
+    this.semitones = this.note2.minus(this.note1);
   }
 
-  public isMajor(interval: 2 | 3 | 6 | 7) {
-    switch (interval) {
-      case 2:
-        return this.toSemitones() === 2;
-      case 3:
-        return this.toSemitones() === 4;
-      case 6:
-        return this.toSemitones() === 9;
-      case 7:
-        return this.toSemitones() === 11;
-    }
+  public getSemitones() {
+    return this.semitones;
   }
 
-  public isMinor(interval: 2 | 3 | 6 | 7) {
-    switch (interval) {
-      case 2:
-        return this.toSemitones() === 1;
-      case 3:
-        return this.toSemitones() === 3;
-      case 6:
-        return this.toSemitones() === 8;
-      case 7:
-        return this.toSemitones() === 10;
-    }
+  public isMajor2nd() {
+    return this.semitones === 2;
   }
 
-  public isPerfect(interval: 4 | 5) {
-    switch (interval) {
-      case 4:
-        return this.toSemitones() === 5;
-      case 5:
-        return this.toSemitones() === 7;
-    }
+  public isMajor3rd() {
+    return this.semitones === 4;
   }
 
-  public isAugmented(interval: 4 | 5) {
-    switch (interval) {
-      case 4:
-        return this.toSemitones() === 6;
-      case 5:
-        return this.toSemitones() === 8;
-    }
+  public isMajor6th() {
+    return this.semitones === 9;
   }
 
-  public isDiminished(interval: 4 | 5 | 7) {
-    switch (interval) {
-      case 4:
-        return this.toSemitones() === 4;
-      case 5:
-        return this.toSemitones() === 6;
-      case 7:
-        return this.toSemitones() === 9;
-    }
+  public isMajor7th() {
+    return this.semitones === 11;
+  }
+
+  public isMinor2nd() {
+    return this.semitones === 1;
+  }
+
+  public isMinor3rd() {
+    return this.semitones === 3;
+  }
+
+  public isMinor6th() {
+    return this.semitones === 8;
+  }
+
+  public isMinor7th() {
+    return this.semitones === 10;
+  }
+
+  public isPerfect4th() {
+    return this.semitones === 5;
+  }
+
+  public isPerfect5th() {
+    return this.semitones === 7;
+  }
+
+  public isAugmented4th() {
+    return this.semitones === 6;
+  }
+
+  public isAugmented5th() {
+    return this.semitones === 8;
+  }
+
+  public isDiminished4th() {
+    return this.semitones === 4;
+  }
+
+  public isDiminished5th() {
+    return this.semitones === 6;
+  }
+
+  public isDiminished7th() {
+    return this.semitones === 9;
   }
 }

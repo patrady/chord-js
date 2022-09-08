@@ -14,8 +14,8 @@ export class DiminishedChord extends BaseChord {
   public isMatch() {
     return (
       this.isTriad() &&
-      Interval.between(this.root(), this.second()).isMinor(3) &&
-      Interval.between(this.root(), this.third()).isDiminished(5)
+      Interval.between(this.root(), this.second()).isMinor3rd() &&
+      Interval.between(this.root(), this.third()).isDiminished5th()
     );
   }
 }

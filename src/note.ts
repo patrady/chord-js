@@ -1,10 +1,11 @@
 import { Accidental } from "./accidental";
+import { Base } from "./accidentals/base";
 import { Name } from "./name";
 import { Octave } from "./octave";
 
 export class Note {
   public name: Name;
-  public accidental: Accidental;
+  public accidental: Base;
   public octave: Octave;
 
   constructor(value: string) {
