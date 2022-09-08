@@ -9,15 +9,21 @@ export abstract class Chord {
   }
 
   private static getChord(notes: Note[]): BaseChord | undefined {
-    return strategies
-      .map((klass) => new klass(notes))
-      .filter((chord) => chord.isMatch())[0];
+    for (const Strategy of strategies) {
+      const chord = new Strategy(notes);
+      if (chord.isMatch()) {
+        return chord;
+      }
+    }
   }
 
   private static getInvertedChord(notes: Note[]): BaseChord | undefined {
-    return strategies
-      .map((klass) => new InvertedChord(klass, new klass(notes)))
-      .filter((chord) => chord.isMatch())[0];
+    for (const Strategy of strategies) {
+      const chord = new InvertedChord(Strategy, new Strategy(notes));
+      if (chord.isMatch()) {
+        return chord;
+      }
+    }
   }
 
   private static parse(notes: string): Note[] {
