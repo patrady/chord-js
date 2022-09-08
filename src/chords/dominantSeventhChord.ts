@@ -1,6 +1,6 @@
-import { Interval } from "../interval";
-import { BaseChord } from "./baseChord";
-import { MajorChord } from "./majorChord";
+import { Interval } from '../interval';
+import { BaseChord } from './baseChord';
+import { MajorChord } from './majorChord';
 
 export class DominantSeventhChord extends BaseChord {
   public getName(): string {

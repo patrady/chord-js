@@ -1,5 +1,5 @@
-import { BaseChord, InvertedChord, strategies } from "./chords";
-import { Note } from "./note";
+import { BaseChord, InvertedChord, strategies } from './chords';
+import { Note } from './note';
 
 export abstract class Chord {
   public static for(notes: string): BaseChord | undefined {
@@ -27,6 +27,6 @@ export abstract class Chord {
   }
 
   private static parse(notes: string): Note[] {
-    return notes.split(" ").map((note) => new Note(note));
+    return notes.split(' ').map((note) => new Note(note));
   }
 }

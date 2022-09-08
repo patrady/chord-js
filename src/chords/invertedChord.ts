@@ -1,11 +1,11 @@
-import { Note } from "../note";
-import { invertArray } from "../utils";
-import { BaseChord } from "./baseChord";
+import { Note } from '../note';
+import { invertArray } from '../utils';
+import { BaseChord } from './baseChord';
 
-export type Strategy = { new (notes: Note[]): BaseChord };
+export type Strategy = new (notes: Note[]) => BaseChord;
 
 export class InvertedChord extends BaseChord {
-  DecoratedClass: { new (notes: Note[]): BaseChord };
+  DecoratedClass: Strategy;
   baseNote: Note;
   chord: BaseChord;
 
@@ -28,9 +28,7 @@ export class InvertedChord extends BaseChord {
   public isMatch() {
     let index = 1;
     do {
-      const invertedChord = new this.DecoratedClass(
-        invertArray(this.chord.getNotes(), index)
-      );
+      const invertedChord = new this.DecoratedClass(invertArray(this.chord.getNotes(), index));
 
       if (invertedChord.isMatch()) {
         this.chord = invertedChord;

@@ -1,6 +1,6 @@
-import { Interval } from "../interval";
-import { BaseChord } from "./baseChord";
-import { MinorChord } from "./minorChord";
+import { Interval } from '../interval';
+import { BaseChord } from './baseChord';
+import { MinorChord } from './minorChord';
 
 export class MinorSeventhChord extends BaseChord {
   public getName(): string {

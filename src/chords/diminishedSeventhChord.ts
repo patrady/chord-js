@@ -1,6 +1,6 @@
-import { Interval } from "../interval";
-import { BaseChord } from "./baseChord";
-import { DiminishedChord } from "./diminishedChord";
+import { Interval } from '../interval';
+import { BaseChord } from './baseChord';
+import { DiminishedChord } from './diminishedChord';
 
 export class DiminishedSeventhChord extends BaseChord {
   public getName(): string {

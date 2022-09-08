@@ -35,8 +35,8 @@ export class Octave {
       return result as OctaveProps;
     }
 
-    if (typeof value === "string") {
-      result = parseInt(value);
+    if (typeof value === 'string') {
+      result = parseInt(value, 10);
     } else {
       result = value;
     }

@@ -1,7 +1,7 @@
-import { IAccidental } from ".";
+import { IAccidental } from '.';
 
 export class Sharp implements IAccidental {
-  static value = "#";
+  static value = '#';
 
   public getValue() {
     return Sharp.value;

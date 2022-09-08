@@ -1,5 +1,5 @@
-import { Interval } from "../interval";
-import { BaseChord } from "./baseChord";
+import { Interval } from '../interval';
+import { BaseChord } from './baseChord';
 
 export class AugmentedChord extends BaseChord {
   public getName(): string {

@@ -1,10 +1,10 @@
-import { IAccidental } from ".";
+import { IAccidental } from '.';
 
 export class Natural implements IAccidental {
-  static value = "♮";
+  static value = '♮';
 
   public getValue() {
-    return "";
+    return '';
   }
 
   public getKeyIndex(): number {

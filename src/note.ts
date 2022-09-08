@@ -1,7 +1,7 @@
-import { Accidental } from "./accidental";
-import { IAccidental } from "./accidentals/IAccidental";
-import { Name } from "./name";
-import { Octave } from "./octave";
+import { Accidental } from './accidental';
+import { IAccidental } from './accidentals/IAccidental';
+import { Name } from './name';
+import { Octave } from './octave';
 
 export class Note {
   public name: Name;
@@ -11,7 +11,7 @@ export class Note {
   constructor(value: string) {
     const result = this.parse(value);
     if (!result) {
-      throw new Error("Invalid note");
+      throw new Error('Invalid note');
     }
 
     const [, name, accidental, octave] = result;
@@ -33,24 +33,22 @@ export class Note {
   }
 
   public getFrequency() {
-    return parseFloat(
-      (Math.pow(2, (this.getKeyNumber() - 49) / 12) * 440).toFixed(5)
-    );
+    return parseFloat((Math.pow(2, (this.getKeyNumber() - 49) / 12) * 440).toFixed(5));
   }
 
   public getKeyNumber() {
     if (this.octave.isSubContra()) {
       switch (this.getName()) {
-        case "A":
-        case "Bbb":
+        case 'A':
+        case 'Bbb':
           return 1;
-        case "A#":
-        case "Bb":
+        case 'A#':
+        case 'Bb':
           return 2;
-        case "B":
-        case "A##":
+        case 'B':
+        case 'A##':
           return 3;
-        case "B#":
+        case 'B#':
           return 4;
       }
     }
@@ -65,16 +63,16 @@ export class Note {
   public getMidiValue() {
     if (this.octave.isSubContra()) {
       switch (this.getName()) {
-        case "A":
-        case "Bbb":
+        case 'A':
+        case 'Bbb':
           return 21;
-        case "A#":
-        case "Bb":
+        case 'A#':
+        case 'Bb':
           return 22;
-        case "B":
-        case "A##":
+        case 'B':
+        case 'A##':
           return 23;
-        case "B#":
+        case 'B#':
           return 24;
       }
     }

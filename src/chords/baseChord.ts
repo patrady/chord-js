@@ -1,4 +1,4 @@
-import { Note } from "../note";
+import { Note } from '../note';
 
 export abstract class BaseChord {
   constructor(public notes: Note[]) {}

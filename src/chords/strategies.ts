@@ -1,13 +1,13 @@
-import { AugmentedChord } from "./augmentedChord";
-import { DiminishedChord } from "./diminishedChord";
-import { DiminishedSeventhChord } from "./diminishedSeventhChord";
-import { DominantSeventhChord } from "./dominantSeventhChord";
-import { MajorChord } from "./majorChord";
-import { MajorSeventhChord } from "./majorSeventhChord";
-import { MinorChord } from "./minorChord";
-import { MinorSeventhChord } from "./minorSeventhChord";
-import { SuspendedChord } from "./suspendedChord";
-import { SuspendedSecondChord } from "./suspendedSecondChord";
+import { AugmentedChord } from './augmentedChord';
+import { DiminishedChord } from './diminishedChord';
+import { DiminishedSeventhChord } from './diminishedSeventhChord';
+import { DominantSeventhChord } from './dominantSeventhChord';
+import { MajorChord } from './majorChord';
+import { MajorSeventhChord } from './majorSeventhChord';
+import { MinorChord } from './minorChord';
+import { MinorSeventhChord } from './minorSeventhChord';
+import { SuspendedChord } from './suspendedChord';
+import { SuspendedSecondChord } from './suspendedSecondChord';
 
 export const strategies = [
   MajorChord,
@@ -19,5 +19,5 @@ export const strategies = [
   DominantSeventhChord,
   MajorSeventhChord,
   MinorSeventhChord,
-  DiminishedSeventhChord
+  DiminishedSeventhChord,
 ];

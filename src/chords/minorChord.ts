@@ -1,6 +1,6 @@
-import { Interval } from "../interval";
-import { Note } from "../note";
-import { BaseChord } from "./baseChord";
+import { Interval } from '../interval';
+import { Note } from '../note';
+import { BaseChord } from './baseChord';
 
 export class MinorChord extends BaseChord {
   public static isMatch(notes: Note[]) {
