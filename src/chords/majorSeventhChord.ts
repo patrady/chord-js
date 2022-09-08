@@ -10,8 +10,8 @@ export class MajorSeventhChord extends BaseChord {
   public isMatch() {
     return (
       this.isTetrad() &&
-      new MajorChord(this.notes.slice(0, 3)).isMatch() &&
-      Interval.between(this.root(), this.notes[3]).isMajor(7)
+      new MajorChord(this.getTriad()).isMatch() &&
+      Interval.between(this.root(), this.fourth()).isMajor(7)
     );
   }
 }

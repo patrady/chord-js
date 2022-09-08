@@ -9,8 +9,8 @@ export class SuspendedChord extends BaseChord {
   public isMatch() {
     return (
       this.isTriad() &&
-      Interval.between(this.root(), this.notes[1]).isPerfect(4) &&
-      Interval.between(this.root(), this.notes[2]).isPerfect(5)
+      Interval.between(this.root(), this.second()).isPerfect(4) &&
+      Interval.between(this.root(), this.third()).isPerfect(5)
     );
   }
 }
