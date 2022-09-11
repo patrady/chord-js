@@ -1,5 +1,5 @@
 {
-  "name": "chord-js",
+  "name": "@patrady/chord-js",
   "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

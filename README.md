@@ -5,13 +5,13 @@ Chord JS identifies chords based on their notes
 To install run
 
 ```bash
-npm install chord-js
+npm install @patrady/chord-js
 ```
 
 or if you're using yarn 
 
 ```bash
-yarn add chord-js
+yarn add @patrady/chord-js
 ```
 
 ## Supported Chords
