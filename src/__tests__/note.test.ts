@@ -1,5 +1,112 @@
 import { Note } from '../note';
 
+describe('.fromMidi', () => { 
+  it("returns an instance of a Note", () => {
+    expect(Note.fromMidi(21)).toEqual(new Note('A0'));
+    expect(Note.fromMidi(22)).toEqual(new Note('Bb0'));
+    expect(Note.fromMidi(23)).toEqual(new Note('B0'));
+    expect(Note.fromMidi(24)).toEqual(new Note('C1'));
+    expect(Note.fromMidi(26)).toEqual(new Note('Db1'));
+    expect(Note.fromMidi(26)).toEqual(new Note('D1'));
+    expect(Note.fromMidi(27)).toEqual(new Note('Eb1'));
+    expect(Note.fromMidi(28)).toEqual(new Note('E1'));
+    expect(Note.fromMidi(29)).toEqual(new Note('Fb1'));
+    expect(Note.fromMidi(29)).toEqual(new Note('F1'));
+    expect(Note.fromMidi(30)).toEqual(new Note('Gb1'));
+    expect(Note.fromMidi(31)).toEqual(new Note('G1'));
+    expect(Note.fromMidi(32)).toEqual(new Note('Ab1'));
+    expect(Note.fromMidi(33)).toEqual(new Note('A1'));
+    expect(Note.fromMidi(34)).toEqual(new Note('Bb1'));
+    expect(Note.fromMidi(35)).toEqual(new Note('B1'));
+    expect(Note.fromMidi(36)).toEqual(new Note('C2'));
+    expect(Note.fromMidi(38)).toEqual(new Note('Db2'));
+    expect(Note.fromMidi(38)).toEqual(new Note('D2'));
+    expect(Note.fromMidi(39)).toEqual(new Note('Eb2'));
+    expect(Note.fromMidi(40)).toEqual(new Note('E2'));
+    expect(Note.fromMidi(41)).toEqual(new Note('Fb2'));
+    expect(Note.fromMidi(41)).toEqual(new Note('F2'));
+    expect(Note.fromMidi(42)).toEqual(new Note('Gb2'));
+    expect(Note.fromMidi(43)).toEqual(new Note('G2'));
+    expect(Note.fromMidi(44)).toEqual(new Note('Ab2'));
+    expect(Note.fromMidi(45)).toEqual(new Note('A2'));
+    expect(Note.fromMidi(46)).toEqual(new Note('Bb2'));
+    expect(Note.fromMidi(47)).toEqual(new Note('B2'));
+    expect(Note.fromMidi(48)).toEqual(new Note('C3'));
+    expect(Note.fromMidi(50)).toEqual(new Note('Db3'));
+    expect(Note.fromMidi(50)).toEqual(new Note('D3'));
+    expect(Note.fromMidi(51)).toEqual(new Note('Eb3'));
+    expect(Note.fromMidi(52)).toEqual(new Note('E3'));
+    expect(Note.fromMidi(53)).toEqual(new Note('Fb3'));
+    expect(Note.fromMidi(53)).toEqual(new Note('F3'));
+    expect(Note.fromMidi(54)).toEqual(new Note('Gb3'));
+    expect(Note.fromMidi(55)).toEqual(new Note('G3'));
+    expect(Note.fromMidi(56)).toEqual(new Note('Ab3'));
+    expect(Note.fromMidi(57)).toEqual(new Note('A3'));
+    expect(Note.fromMidi(58)).toEqual(new Note('Bb3'));
+    expect(Note.fromMidi(59)).toEqual(new Note('B3'));
+    expect(Note.fromMidi(60)).toEqual(new Note('C4'));
+    expect(Note.fromMidi(62)).toEqual(new Note('Db4'));
+    expect(Note.fromMidi(62)).toEqual(new Note('D4'));
+    expect(Note.fromMidi(63)).toEqual(new Note('Eb4'));
+    expect(Note.fromMidi(64)).toEqual(new Note('E4'));
+    expect(Note.fromMidi(65)).toEqual(new Note('Fb4'));
+    expect(Note.fromMidi(65)).toEqual(new Note('F4'));
+    expect(Note.fromMidi(66)).toEqual(new Note('Gb4'));
+    expect(Note.fromMidi(67)).toEqual(new Note('G4'));
+    expect(Note.fromMidi(68)).toEqual(new Note('Ab4'));
+    expect(Note.fromMidi(69)).toEqual(new Note('A4'));
+    expect(Note.fromMidi(70)).toEqual(new Note('Bb4'));
+    expect(Note.fromMidi(71)).toEqual(new Note('B4'));
+    expect(Note.fromMidi(72)).toEqual(new Note('C5'));
+    expect(Note.fromMidi(74)).toEqual(new Note('Db5'));
+    expect(Note.fromMidi(74)).toEqual(new Note('D5'));
+    expect(Note.fromMidi(75)).toEqual(new Note('Eb5'));
+    expect(Note.fromMidi(76)).toEqual(new Note('E5'));
+    expect(Note.fromMidi(77)).toEqual(new Note('Fb5'));
+    expect(Note.fromMidi(77)).toEqual(new Note('F5'));
+    expect(Note.fromMidi(78)).toEqual(new Note('Gb5'));
+    expect(Note.fromMidi(79)).toEqual(new Note('G5'));
+    expect(Note.fromMidi(80)).toEqual(new Note('Ab5'));
+    expect(Note.fromMidi(81)).toEqual(new Note('A5'));
+    expect(Note.fromMidi(82)).toEqual(new Note('Bb5'));
+    expect(Note.fromMidi(83)).toEqual(new Note('B5'));
+    expect(Note.fromMidi(84)).toEqual(new Note('C6'));
+    expect(Note.fromMidi(86)).toEqual(new Note('Db6'));
+    expect(Note.fromMidi(86)).toEqual(new Note('D6'));
+    expect(Note.fromMidi(87)).toEqual(new Note('Eb6'));
+    expect(Note.fromMidi(88)).toEqual(new Note('E6'));
+    expect(Note.fromMidi(89)).toEqual(new Note('Fb6'));
+    expect(Note.fromMidi(89)).toEqual(new Note('F6'));
+    expect(Note.fromMidi(90)).toEqual(new Note('Gb6'));
+    expect(Note.fromMidi(91)).toEqual(new Note('G6'));
+    expect(Note.fromMidi(92)).toEqual(new Note('Ab6'));
+    expect(Note.fromMidi(93)).toEqual(new Note('A6'));
+    expect(Note.fromMidi(94)).toEqual(new Note('Bb6'));
+    expect(Note.fromMidi(95)).toEqual(new Note('B6'));
+    expect(Note.fromMidi(96)).toEqual(new Note('C7'));
+    expect(Note.fromMidi(98)).toEqual(new Note('Db7'));
+    expect(Note.fromMidi(98)).toEqual(new Note('D7'));
+    expect(Note.fromMidi(99)).toEqual(new Note('Eb7'));
+    expect(Note.fromMidi(100)).toEqual(new Note('E7'));
+    expect(Note.fromMidi(101)).toEqual(new Note('Fb7'));
+    expect(Note.fromMidi(101)).toEqual(new Note('F7'));
+    expect(Note.fromMidi(102)).toEqual(new Note('Gb7'));
+    expect(Note.fromMidi(103)).toEqual(new Note('G7'));
+    expect(Note.fromMidi(104)).toEqual(new Note('Ab7'));
+    expect(Note.fromMidi(105)).toEqual(new Note('A7'));
+    expect(Note.fromMidi(106)).toEqual(new Note('Bb7'));
+    expect(Note.fromMidi(107)).toEqual(new Note('B7'));
+    expect(Note.fromMidi(108)).toEqual(new Note('C8'));    
+  });
+
+  describe("with an invalid midi value", () => {
+    it("throws an error", () => {
+      expect(() => Note.fromMidi(20)).toThrow("Invalid Midi note");
+      expect(() => Note.fromMidi(109)).toThrow("Invalid Midi note");
+    })
+  })
+ })
+
 describe('#constructor', () => {
   describe('with a valid note', () => {
     it('returns an instance of Note', () => {

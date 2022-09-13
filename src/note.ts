@@ -8,6 +8,30 @@ export class Note {
   public accidental: IAccidental;
   public octave: Octave;
 
+  public static fromMidi(value: number) {
+    if (value < 21 || value > 108) {
+      throw new Error('Invalid Midi note');
+    }
+
+    if (21 <= value && value <= 23) {
+      switch (value) {
+        case 21:
+          return new Note('A0');
+        case 22:
+          return new Note('Bb0');
+        case 23:
+          return new Note('B0');
+      }
+    }
+
+    return new Note(`${Note.getNameFromMidi(value)}${Octave.fromMidi(value)}`);
+  }
+
+  private static getNameFromMidi(value: number) {
+    const notes = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+    return notes[(value - new Note('C1').getMidiValue()) % notes.length];
+  }
+
   constructor(value: string) {
     const result = this.parse(value);
     if (!result) {

@@ -1,7 +1,14 @@
+import { Note } from "./note";
+
 type NameProps = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
 
 export class Name {
   static values = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+  static valuesWithFlats = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+
+  static fromMidi(value: number) {
+    return this.valuesWithFlats[(value - new Note('C1').getMidiValue()) % 12];
+  }
 
   value: NameProps;
 
