@@ -155,3 +155,104 @@ describe('#B', () => {
     });
   });
 });
+
+describe('.fromMidi', () => {
+  it('returns the name portion of the MIDI value', () => {
+    expect(Name.fromMidi(24)).toEqual('C');
+    expect(Name.fromMidi(36)).toEqual('C');
+    expect(Name.fromMidi(48)).toEqual('C');
+    expect(Name.fromMidi(60)).toEqual('C');
+    expect(Name.fromMidi(72)).toEqual('C');
+    expect(Name.fromMidi(84)).toEqual('C');
+    expect(Name.fromMidi(96)).toEqual('C');
+    expect(Name.fromMidi(108)).toEqual('C');
+
+    expect(Name.fromMidi(25)).toEqual('Db');
+    expect(Name.fromMidi(37)).toEqual('Db');
+    expect(Name.fromMidi(49)).toEqual('Db');
+    expect(Name.fromMidi(61)).toEqual('Db');
+    expect(Name.fromMidi(73)).toEqual('Db');
+    expect(Name.fromMidi(85)).toEqual('Db');
+    expect(Name.fromMidi(97)).toEqual('Db');
+
+    expect(Name.fromMidi(26)).toEqual('D');
+    expect(Name.fromMidi(38)).toEqual('D');
+    expect(Name.fromMidi(50)).toEqual('D');
+    expect(Name.fromMidi(62)).toEqual('D');
+    expect(Name.fromMidi(74)).toEqual('D');
+    expect(Name.fromMidi(86)).toEqual('D');
+    expect(Name.fromMidi(98)).toEqual('D');
+
+    expect(Name.fromMidi(27)).toEqual('Eb');
+    expect(Name.fromMidi(39)).toEqual('Eb');
+    expect(Name.fromMidi(51)).toEqual('Eb');
+    expect(Name.fromMidi(63)).toEqual('Eb');
+    expect(Name.fromMidi(75)).toEqual('Eb');
+    expect(Name.fromMidi(87)).toEqual('Eb');
+    expect(Name.fromMidi(99)).toEqual('Eb');
+
+    expect(Name.fromMidi(28)).toEqual('E');
+    expect(Name.fromMidi(40)).toEqual('E');
+    expect(Name.fromMidi(52)).toEqual('E');
+    expect(Name.fromMidi(64)).toEqual('E');
+    expect(Name.fromMidi(76)).toEqual('E');
+    expect(Name.fromMidi(88)).toEqual('E');
+    expect(Name.fromMidi(100)).toEqual('E');
+
+    expect(Name.fromMidi(29)).toEqual('F');
+    expect(Name.fromMidi(41)).toEqual('F');
+    expect(Name.fromMidi(53)).toEqual('F');
+    expect(Name.fromMidi(65)).toEqual('F');
+    expect(Name.fromMidi(77)).toEqual('F');
+    expect(Name.fromMidi(89)).toEqual('F');
+    expect(Name.fromMidi(101)).toEqual('F');
+
+    expect(Name.fromMidi(30)).toEqual('Gb');
+    expect(Name.fromMidi(42)).toEqual('Gb');
+    expect(Name.fromMidi(54)).toEqual('Gb');
+    expect(Name.fromMidi(66)).toEqual('Gb');
+    expect(Name.fromMidi(78)).toEqual('Gb');
+    expect(Name.fromMidi(90)).toEqual('Gb');
+    expect(Name.fromMidi(102)).toEqual('Gb');
+
+    expect(Name.fromMidi(31)).toEqual('G');
+    expect(Name.fromMidi(43)).toEqual('G');
+    expect(Name.fromMidi(55)).toEqual('G');
+    expect(Name.fromMidi(67)).toEqual('G');
+    expect(Name.fromMidi(79)).toEqual('G');
+    expect(Name.fromMidi(91)).toEqual('G');
+    expect(Name.fromMidi(103)).toEqual('G');
+
+    expect(Name.fromMidi(32)).toEqual('Ab');
+    expect(Name.fromMidi(44)).toEqual('Ab');
+    expect(Name.fromMidi(56)).toEqual('Ab');
+    expect(Name.fromMidi(68)).toEqual('Ab');
+    expect(Name.fromMidi(80)).toEqual('Ab');
+    expect(Name.fromMidi(92)).toEqual('Ab');
+    expect(Name.fromMidi(104)).toEqual('Ab');
+
+    expect(Name.fromMidi(33)).toEqual('A');
+    expect(Name.fromMidi(45)).toEqual('A');
+    expect(Name.fromMidi(57)).toEqual('A');
+    expect(Name.fromMidi(69)).toEqual('A');
+    expect(Name.fromMidi(81)).toEqual('A');
+    expect(Name.fromMidi(93)).toEqual('A');
+    expect(Name.fromMidi(105)).toEqual('A');
+
+    expect(Name.fromMidi(34)).toEqual('Bb');
+    expect(Name.fromMidi(46)).toEqual('Bb');
+    expect(Name.fromMidi(58)).toEqual('Bb');
+    expect(Name.fromMidi(70)).toEqual('Bb');
+    expect(Name.fromMidi(82)).toEqual('Bb');
+    expect(Name.fromMidi(94)).toEqual('Bb');
+    expect(Name.fromMidi(106)).toEqual('Bb');
+
+    expect(Name.fromMidi(35)).toEqual('B');
+    expect(Name.fromMidi(47)).toEqual('B');
+    expect(Name.fromMidi(59)).toEqual('B');
+    expect(Name.fromMidi(71)).toEqual('B');
+    expect(Name.fromMidi(83)).toEqual('B');
+    expect(Name.fromMidi(95)).toEqual('B');
+    expect(Name.fromMidi(107)).toEqual('B');
+  });
+});
