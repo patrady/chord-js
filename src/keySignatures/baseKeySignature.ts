@@ -17,4 +17,16 @@ export abstract class BaseKeySignature {
 
     return note;
   }
+
+  public isInKey(note: Note) {
+    for (const keyNote of this.getNotes()) {
+      for (const octave of Octave.all()) {
+        if (keyNote.setOctave(octave).equals(note)) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
 }

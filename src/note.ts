@@ -125,6 +125,10 @@ export class Note {
     return this.getMidiValue() === note.getMidiValue();
   }
 
+  public equals(note: Note) {
+    return this.getScientificName() === note.getScientificName();
+  }
+
   private isLessThan(note: Note) {
     return this.getKeyIndex() < note.getKeyIndex();
   }

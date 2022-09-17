@@ -1,4 +1,4 @@
-import { KeySignatureOfD, KeySignatureOfF } from '../keySignatures';
+import { KeySignatureOfC, KeySignatureOfD, KeySignatureOfF } from '../keySignatures';
 import { Note } from '../note';
 
 describe('#normalize', () => {
@@ -18,3 +18,17 @@ describe('#normalize', () => {
     });
   });
 });
+
+describe("#isInKey", () => {
+  describe("when the note is in the key", () => {
+    it('returns true', () => {
+      expect(new KeySignatureOfC().isInKey(new Note("C"))).toBeTruthy();
+    })
+  })
+
+  describe('when the note is not in the key', () => {
+    it('returns false', () => {
+      expect(new KeySignatureOfC().isInKey(new Note("C#"))).toBeFalsy();
+    })
+  })
+})

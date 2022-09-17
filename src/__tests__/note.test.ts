@@ -405,3 +405,21 @@ describe('#matches', () => {
     });
   });
 });
+
+describe('#equals', () => {
+  describe('when the scientific names match', () => {
+    it('returns true', () => {
+      expect(new Note('C').equals(new Note('C'))).toBeTruthy();
+      expect(new Note('C#6').equals(new Note('C#6'))).toBeTruthy();
+      expect(new Note('Bbb3').equals(new Note('Bbb3'))).toBeTruthy();
+    });
+  });
+
+  describe('when the scientific names do not match', () => {
+    it('returns false', () => {
+      expect(new Note('C').equals(new Note('D'))).toBeFalsy();
+      expect(new Note('C#').equals(new Note('Db'))).toBeFalsy();
+      expect(new Note('C#6').equals(new Note('Db6'))).toBeFalsy();
+    });
+  });
+});
