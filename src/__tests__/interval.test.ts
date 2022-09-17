@@ -440,3 +440,45 @@ describe('#isDiminished7th', () => {
     });
   });
 });
+
+describe('.major2nd', () => {
+  it('returns 2', () => {
+    expect(Interval.major2nd()).toEqual(2);
+  });
+});
+
+describe('.major3rd', () => {
+  it('returns 4', () => {
+    expect(Interval.major3rd()).toEqual(4);
+  });
+});
+
+describe('.perfect4th', () => {
+  it('returns 5', () => {
+    expect(Interval.perfect4th()).toEqual(5);
+  });
+});
+
+describe('.perfect5th', () => {
+  it('returns 7', () => {
+    expect(Interval.perfect5th()).toEqual(7);
+  });
+});
+
+describe('.major6th', () => {
+  it('returns 9', () => {
+    expect(Interval.major6th()).toEqual(9);
+  });
+});
+
+describe('.major7th', () => {
+  it('returns 11', () => {
+    expect(Interval.major7th()).toEqual(11);
+  });
+});
+
+describe('.octave', () => {
+  it('returns 12', () => {
+    expect(Interval.octave()).toEqual(12);
+  });
+});

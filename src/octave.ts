@@ -1,7 +1,7 @@
 import { Note } from "./note";
 
 type MiddleOctave = 4;
-type OctaveProps = 0 | 1 | 2 | 3 | MiddleOctave | 5 | 6 | 7 | 8 | 9;
+export type OctaveProps = 0 | 1 | 2 | 3 | MiddleOctave | 5 | 6 | 7 | 8 | 9;
 
 export class Octave {
   static MIN = 0;
@@ -18,6 +18,10 @@ export class Octave {
     }
 
     return new Octave(Math.ceil((value - new Note('C1').getMidiValue() + 1) / 12));
+  }
+
+  public static all() {
+    return [...Array(this.MAX - this.MIN + 1).keys()] as OctaveProps[];
   }
 
   value: OctaveProps;

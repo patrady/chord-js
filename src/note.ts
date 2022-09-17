@@ -1,7 +1,7 @@
 import { Accidental } from './accidental';
 import { IAccidental } from './accidentals/IAccidental';
 import { Name } from './name';
-import { Octave } from './octave';
+import { Octave, OctaveProps } from './octave';
 
 export class Note {
   public name: Name;
@@ -56,6 +56,14 @@ export class Note {
     return this.octave.value;
   }
 
+  public setOctave(octave: OctaveProps) {
+    try {
+      return new Note(`${this.getName()}${octave}`);
+    } catch {
+      return this;
+    }
+  }
+
   public getFrequency() {
     return parseFloat((Math.pow(2, (this.getKeyNumber() - 49) / 12) * 440).toFixed(5));
   }
@@ -104,12 +112,17 @@ export class Note {
     return 24 + (this.getOctave() - 1) * 12 + this.getKeyIndex();
   }
 
+  // TODO: What does it mean to minus two notes? This needs to be more descriptive
   public minus(note: Note) {
     if (this.isLessThan(note)) {
       return this.getKeyIndex() - note.getKeyIndex() + 12;
     }
 
     return this.getKeyIndex() - note.getKeyIndex();
+  }
+
+  public matches(note: Note) {
+    return this.getMidiValue() === note.getMidiValue();
   }
 
   private isLessThan(note: Note) {

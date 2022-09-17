@@ -1,3 +1,4 @@
+import { Interval } from "./interval";
 import { Note } from "./note";
 
 export class DefinedInterval {
@@ -12,19 +13,19 @@ export class DefinedInterval {
   }
 
   public isMajor2nd() {
-    return this.semitones === 2;
+    return this.semitones === Interval.major2nd();
   }
 
   public isMajor3rd() {
-    return this.semitones === 4;
+    return this.semitones === Interval.major3rd();
   }
 
   public isMajor6th() {
-    return this.semitones === 9;
+    return this.semitones === Interval.major6th();
   }
 
   public isMajor7th() {
-    return this.semitones === 11;
+    return this.semitones === Interval.major7th();
   }
 
   public isMinor2nd() {
@@ -44,11 +45,11 @@ export class DefinedInterval {
   }
 
   public isPerfect4th() {
-    return this.semitones === 5;
+    return this.semitones === Interval.perfect4th();
   }
 
   public isPerfect5th() {
-    return this.semitones === 7;
+    return this.semitones === Interval.perfect5th();
   }
 
   public isAugmented4th() {

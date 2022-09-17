@@ -43,8 +43,8 @@ describe('.middle', () => {
   });
 });
 
-describe(".fromMidi", () => {
-  it("returns the octave from the midi value", () => {
+describe('.fromMidi', () => {
+  it('returns the octave from the midi value', () => {
     expect(Octave.fromMidi(21)).toEqual(new Octave(0));
     expect(Octave.fromMidi(23)).toEqual(new Octave(0));
     expect(Octave.fromMidi(24)).toEqual(new Octave(1));
@@ -69,5 +69,11 @@ describe(".fromMidi", () => {
     expect(Octave.fromMidi(97)).toEqual(new Octave(7));
     expect(Octave.fromMidi(107)).toEqual(new Octave(7));
     expect(Octave.fromMidi(108)).toEqual(new Octave(8));
+  });
+});
+
+describe(".all", () => {
+  it("returns all the possible octaves", () => {
+    expect(Octave.all()).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8]);
   })
 })

@@ -1,7 +1,7 @@
 import { Note } from '../note';
 
-describe('.fromMidi', () => { 
-  it("returns an instance of a Note", () => {
+describe('.fromMidi', () => {
+  it('returns an instance of a Note', () => {
     expect(Note.fromMidi(21)).toEqual(new Note('A0'));
     expect(Note.fromMidi(22)).toEqual(new Note('Bb0'));
     expect(Note.fromMidi(23)).toEqual(new Note('B0'));
@@ -96,16 +96,16 @@ describe('.fromMidi', () => {
     expect(Note.fromMidi(105)).toEqual(new Note('A7'));
     expect(Note.fromMidi(106)).toEqual(new Note('Bb7'));
     expect(Note.fromMidi(107)).toEqual(new Note('B7'));
-    expect(Note.fromMidi(108)).toEqual(new Note('C8'));    
+    expect(Note.fromMidi(108)).toEqual(new Note('C8'));
   });
 
-  describe("with an invalid midi value", () => {
-    it("throws an error", () => {
-      expect(() => Note.fromMidi(20)).toThrow("Invalid Midi note");
-      expect(() => Note.fromMidi(109)).toThrow("Invalid Midi note");
-    })
-  })
- })
+  describe('with an invalid midi value', () => {
+    it('throws an error', () => {
+      expect(() => Note.fromMidi(20)).toThrow('Invalid Midi note');
+      expect(() => Note.fromMidi(109)).toThrow('Invalid Midi note');
+    });
+  });
+});
 
 describe('#constructor', () => {
   describe('with a valid note', () => {
@@ -285,6 +285,12 @@ describe('#getOctave', () => {
   });
 });
 
+describe('#setOctave', () => {
+  it('returns a new Note in that octave', () => {
+    expect(new Note('C4').setOctave(1)).toEqual(new Note('C1'));
+  });
+});
+
 describe('#getScientificName', () => {
   it('returns the note name and octave', () => {
     expect(new Note('C').getScientificName()).toEqual('C4');
@@ -381,5 +387,21 @@ describe('#getFrequency', () => {
     expect(new Note('Ab6').getFrequency()).toEqual(1661.21879);
     expect(new Note('B7').getFrequency()).toEqual(3951.06641);
     expect(new Note('Bb7').getFrequency()).toEqual(3729.31009);
+  });
+});
+
+describe('#matches', () => {
+  describe('when the MIDI values match', () => {
+    it('returns true', () => {
+      expect(new Note('C').matches(new Note('C'))).toBeTruthy();
+      expect(new Note('C#').matches(new Note('Db'))).toBeTruthy();
+      expect(new Note('F#').matches(new Note('Gb'))).toBeTruthy();
+    });
+  });
+
+  describe('when the MIDI values do not match', () => {
+    it('returns false', () => {
+      expect(new Note('C').matches(new Note('D'))).toBeFalsy();
+    });
   });
 });
