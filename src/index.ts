@@ -4,6 +4,8 @@ export * from './chord';
 export * from './chords';
 export * from './definedInterval';
 export * from './interval';
+export * from './keySignature';
+export * from './keySignatures';
 export * from './name';
 export * from './note';
 export * from './octave';
