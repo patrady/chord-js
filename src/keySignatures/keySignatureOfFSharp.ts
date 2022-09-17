@@ -1,5 +1,5 @@
-import { Note } from "../note";
-import { BaseKeySignature } from "./baseKeySignature";
+import { Note } from '../note';
+import { BaseKeySignature } from './baseKeySignature';
 
 export class KeySignatureOfFSharp extends BaseKeySignature {
   public getNotes(): Note[] {
@@ -10,7 +10,7 @@ export class KeySignatureOfFSharp extends BaseKeySignature {
       new Note('B4'),
       new Note('C#5'),
       new Note('D#5'),
-      new Note('E#5'),  
+      new Note('E#5'),
       new Note('F#5'),
     ];
   }

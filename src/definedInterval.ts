@@ -1,5 +1,5 @@
-import { Interval } from "./interval";
-import { Note } from "./note";
+import { Interval } from './interval';
+import { Note } from './note';
 
 export class DefinedInterval {
   private semitones: number;

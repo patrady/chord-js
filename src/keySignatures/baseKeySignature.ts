@@ -1,5 +1,5 @@
-import { Note } from "../note";
-import { Octave } from "../octave";
+import { Note } from '../note';
+import { Octave } from '../octave';
 
 export abstract class BaseKeySignature {
   public abstract getNotes(): Note[];

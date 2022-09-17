@@ -1,5 +1,5 @@
-import { Note } from "../note";
-import { BaseKeySignature } from "./baseKeySignature";
+import { Note } from '../note';
+import { BaseKeySignature } from './baseKeySignature';
 
 export class KeySignatureOfGb extends BaseKeySignature {
   public getNotes(): Note[] {

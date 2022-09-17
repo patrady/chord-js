@@ -1,4 +1,4 @@
-import { Note } from "./note";
+import { Note } from './note';
 
 type NameProps = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G';
 

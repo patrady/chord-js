@@ -72,8 +72,8 @@ describe('.fromMidi', () => {
   });
 });
 
-describe(".all", () => {
-  it("returns all the possible octaves", () => {
+describe('.all', () => {
+  it('returns all the possible octaves', () => {
     expect(Octave.all()).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8]);
-  })
-})
+  });
+});

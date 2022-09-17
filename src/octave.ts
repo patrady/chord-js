@@ -1,4 +1,4 @@
-import { Note } from "./note";
+import { Note } from './note';
 
 type MiddleOctave = 4;
 export type OctaveProps = 0 | 1 | 2 | 3 | MiddleOctave | 5 | 6 | 7 | 8 | 9;
