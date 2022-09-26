@@ -42,6 +42,10 @@ export class Octave {
     return this.value.toString();
   }
 
+  public equals(octave: Octave) {
+    return this.value === octave.value;
+  }
+
   private parse(value?: string | number): OctaveProps {
     let result: number = Octave.MIDDLE;
 
