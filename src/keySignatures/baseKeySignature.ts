@@ -62,7 +62,7 @@ export abstract class BaseKeySignature {
       case Interval.major7th():
         return 'leading-tone';
       default:
-        undefined;
+        return undefined;
     }
   }
 }
