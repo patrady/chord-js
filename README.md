@@ -16,7 +16,11 @@ yarn add @patrady/chord-js
 
 ## Notes
 
+A Note is the fundamental element of music. Notes are simply frequencies and are used to create [chords](#chords) and [key signatures](#key-signatures).
+
 ```ts
+import { Note } from '@patrady/chord-js';
+
 const note = new Note('Eb4');
 ```
 
@@ -24,35 +28,108 @@ const note = new Note('Eb4');
 | --------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------- |
 | `getName()`           | The name of the note and accidental                                                                | `note.getName(); // Eb`             |
 | `getScientificName()` | The name of the note, accidental, and octave                                                       | `note.getScientificName(); // Eb4`  |
-| `getOctave()`         | The octave between 0 and 8 inclusive                                                               | `note.getOctave(); // 4`            |
+| `getOctave()`         | The octave between 0 and 8                                                                         | `note.getOctave(); // 4`            |
 | `getFrequency()`      | The frequency in Hz, up to 5 decimal places                                                        | `note.getFrequency(); // 311.12698` |
 | `getKeyNumber()`      | The [number](https://en.wikipedia.org/wiki/Piano_key_frequencies) of the key on an 88-key piano    | `note.getKeyNumber(); // 43`        |
 | `getMidiValue()`      | The [MIDI note](https://en.wikipedia.org/wiki/Piano_key_frequencies) of the key on an 88-key piano | `note.getMidiValue(); // 63`        |
 
-### Using a MIDI Keyboard
+## Chords
 
-When interacting with a MIDI keyboard and you want to convert a [MIDI value](https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies) into a note, use
+To translate a series of notes into a chord, use
 
 ```ts
+import { Chord } from '@patrady/chord-js';
+
+const chord = new Chord.for('C E G');
+
+chord?.getName(); // C
+```
+
+This table shows the type of supported chords with examples
+
+| Chord                                                                        | Example                            |
+| ---------------------------------------------------------------------------- | ---------------------------------- |
+| [Major](https://en.wikipedia.org/wiki/Major_chord)                           | `Chord.for("C E G"); // C`         |
+| [Minor](https://en.wikipedia.org/wiki/Minor_chord)                           | `Chord.for("C Eb G"); // Cm`       |
+| [Suspended](https://en.wikipedia.org/wiki/Suspended_chord)                   | `Chord.for("C F G"); // Csus`      |
+| [Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)            | `Chord.for("C D G"); // Csus2`     |
+| [Augmented](https://en.wikipedia.org/wiki/Augmented_triad)                   | `Chord.for("C E G#"); // Caug`     |
+| [Diminished](https://en.wikipedia.org/wiki/Diminished_triad)                 | `Chord.for("C Eb Gb"); // Cdim`    |
+| [Inverted](https://en.wikipedia.org/wiki/Major_chord#Inversions)             | `Chord.for("E G C"); // C/E`       |
+| [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)     | `Chord.for("C E G Bb"); // C7`     |
+| [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)           | `Chord.for("C E G B"); // Cmaj7`   |
+| [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)           | `Chord.for("C Eb G Bb"); // Cm7`   |
+| [Diminished Seventh](https://en.wikipedia.org/wiki/Diminished_seventh_chord) | `Chord.for("C Eb Gb A"); // Cdim7` |
+
+### Key Signatures
+
+A Key Signature is a combination of sharps and flats at the beginning of each stave.
+
+```ts
+import { Note, KeySignatureOfD } from '@patrady/chord-js';
+
+new KeySignatureOfD().getNotes(); // D, E, F#, G, A, B, C#, D
+
+new KeySignatureOfD().normalize(new Note('Gb')); // F#
+
+new KeySignatureOfD().isInKey(new Note('Gb')); // false
+new KeySignatureOfD().isInKey(new Note('F#')); // true
+```
+
+| Attribute         | Description                                                            | Example                                                         |
+| ----------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `getNotes()`      | Returns an array of eight notes from the base to the octave.           | `new KeySignatureOfD().getNotes(); // D, E, F#, G, A, B, C#, D` |
+| `normalize(note)` | Normalizes a note from one key signature to the current key signature. | `new KeySignatureOfD().normalize(new Note("Gb")); // F#`        |
+| `isInKey(note)`   | Returns whether a note is in the key signature                         | `new KeySignatureOfD().isInKey(new Note("Gb")); // false`       |
+
+### Supported Key Signatures
+
+The major key signatures are supported by less popular ones are not. Check this table to see if the one you need is supported:
+
+| Key Signature | Supported | Name                   |
+| ------------- | --------- | ---------------------- |
+| C             | ✅        | `KeySignatureOfC`      |
+| Cb            | ❌        |                        |
+| C#            | ❌        |                        |
+| D             | ✅        | `KeySignatureOfD`      |
+| Db            | ✅        | `KeySignatureOfDb`     |
+| D#            | ❌        |                        |
+| E             | ✅        | `KeySignatureOfE`      |
+| Eb            | ✅        | `KeySignatureOfEb`     |
+| E#            | ❌        |                        |
+| F             | ✅        | `KeySignatureOfF`      |
+| Fb            | ❌        |                        |
+| F#            | ✅        | `KeySignatureOfFsharp` |
+| G             | ✅        | `KeySignatureOfG`      |
+| Gb            | ✅        | `KeySignatureOfGb`     |
+| G#            | ❌        |                        |
+| A             | ✅        | `KeySignatureOfA`      |
+| Ab            | ✅        | `KeySignatureOfAb`     |
+| A#            | ❌        |                        |
+| B             | ✅        | `KeySignatureOfB`      |
+| Bb            | ✅        | `KeySignatureOfBb`     |
+| B#            | ❌        |                        |
+
+## MIDI Keyboard
+
+When interacting with a MIDI keyboard and you want to convert a [MIDI value](https://www.inspiredacoustics.com/en/MIDI_note_numbers_and_center_frequencies) to a note, use
+
+```ts
+import { Note } from '@patrady/chord-js';
+
 const note = Note.fromMidi(24);
 
 note.getScientificName(); // C1
 ```
 
-## Supported Chords
+For enharmonic notes, the MIDI value will be the same. For example, C# and Db in the 1st octave will have the same MIDI value of 25.
+To choose a specific enharmonic, normalize the note to a key signature:
 
-This package can also recognize a number of different chords and their inversions. 
+```ts
+import { Note, KeySignatureOfD, KeySignatureOfDb } from '@patrady/chord-js';
 
-| Chord              | Example                                       |
-| ------------------ | --------------------------------------------- |
-| Major              | `Chord.for("C E G")?.getName(); // C`         |
-| Minor              | `Chord.for("C Eb G")?.getName(); // Cm`       |
-| Suspended          | `Chord.for("C F G")?.getName(); // Csus`      |
-| Suspended Second   | `Chord.for("C D G")?.getName(); // Csus2`     |
-| Augmented          | `Chord.for("C E G#")?.getName(); // Caug`     |
-| Diminished         | `Chord.for("C Eb Gb")?.getName(); // Cdim`    |
-| Inverted           | `Chord.for("E G C")?.getName(); // C/E`       |
-| Dominant Seventh   | `Chord.for("C E G Bb")?.getName(); // C7`     |
-| Major Seventh      | `Chord.for("C E G B")?.getName(); // Cmaj7`   |
-| Minor Seventh      | `Chord.for("C Eb G Bb")?.getName(); // Cm7`   |
-| Diminished Seventh | `Chord.for("C Eb Gb A")?.getName(); // Cdim7` |
+const note = Note.fromMidi(25);
+
+new KeySignatureOfD().normalize(note); // C#
+new KeySignatureOfDb().normalize(note); // Db
+```
