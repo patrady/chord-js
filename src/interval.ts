@@ -6,6 +6,10 @@ export class Interval {
     return new DefinedInterval(this.parse(note1), this.parse(note2));
   }
 
+  public static isNone() {
+    return 0;
+  }
+
   public static major2nd() {
     return 2;
   }

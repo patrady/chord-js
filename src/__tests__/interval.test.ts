@@ -65,6 +65,21 @@ describe('#getSemitones', () => {
   });
 });
 
+describe('#isNone', () => {
+  describe('when the notes are the same', () => {
+    it('returns true', () => {
+      expect(Interval.between('C', 'C').isNone()).toBeTruthy();
+      expect(Interval.between('A', 'A').isNone()).toBeTruthy();
+    });
+  });
+
+  describe('when the notes are not the same', () => {
+    it('returns false', () => {
+      expect(Interval.between('C', 'D').isNone()).toBeFalsy();
+    });
+  });
+});
+
 describe('#isMajor2nd', () => {
   describe('and there are 2 semitones between the notes', () => {
     it('returns true', () => {

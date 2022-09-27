@@ -12,6 +12,10 @@ export class DefinedInterval {
     return this.semitones;
   }
 
+  public isNone() {
+    return this.semitones === Interval.isNone();
+  }
+
   public isMajor2nd() {
     return this.semitones === Interval.major2nd();
   }
