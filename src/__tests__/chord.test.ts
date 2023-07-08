@@ -288,3 +288,27 @@ describe('Diminished Seventh Chords', () => {
     expect(Chord.for('B# D# F# A')?.getName()).toEqual('B#dim7');
   });
 });
+
+describe('Half-Diminished Seventh Chords', () => {
+  it('returns the name of the half-diminished seventh chord', () => {
+    expect(Chord.for('C Eb Gb Bb')?.getName()).toEqual('Cø7');
+    expect(Chord.for('C# E G B')?.getName()).toEqual('C#ø7');
+    expect(Chord.for('Db Fb Abb Cb')?.getName()).toEqual('Dbø7');
+    expect(Chord.for('D F Ab C')?.getName()).toEqual('Dø7');
+    expect(Chord.for('D# F# A C#')?.getName()).toEqual('D#ø7');
+    expect(Chord.for('Eb Gb Bbb Db')?.getName()).toEqual('Ebø7');
+    expect(Chord.for('E G Bb D')?.getName()).toEqual('Eø7');
+    expect(Chord.for('E# G# B D#')?.getName()).toEqual('E#ø7');
+    expect(Chord.for('F Ab Cb Eb')?.getName()).toEqual('Fø7');
+    expect(Chord.for('F# A C E')?.getName()).toEqual('F#ø7');
+    expect(Chord.for('Gb Bbb Dbb Fb')?.getName()).toEqual('Gbø7');
+    expect(Chord.for('G Bb Db F')?.getName()).toEqual('Gø7');
+    expect(Chord.for('G# B D F#')?.getName()).toEqual('G#ø7');
+    expect(Chord.for('Ab Cb Ebb Gb')?.getName()).toEqual('Abø7');
+    expect(Chord.for('A C Eb G')?.getName()).toEqual('Aø7');
+    expect(Chord.for('A# C# E G#')?.getName()).toEqual('A#ø7');
+    expect(Chord.for('Bb Db Fb Ab')?.getName()).toEqual('Bbø7');
+    expect(Chord.for('B D F A')?.getName()).toEqual('Bø7');
+    expect(Chord.for('B# D# F# A#')?.getName()).toEqual('B#ø7');
+  });
+});
