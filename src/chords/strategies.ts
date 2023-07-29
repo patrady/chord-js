@@ -10,6 +10,7 @@ import { MinorChord } from './minorChord';
 import { MinorSeventhChord } from './minorSeventhChord';
 import { SuspendedChord } from './suspendedChord';
 import { SuspendedSecondChord } from './suspendedSecondChord';
+import { MinorSixthChord } from './minorSixthChord';
 
 export const strategies = [
   MajorChord,
@@ -19,6 +20,7 @@ export const strategies = [
   AugmentedChord,
   DiminishedChord,
   SixthChord,
+  MinorSixthChord,
   DominantSeventhChord,
   MajorSeventhChord,
   MinorSeventhChord,

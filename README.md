@@ -57,6 +57,7 @@ This table shows the type of supported chords with examples
 | [Diminished](https://en.wikipedia.org/wiki/Diminished_triad)                           | `Chord.for("C Eb Gb"); // Cdim`    |
 | [Inverted](https://en.wikipedia.org/wiki/Major_chord#Inversions)                       | `Chord.for("E G C"); // C/E`       |
 | [Sixth](https://en.wikipedia.org/wiki/Sixth_chord)                                     | `Chord.for("C E G A"); // C6`      |
+| [Minor Sixth](https://en.wikipedia.org/wiki/Sixth_chord)                               | `Chord.for('C Eb G A'); // Cm6`    |
 | [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)               | `Chord.for("C E G Bb"); // C7`     |
 | [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)                     | `Chord.for("C E G B"); // Cmaj7`   |
 | [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)                     | `Chord.for("C Eb G Bb"); // Cm7`   |

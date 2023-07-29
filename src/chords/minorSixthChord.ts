@@ -1,16 +1,16 @@
 import { Interval } from '../interval';
 import { BaseChord } from './baseChord';
-import { MajorChord } from './majorChord';
+import { MinorChord } from './minorChord';
 
-export class SixthChord extends BaseChord {
+export class MinorSixthChord extends BaseChord {
   public getName(): string {
-    return `${this.root().getName()}6`;
+    return `${this.root().getName()}m6`;
   }
 
   public isMatch() {
     return (
       this.isTetrad() &&
-      MajorChord.isMatch(this.getTriad()) &&
+      MinorChord.isMatch(this.getTriad()) &&
       Interval.between(this.root(), this.fourth()).isMajor6th()
     );
   }
