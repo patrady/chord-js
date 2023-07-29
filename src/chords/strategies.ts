@@ -5,6 +5,7 @@ import { DominantSeventhChord } from './dominantSeventhChord';
 import { HalfDiminishedSeventhChord } from './halfDiminishedSeventhChord';
 import { MajorChord } from './majorChord';
 import { MajorSeventhChord } from './majorSeventhChord';
+import { MajorSixthChord } from './majorSixthChord';
 import { MinorChord } from './minorChord';
 import { MinorSeventhChord } from './minorSeventhChord';
 import { SuspendedChord } from './suspendedChord';
@@ -17,6 +18,7 @@ export const strategies = [
   SuspendedSecondChord,
   AugmentedChord,
   DiminishedChord,
+  MajorSixthChord,
   DominantSeventhChord,
   MajorSeventhChord,
   MinorSeventhChord,
