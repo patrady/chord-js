@@ -1,4 +1,5 @@
 import { Chord } from '../chord';
+import { Note } from '../note';
 
 describe('Major Chords', () => {
   it('returns the name of the major chord', () => {
@@ -310,5 +311,19 @@ describe('Half-Diminished Seventh Chords', () => {
     expect(Chord.for('Bb Db Fb Ab')?.getName()).toEqual('Bbø7');
     expect(Chord.for('B D F A')?.getName()).toEqual('Bø7');
     expect(Chord.for('B# D# F# A#')?.getName()).toEqual('B#ø7');
+  });
+});
+
+describe('.for', () => {
+  describe('with a string', () => {
+    expect(Chord.for('C E G')?.getName()).toEqual('C');
+  });
+
+  describe('with an array of Notes', () => {
+    const C = Note.fromMidi(60);
+    const E = Note.fromMidi(64);
+    const G = Note.fromMidi(67);
+
+    expect(Chord.for([C, E, G])?.getName()).toEqual('C');
   });
 });

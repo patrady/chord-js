@@ -47,20 +47,20 @@ chord?.getName(); // C
 
 This table shows the type of supported chords with examples
 
-| Chord                                                                        | Example                            |
-| ---------------------------------------------------------------------------- | ---------------------------------- |
-| [Major](https://en.wikipedia.org/wiki/Major_chord)                           | `Chord.for("C E G"); // C`         |
-| [Minor](https://en.wikipedia.org/wiki/Minor_chord)                           | `Chord.for("C Eb G"); // Cm`       |
-| [Suspended](https://en.wikipedia.org/wiki/Suspended_chord)                   | `Chord.for("C F G"); // Csus`      |
-| [Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)            | `Chord.for("C D G"); // Csus2`     |
-| [Augmented](https://en.wikipedia.org/wiki/Augmented_triad)                   | `Chord.for("C E G#"); // Caug`     |
-| [Diminished](https://en.wikipedia.org/wiki/Diminished_triad)                 | `Chord.for("C Eb Gb"); // Cdim`    |
-| [Inverted](https://en.wikipedia.org/wiki/Major_chord#Inversions)             | `Chord.for("E G C"); // C/E`       |
-| [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)     | `Chord.for("C E G Bb"); // C7`     |
-| [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)           | `Chord.for("C E G B"); // Cmaj7`   |
-| [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)           | `Chord.for("C Eb G Bb"); // Cm7`   |
-| [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord)| `Chord.for("C Eb Gb Bb"); // Cø7`   |
-| [Diminished Seventh](https://en.wikipedia.org/wiki/Diminished_seventh_chord) | `Chord.for("C Eb Gb A"); // Cdim7` |
+| Chord                                                                                  | Example                            |
+| -------------------------------------------------------------------------------------- | ---------------------------------- |
+| [Major](https://en.wikipedia.org/wiki/Major_chord)                                     | `Chord.for("C E G"); // C`         |
+| [Minor](https://en.wikipedia.org/wiki/Minor_chord)                                     | `Chord.for("C Eb G"); // Cm`       |
+| [Suspended](https://en.wikipedia.org/wiki/Suspended_chord)                             | `Chord.for("C F G"); // Csus`      |
+| [Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)                      | `Chord.for("C D G"); // Csus2`     |
+| [Augmented](https://en.wikipedia.org/wiki/Augmented_triad)                             | `Chord.for("C E G#"); // Caug`     |
+| [Diminished](https://en.wikipedia.org/wiki/Diminished_triad)                           | `Chord.for("C Eb Gb"); // Cdim`    |
+| [Inverted](https://en.wikipedia.org/wiki/Major_chord#Inversions)                       | `Chord.for("E G C"); // C/E`       |
+| [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)               | `Chord.for("C E G Bb"); // C7`     |
+| [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)                     | `Chord.for("C E G B"); // Cmaj7`   |
+| [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)                     | `Chord.for("C Eb G Bb"); // Cm7`   |
+| [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord) | `Chord.for("C Eb Gb Bb"); // Cø7`  |
+| [Diminished Seventh](https://en.wikipedia.org/wiki/Diminished_seventh_chord)           | `Chord.for("C Eb Gb A"); // Cdim7` |
 
 ### Key Signatures
 
@@ -123,7 +123,7 @@ const note = Note.fromMidi(24);
 note.getScientificName(); // C1
 ```
 
-For enharmonic notes, the MIDI value will be the same. For example, C# and Db in the 1st octave will have the same MIDI value of 25.
+For [enharmonic](https://en.wikipedia.org/wiki/Enharmonic) notes, the MIDI value will be the same. For example, C# and Db in the 1st octave will have the same MIDI value of 25.
 To choose a specific enharmonic, normalize the note to a key signature:
 
 ```ts
@@ -133,4 +133,16 @@ const note = Note.fromMidi(25);
 
 new KeySignatureOfD().normalize(note); // C#
 new KeySignatureOfDb().normalize(note); // Db
+```
+
+A chord can also be determined from the MIDI notes like so
+
+```ts
+import { Note, KeySignatureOfD, KeySignatureOfDb } from '@patrady/chord-js';
+
+const C = Note.fromMidi(60);
+const E = Note.fromMidi(64);
+const G = Note.fromMidi(67);
+
+Chord.for([C, E, G])?.getName(); // C
 ```
