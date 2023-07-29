@@ -261,6 +261,23 @@ describe('Dominant Seventh Chords', () => {
   });
 });
 
+describe('Augmented Seventh Chords', () => {
+  it('returns the name of the augmented dominant seventh', () => {
+    expect(Chord.for('C E G# Bb')?.getName()).toEqual('C+7');
+    expect(Chord.for('Db F A Cb5')?.getName()).toEqual('Db+7');
+    expect(Chord.for('D F# A# C5')?.getName()).toEqual('D+7');
+    expect(Chord.for('Eb G B Db5')?.getName()).toEqual('Eb+7');
+    expect(Chord.for('E G# B# D5')?.getName()).toEqual('E+7');
+    expect(Chord.for('F A C#5 Eb5')?.getName()).toEqual('F+7');
+    expect(Chord.for('Gb Bb D5 Fb5')?.getName()).toEqual('Gb+7');
+    expect(Chord.for('G B D#5 F5')?.getName()).toEqual('G+7');
+    expect(Chord.for('Ab3 C E Gb')?.getName()).toEqual('Ab+7');
+    expect(Chord.for('A3 C# E# G')?.getName()).toEqual('A+7');
+    expect(Chord.for('Bb3 D F# Ab')?.getName()).toEqual('Bb+7');
+    expect(Chord.for('B3 D# F## A')?.getName()).toEqual('B+7');
+  });
+});
+
 describe('Major Seventh Chords', () => {
   it('returns the name of the major seventh', () => {
     expect(Chord.for('C E G B')?.getName()).toEqual('Cmaj7');
@@ -409,6 +426,8 @@ describe('Out of Order Chords', () => {
     expect(Chord.for('C G B Eb')?.getName()).toEqual('Cm7+');
     expect(Chord.for('C Gb Eb Bbb')?.getName()).toEqual('Cdim7');
     expect(Chord.for('C Bbb Eb Gb')?.getName()).toEqual('Cdim7');
+    expect(Chord.for('C G# Bb E')?.getName()).toEqual('C+7');
+    expect(Chord.for('C Bb G# E')?.getName()).toEqual('C+7');
     expect(Chord.for('C Gb Eb Bb')?.getName()).toEqual('Cø7');
     expect(Chord.for('C Gb Bb Eb')?.getName()).toEqual('Cø7');
 
