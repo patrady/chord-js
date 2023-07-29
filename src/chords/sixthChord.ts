@@ -2,7 +2,7 @@ import { Interval } from '../interval';
 import { BaseChord } from './baseChord';
 import { MajorChord } from './majorChord';
 
-export class MajorSixthChord extends BaseChord {
+export class SixthChord extends BaseChord {
   public getName(): string {
     return `${this.root().getName()}6`;
   }

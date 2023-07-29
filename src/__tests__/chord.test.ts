@@ -205,8 +205,8 @@ describe('Diminished Chords', () => {
   });
 });
 
-describe('Major Sixth Chord', () => {
-  it('returns the name of the major sixth chord', () => {
+describe('Sixth Chord', () => {
+  it('returns the name of the sixth chord', () => {
     expect(Chord.for('C E G A')?.getName()).toEqual('C6');
     expect(Chord.for('C# E# G# A#')?.getName()).toEqual('C#6');
     expect(Chord.for('Db F Ab Bb')?.getName()).toEqual('Db6');
