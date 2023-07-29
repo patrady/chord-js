@@ -138,7 +138,7 @@ new KeySignatureOfDb().normalize(note); // Db
 A chord can also be determined from the MIDI notes like so
 
 ```ts
-import { Note, KeySignatureOfD, KeySignatureOfDb } from '@patrady/chord-js';
+import { Note } from '@patrady/chord-js';
 
 const C = Note.fromMidi(60);
 const E = Note.fromMidi(64);
