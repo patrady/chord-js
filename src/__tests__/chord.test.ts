@@ -205,7 +205,7 @@ describe('Diminished Chords', () => {
   });
 });
 
-describe('Sixth Chord', () => {
+describe('Sixth Chords', () => {
   it('returns the name of the sixth chord', () => {
     expect(Chord.for('C E G A')?.getName()).toEqual('C6');
     expect(Chord.for('C# E# G# A#')?.getName()).toEqual('C#6');
@@ -244,7 +244,7 @@ describe('Minor Sixth Chords', () => {
   });
 });
 
-describe('Dominant Sevenths', () => {
+describe('Dominant Seventh Chords', () => {
   it('returns the name of the dominant seventh', () => {
     expect(Chord.for('C E G Bb')?.getName()).toEqual('C7');
     expect(Chord.for('Db F Ab Cb5')?.getName()).toEqual('Db7');
@@ -261,7 +261,7 @@ describe('Dominant Sevenths', () => {
   });
 });
 
-describe('Major Sevenths', () => {
+describe('Major Seventh Chords', () => {
   it('returns the name of the major seventh', () => {
     expect(Chord.for('C E G B')?.getName()).toEqual('Cmaj7');
     expect(Chord.for('C# E# G# B#')?.getName()).toEqual('C#maj7');
@@ -283,7 +283,7 @@ describe('Major Sevenths', () => {
   });
 });
 
-describe('Minor Sevenths', () => {
+describe('Minor Seventh Chords', () => {
   it('returns the name of the minor seventh', () => {
     expect(Chord.for('C Eb G Bb')?.getName()).toEqual('Cm7');
     expect(Chord.for('C# E G# B')?.getName()).toEqual('C#m7');
@@ -353,6 +353,28 @@ describe('Half-Diminished Seventh Chords', () => {
   });
 });
 
+describe('Minor Major Seventh Chords', () => {
+  it('returns the name of the minor major seventh', () => {
+    expect(Chord.for('C Eb G B')?.getName()).toEqual('Cm7+');
+    expect(Chord.for('C# E G# B#')?.getName()).toEqual('C#m7+');
+    expect(Chord.for('Db Fb Ab C5')?.getName()).toEqual('Dbm7+');
+    expect(Chord.for('D F A C#5')?.getName()).toEqual('Dm7+');
+    expect(Chord.for('D# F# A# C##5')?.getName()).toEqual('D#m7+');
+    expect(Chord.for('Eb Gb Bb D5')?.getName()).toEqual('Ebm7+');
+    expect(Chord.for('E G B D#5')?.getName()).toEqual('Em7+');
+    expect(Chord.for('F Ab C5 E5')?.getName()).toEqual('Fm7+');
+    expect(Chord.for('F# A C#5 E#5')?.getName()).toEqual('F#m7+');
+    expect(Chord.for('Gb Bbb Db5 F5')?.getName()).toEqual('Gbm7+');
+    expect(Chord.for('G Bb D5 F#5')?.getName()).toEqual('Gm7+');
+    expect(Chord.for('G# B D#5 F##5')?.getName()).toEqual('G#m7+');
+    expect(Chord.for('Ab3 Cb Eb G')?.getName()).toEqual('Abm7+');
+    expect(Chord.for('A3 C E G#')?.getName()).toEqual('Am7+');
+    expect(Chord.for('A#3 C# E# G##')?.getName()).toEqual('A#m7+');
+    expect(Chord.for('Bb3 Db F A')?.getName()).toEqual('Bbm7+');
+    expect(Chord.for('B3 D F# A#')?.getName()).toEqual('Bm7+');
+  });
+})
+
 describe('Out of Order Chords', () => {
   it('returns the appropriate chord', () => {
     expect(Chord.for('C G E')?.getName()).toEqual('C');
@@ -383,6 +405,8 @@ describe('Out of Order Chords', () => {
     expect(Chord.for('C B G E')?.getName()).toEqual('Cmaj7');
     expect(Chord.for('C G Bb Eb')?.getName()).toEqual('Cm7');
     expect(Chord.for('C Eb Bb G')?.getName()).toEqual('Cm7');
+    expect(Chord.for('C G Eb B')?.getName()).toEqual('Cm7+');
+    expect(Chord.for('C G B Eb')?.getName()).toEqual('Cm7+');
     expect(Chord.for('C Gb Eb Bbb')?.getName()).toEqual('Cdim7');
     expect(Chord.for('C Bbb Eb Gb')?.getName()).toEqual('Cdim7');
     expect(Chord.for('C Gb Eb Bb')?.getName()).toEqual('Cø7');

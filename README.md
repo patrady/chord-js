@@ -61,6 +61,7 @@ This table shows the type of supported chords with examples
 | [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)               | `Chord.for("C E G Bb"); // C7`     |
 | [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)                     | `Chord.for("C E G B"); // Cmaj7`   |
 | [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)                     | `Chord.for("C Eb G Bb"); // Cm7`   |
+| [Minor Major Seventh](https://en.wikipedia.org/wiki/Minor_major_seventh_chord)         | `Chord.for("C Eb G B"); // Cm7+`   |
 | [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord) | `Chord.for("C Eb Gb Bb"); // Cø7`  |
 | [Diminished Seventh](https://en.wikipedia.org/wiki/Diminished_seventh_chord)           | `Chord.for("C Eb Gb A"); // Cdim7` |
 
