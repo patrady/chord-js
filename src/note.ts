@@ -78,7 +78,7 @@ export class Note {
         case 'Bb':
           return 2;
         case 'B':
-        case 'A##':
+        case 'A𝄪':
           return 3;
         case 'B#':
           return 4;
@@ -102,7 +102,7 @@ export class Note {
         case 'Bb':
           return 22;
         case 'B':
-        case 'A##':
+        case 'A𝄪':
           return 23;
         case 'B#':
           return 24;
@@ -134,7 +134,7 @@ export class Note {
   }
 
   private parse(value: string) {
-    const result = /([A-G]){1}(bb|##|b|#)?(\d)?/g.exec(value);
+    const result = /([A-G]){1}(bb|b|#|𝄪)?(\d)?/g.exec(value);
     if (!this.isValid(result)) {
       return null;
     }

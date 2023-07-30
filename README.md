@@ -90,7 +90,7 @@ new KeySignatureOfD().isInKey(new Note('F#')); // true
 
 ### Supported Key Signatures
 
-The major key signatures are supported by less popular ones are not. Check this table to see if the one you need is supported:
+The major key signatures are supported but less popular ones are not. Check this table to see if the one you need is supported:
 
 | Key Signature | Supported | Name                   |
 | ------------- | --------- | ---------------------- |

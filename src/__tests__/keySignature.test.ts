@@ -7,7 +7,7 @@ describe('#normalize', () => {
     it('returns the enharmonic in the key', () => {
       expect(new KeySignatureOfF().normalize(new Note('A#')).equals(new Note('Bb'))).toBeTruthy();
       expect(new KeySignatureOfF().normalize(new Note('A#5')).equals(new Note('Bb5'))).toBeTruthy();
-      expect(new KeySignatureOfD().normalize(new Note('A##5')).equals(new Note('B5'))).toBeTruthy();
+      expect(new KeySignatureOfD().normalize(new Note('A𝄪5')).equals(new Note('B5'))).toBeTruthy();
       expect(new KeySignatureOfD().normalize(new Note('Db5')).equals(new Note('C#5'))).toBeTruthy();
     });
   });

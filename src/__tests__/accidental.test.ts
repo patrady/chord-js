@@ -6,7 +6,7 @@ describe('#new', () => {
       expect(Accidental.for('b')).toEqual(Accidental.flat());
       expect(Accidental.for('bb')).toEqual(Accidental.doubleFlat());
       expect(Accidental.for('#')).toEqual(Accidental.sharp());
-      expect(Accidental.for('##')).toEqual(Accidental.doubleSharp());
+      expect(Accidental.for('𝄪')).toEqual(Accidental.doubleSharp());
       expect(Accidental.for('♮')).toEqual(Accidental.natural());
     });
   });
@@ -27,7 +27,7 @@ describe('#getKeyIndex', () => {
 
   describe('with a double sharp', () => {
     it('returns 2', () => {
-      expect(Accidental.for('##').getKeyIndex()).toEqual(2);
+      expect(Accidental.for('𝄪').getKeyIndex()).toEqual(2);
     });
   });
 
@@ -59,7 +59,7 @@ describe('#getValue', () => {
 
   describe('with a double sharp', () => {
     it('returns a double sharp', () => {
-      expect(Accidental.for('##').getValue()).toEqual('##');
+      expect(Accidental.for('𝄪').getValue()).toEqual('𝄪');
     });
   });
 

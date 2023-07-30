@@ -106,7 +106,7 @@ describe('#constructor', () => {
       expect(new Note('C')).toBeInstanceOf(Note);
 
       expect(new Note('C#')).toBeInstanceOf(Note);
-      expect(new Note('C##')).toBeInstanceOf(Note);
+      expect(new Note('C𝄪')).toBeInstanceOf(Note);
       expect(new Note('Cb')).toBeInstanceOf(Note);
       expect(new Note('Cbb')).toBeInstanceOf(Note);
       expect(new Note('C♮')).toBeInstanceOf(Note);
@@ -141,7 +141,7 @@ describe('#getKeyNumber', () => {
     expect(new Note('Bbb0').getKeyNumber()).toEqual(1);
     expect(new Note('A#0').getKeyNumber()).toEqual(2);
     expect(new Note('Bb0').getKeyNumber()).toEqual(2);
-    expect(new Note('A##0').getKeyNumber()).toEqual(3);
+    expect(new Note('A𝄪0').getKeyNumber()).toEqual(3);
     expect(new Note('B0').getKeyNumber()).toEqual(3);
     expect(new Note('B#0').getKeyNumber()).toEqual(4);
 
@@ -149,7 +149,7 @@ describe('#getKeyNumber', () => {
     expect(new Note('Dbb1').getKeyNumber()).toEqual(4);
     expect(new Note('C#1').getKeyNumber()).toEqual(5);
     expect(new Note('Db1').getKeyNumber()).toEqual(5);
-    expect(new Note('C##1').getKeyNumber()).toEqual(6);
+    expect(new Note('C𝄪1').getKeyNumber()).toEqual(6);
     expect(new Note('D1').getKeyNumber()).toEqual(6);
     expect(new Note('D#1').getKeyNumber()).toEqual(7);
     expect(new Note('Eb1').getKeyNumber()).toEqual(7);
@@ -158,7 +158,7 @@ describe('#getKeyNumber', () => {
     expect(new Note('F1').getKeyNumber()).toEqual(9);
     expect(new Note('F#1').getKeyNumber()).toEqual(10);
     expect(new Note('Gb1').getKeyNumber()).toEqual(10);
-    expect(new Note('F##1').getKeyNumber()).toEqual(11);
+    expect(new Note('F𝄪1').getKeyNumber()).toEqual(11);
     expect(new Note('G1').getKeyNumber()).toEqual(11);
     expect(new Note('G#1').getKeyNumber()).toEqual(12);
     expect(new Note('Ab1').getKeyNumber()).toEqual(12);
@@ -170,7 +170,7 @@ describe('#getKeyNumber', () => {
 
     expect(new Note('C2').getKeyNumber()).toEqual(16);
     expect(new Note('C#2').getKeyNumber()).toEqual(17);
-    expect(new Note('C##2').getKeyNumber()).toEqual(18);
+    expect(new Note('C𝄪2').getKeyNumber()).toEqual(18);
     expect(new Note('D3').getKeyNumber()).toEqual(30);
     expect(new Note('D#3').getKeyNumber()).toEqual(31);
     expect(new Note('E4').getKeyNumber()).toEqual(44);
@@ -190,7 +190,7 @@ describe('#getMidiValue', () => {
     expect(new Note('Bbb0').getMidiValue()).toEqual(21);
     expect(new Note('A#0').getMidiValue()).toEqual(22);
     expect(new Note('Bb0').getMidiValue()).toEqual(22);
-    expect(new Note('A##0').getMidiValue()).toEqual(23);
+    expect(new Note('A𝄪0').getMidiValue()).toEqual(23);
     expect(new Note('B0').getMidiValue()).toEqual(23);
     expect(new Note('B#0').getMidiValue()).toEqual(24);
 
@@ -198,7 +198,7 @@ describe('#getMidiValue', () => {
     expect(new Note('Dbb1').getMidiValue()).toEqual(24);
     expect(new Note('C#1').getMidiValue()).toEqual(25);
     expect(new Note('Db1').getMidiValue()).toEqual(25);
-    expect(new Note('C##1').getMidiValue()).toEqual(26);
+    expect(new Note('C𝄪1').getMidiValue()).toEqual(26);
     expect(new Note('D1').getMidiValue()).toEqual(26);
     expect(new Note('D#1').getMidiValue()).toEqual(27);
     expect(new Note('Eb1').getMidiValue()).toEqual(27);
@@ -208,7 +208,7 @@ describe('#getMidiValue', () => {
     expect(new Note('F1').getMidiValue()).toEqual(29);
     expect(new Note('F#1').getMidiValue()).toEqual(30);
     expect(new Note('Gb1').getMidiValue()).toEqual(30);
-    expect(new Note('F##1').getMidiValue()).toEqual(31);
+    expect(new Note('F𝄪1').getMidiValue()).toEqual(31);
     expect(new Note('G1').getMidiValue()).toEqual(31);
     expect(new Note('G#1').getMidiValue()).toEqual(32);
     expect(new Note('Ab1').getMidiValue()).toEqual(32);
@@ -221,7 +221,7 @@ describe('#getMidiValue', () => {
 
     expect(new Note('C2').getMidiValue()).toEqual(36);
     expect(new Note('C#2').getMidiValue()).toEqual(37);
-    expect(new Note('C##2').getMidiValue()).toEqual(38);
+    expect(new Note('C𝄪2').getMidiValue()).toEqual(38);
     expect(new Note('Db3').getMidiValue()).toEqual(49);
     expect(new Note('D3').getMidiValue()).toEqual(50);
     expect(new Note('Eb4').getMidiValue()).toEqual(63);
