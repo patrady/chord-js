@@ -1,6 +1,6 @@
 import { Flat, DoubleFlat, Sharp, DoubleSharp, Natural } from './accidentals';
 
-type Accidentals = 'b' | 'bb' | '#' | '𝄪' | '♮';
+type Accidentals = 'b' | '𝄫' | '#' | '𝄪' | '♮';
 
 export abstract class Accidental {
   static accidentals = [DoubleFlat.value, Flat.value, Natural.value, Sharp.value, DoubleSharp.value];

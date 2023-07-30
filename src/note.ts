@@ -134,7 +134,7 @@ export class Note {
   }
 
   private parse(value: string) {
-    const result = /([A-G]){1}(bb|b|#|𝄪)?(\d)?/g.exec(value);
+    const result = /([A-G]){1}(𝄫|b|#|𝄪)?(\d)?/g.exec(value);
     if (!this.isValid(result)) {
       return null;
     }

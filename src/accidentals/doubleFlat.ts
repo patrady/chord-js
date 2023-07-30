@@ -1,7 +1,7 @@
 import { IAccidental } from '.';
 
 export class DoubleFlat implements IAccidental {
-  static value = 'bb';
+  static value = '𝄫';
 
   public getValue() {
     return DoubleFlat.value;
