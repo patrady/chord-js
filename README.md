@@ -14,25 +14,6 @@ or if you're using yarn
 yarn add @patrady/chord-js
 ```
 
-## Notes
-
-A Note is the fundamental element of music. Notes are simply frequencies and are used to create [chords](#chords) and [key signatures](#key-signatures).
-
-```ts
-import { Note } from '@patrady/chord-js';
-
-const note = new Note('Eb4');
-```
-
-| Attribute             | Description                                                                                        | Example                             |
-| --------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| `getName()`           | The name of the note and accidental                                                                | `note.getName(); // Eb`             |
-| `getScientificName()` | The name of the note, accidental, and octave                                                       | `note.getScientificName(); // Eb4`  |
-| `getOctave()`         | The octave between 0 and 8                                                                         | `note.getOctave(); // 4`            |
-| `getFrequency()`      | The frequency in Hz, up to 5 decimal places                                                        | `note.getFrequency(); // 311.12698` |
-| `getKeyNumber()`      | The [number](https://en.wikipedia.org/wiki/Piano_key_frequencies) of the key on an 88-key piano    | `note.getKeyNumber(); // 43`        |
-| `getMidiValue()`      | The [MIDI note](https://en.wikipedia.org/wiki/Piano_key_frequencies) of the key on an 88-key piano | `note.getMidiValue(); // 63`        |
-
 ## Chords
 
 To translate a series of notes into a chord, use
@@ -115,6 +96,26 @@ The major key signatures are supported but less popular ones are not. Check this
 | B             | ✅        | `KeySignatureOfB`      |
 | Bb            | ✅        | `KeySignatureOfBb`     |
 | B#            | ❌        |                        |
+
+
+## Notes
+
+A Note is the fundamental element of music. Notes are simply frequencies and are used to create [chords](#chords) and [key signatures](#key-signatures).
+
+```ts
+import { Note } from '@patrady/chord-js';
+
+const note = new Note('Eb4');
+```
+
+| Attribute             | Description                                                                                        | Example                             |
+| --------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| `getName()`           | The name of the note and accidental                                                                | `note.getName(); // Eb`             |
+| `getScientificName()` | The name of the note, accidental, and octave                                                       | `note.getScientificName(); // Eb4`  |
+| `getOctave()`         | The octave between 0 and 8                                                                         | `note.getOctave(); // 4`            |
+| `getFrequency()`      | The frequency in Hz, up to 5 decimal places                                                        | `note.getFrequency(); // 311.12698` |
+| `getKeyNumber()`      | The [number](https://en.wikipedia.org/wiki/Piano_key_frequencies) of the key on an 88-key piano    | `note.getKeyNumber(); // 43`        |
+| `getMidiValue()`      | The [MIDI note](https://en.wikipedia.org/wiki/Piano_key_frequencies) of the key on an 88-key piano | `note.getMidiValue(); // 63`        |
 
 ## MIDI Keyboard
 

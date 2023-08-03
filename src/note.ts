@@ -114,23 +114,27 @@ export class Note {
 
   // TODO: What does it mean to minus two notes? This needs to be more descriptive
   public minus(note: Note) {
-    if (this.isLessThan(note)) {
+    if (this.getKeyIndex() < note.getKeyIndex()) {
       return this.getKeyIndex() - note.getKeyIndex() + 12;
     }
 
     return this.getKeyIndex() - note.getKeyIndex();
   }
 
-  public matches(note: Note) {
-    return this.getMidiValue() === note.getMidiValue();
-  }
-
   public equals(note: Note) {
     return this.getScientificName() === note.getScientificName();
   }
 
-  private isLessThan(note: Note) {
-    return this.getKeyIndex() < note.getKeyIndex();
+  public matches(note: Note) {
+    return this.getMidiValue() === note.getMidiValue();
+  }
+
+  public isLessThan(note: Note) {
+    return this.getMidiValue() < note.getMidiValue();
+  }
+
+  public isGreaterThan(note: Note) {
+    return this.getMidiValue() > note.getMidiValue();
   }
 
   private parse(value: string) {

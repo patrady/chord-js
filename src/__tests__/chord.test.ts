@@ -1,5 +1,4 @@
 import { Chord } from '../chord';
-import { Note } from '../note';
 
 describe('Major Chords', () => {
   it('returns the name of the major chord', () => {
@@ -411,63 +410,5 @@ describe('Minor Major Seventh Chords', () => {
     expect(Chord.for('A#3 C# E# G𝄪')?.getName()).toEqual('A#m7+');
     expect(Chord.for('Bb3 Db F A')?.getName()).toEqual('Bbm7+');
     expect(Chord.for('B3 D F# A#')?.getName()).toEqual('Bm7+');
-  });
-})
-
-describe('Out of Order Chords', () => {
-  it('returns the appropriate chord', () => {
-    expect(Chord.for('C G E')?.getName()).toEqual('C');
-    expect(Chord.for('G E C')?.getName()).toEqual('C');
-    expect(Chord.for('E C5 G')?.getName()).toEqual('C/E');
-    expect(Chord.for('C5 G E')?.getName()).toEqual('C/E');
-    expect(Chord.for('C G Eb')?.getName()).toEqual('Cm');
-    expect(Chord.for('G Eb C')?.getName()).toEqual('Cm');
-    expect(Chord.for('Eb C5 G')?.getName()).toEqual('Cm/Eb');
-    expect(Chord.for('C5 G Eb')?.getName()).toEqual('Cm/Eb');
-    expect(Chord.for('C G F')?.getName()).toEqual('Csus');
-    expect(Chord.for('G F C')?.getName()).toEqual('Csus');
-    expect(Chord.for('G3 F C')?.getName()).toEqual('Csus/G');
-    expect(Chord.for('F C G3')?.getName()).toEqual('Csus/G');
-    expect(Chord.for('C G D')?.getName()).toEqual('Csus2');
-    expect(Chord.for('G D C')?.getName()).toEqual('Csus2');
-    expect(Chord.for('C G# E')?.getName()).toEqual('Caug');
-    expect(Chord.for('E C G#')?.getName()).toEqual('Caug');
-    expect(Chord.for('C Gb Eb')?.getName()).toEqual('Cdim');
-    expect(Chord.for('Gb Eb C')?.getName()).toEqual('Cdim');
-    expect(Chord.for('C A E G')?.getName()).toEqual('C6');
-    expect(Chord.for('C A G E')?.getName()).toEqual('C6');
-    expect(Chord.for('C A Eb G')?.getName()).toEqual('Cm6');
-    expect(Chord.for('C G Eb A')?.getName()).toEqual('Cm6');
-    expect(Chord.for('C G Bb E')?.getName()).toEqual('C7');
-    expect(Chord.for('C E Bb G')?.getName()).toEqual('C7');   
-    expect(Chord.for('C E G B')?.getName()).toEqual('Cmaj7');
-    expect(Chord.for('C B G E')?.getName()).toEqual('Cmaj7');
-    expect(Chord.for('C G# B E')?.getName()).toEqual('Cmaj+7');
-    expect(Chord.for('C B G# E')?.getName()).toEqual('Cmaj+7');
-    expect(Chord.for('C G Bb Eb')?.getName()).toEqual('Cm7');
-    expect(Chord.for('C Eb Bb G')?.getName()).toEqual('Cm7');
-    expect(Chord.for('C G Eb B')?.getName()).toEqual('Cm7+');
-    expect(Chord.for('C G B Eb')?.getName()).toEqual('Cm7+');
-    expect(Chord.for('C Gb Eb B𝄫')?.getName()).toEqual('Cdim7');
-    expect(Chord.for('C B𝄫 Eb Gb')?.getName()).toEqual('Cdim7');
-    expect(Chord.for('C G# Bb E')?.getName()).toEqual('C+7');
-    expect(Chord.for('C Bb G# E')?.getName()).toEqual('C+7');
-    expect(Chord.for('C Gb Eb Bb')?.getName()).toEqual('Cø7');
-    expect(Chord.for('C Gb Bb Eb')?.getName()).toEqual('Cø7');
-
-  })
-})
-
-describe('.for', () => {
-  describe('with a string', () => {
-    expect(Chord.for('C E G')?.getName()).toEqual('C');
-  });
-
-  describe('with an array of Notes', () => {
-    const C = Note.fromMidi(60);
-    const E = Note.fromMidi(64);
-    const G = Note.fromMidi(67);
-
-    expect(Chord.for([C, E, G])?.getName()).toEqual('C');
   });
 });

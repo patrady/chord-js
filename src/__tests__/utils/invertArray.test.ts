@@ -1,4 +1,4 @@
-import { invertArray } from '../utils';
+import { invertArray } from '../../utils';
 
 describe('invertArray', () => {
   const arr = [1, 2, 3, 4, 5];

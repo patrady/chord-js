@@ -9,11 +9,11 @@ export class InvertedChord extends BaseChord {
   baseNote: Note;
   chord: BaseChord;
 
-  constructor(decoratedClass: Strategy, chord: BaseChord) {
-    super(chord.getNotes());
+  constructor(DecoratedClass: Strategy, notes: Note[]) {
+    super(notes);
 
-    this.DecoratedClass = decoratedClass;
-    this.chord = chord;
+    this.DecoratedClass = DecoratedClass;
+    this.chord = new DecoratedClass(notes);
     this.baseNote = this.root();
   }
 
