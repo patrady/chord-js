@@ -114,11 +114,11 @@ export class Note {
 
   // TODO: What does it mean to minus two notes? This needs to be more descriptive
   public minus(note: Note) {
-    if (this.getKeyIndex() < note.getKeyIndex()) {
-      return this.getKeyIndex() - note.getKeyIndex() + 12;
+    if (this.getKeyNumber() < note.getKeyNumber()) {
+      return this.getKeyNumber() - note.getKeyNumber() + 12;
     }
 
-    return this.getKeyIndex() - note.getKeyIndex();
+    return this.getKeyNumber() - note.getKeyNumber();
   }
 
   public equals(note: Note) {

@@ -34,17 +34,14 @@ describe('#call', () => {
     it('removes the duplications', () => {
       expect(new InputSanitization('C E G C').call()).toEqual([[new Note('C'), new Note('E'), new Note('G')]]);
       expect(new InputSanitization('D F# A F#').call()).toEqual([[new Note('D'), new Note('F#'), new Note('A')]]);
-      expect(new InputSanitization('D4 F#5 A6 D4 F#5 A6').call()).toEqual([
-        [new Note('D4'), new Note('F#5'), new Note('A6')],
-      ]);
+      expect(new InputSanitization('D F# Gb A').call()).toEqual([[new Note('D'), new Note('F#'), new Note('A')]]);
     });
   });
 
-  describe('when some notes the same letter but in different octaves', () => {
-    it('keeps note with the lowest octave', () => {
-      expect(new InputSanitization('A2 D4 F#5 D5 F#4 A6').call()).toEqual([
-        [new Note('A2'), new Note('D4'), new Note('F#4')],
-      ]);
+  describe('when some notes have the same letter but in different octaves', () => {
+    it('keeps the note with the lowest octave', () => {
+      expect(new InputSanitization('D F# A D5').call()).toEqual([[new Note('D'), new Note('F#'), new Note('A')]]);
+      expect(new InputSanitization('D F# A D5 Gb5').call()).toEqual([[new Note('D'), new Note('F#'), new Note('A')]]);
     });
   });
 

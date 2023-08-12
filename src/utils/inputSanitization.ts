@@ -35,7 +35,13 @@ export class InputSanitization {
 
   private removeDuplicates() {
     this.notes = Object.values(
-      this.notes.reduce<{ [midiValue: number]: Note }>((map, note) => ({ ...map, [note.getMidiValue()]: note }), {}),
+      this.notes.reduce<{ [midiValue: number]: Note }>((map, note) => {
+        if (map[note.getMidiValue()] !== undefined) {
+          return map;
+        }
+
+        return { ...map, [note.getMidiValue()]: note };
+      }, {}),
     );
 
     return this;
@@ -43,13 +49,13 @@ export class InputSanitization {
 
   private removeOctaveDuplicates() {
     this.notes = Object.values(
-      this.notes.reduce<{ [name: string]: Note }>((map, note) => {
-        const existingNote = map[note.getName()];
+      this.notes.reduce<{ [keyIndex: number]: Note }>((map, note) => {
+        const existingNote = map[note.getKeyIndex()];
         if (existingNote !== undefined && note.isGreaterThan(existingNote)) {
           return map;
         }
 
-        return { ...map, [note.getName()]: note };
+        return { ...map, [note.getKeyIndex()]: note };
       }, {}),
     );
 
