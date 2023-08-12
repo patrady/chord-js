@@ -1,6 +1,6 @@
 {
   "name": "@patrady/chord-js",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/patrady/chord-js.git",
@@ -10,7 +10,8 @@
   "files": ["lib/**/*"],
   "scripts": {
     "test": "jest",
-    "build": "tsc --project tsconfig.build.json",
+    "build": "yarn run clean && tsc --project tsconfig.build.json",
+    "clean": "rm -r ./lib",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "yarn build",
