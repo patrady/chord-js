@@ -87,7 +87,7 @@ describe('#getDegree', () => {
 
   describe('when the leading-tone', () => {
     it('returns leading-tone', () => {
-      const bMinor = Chord.for('B D F');
+      const bMinor = Chord.for('B D F#');
 
       expect(new KeySignatureOfC().getDegree(bMinor)).toEqual("leading-tone");
     });

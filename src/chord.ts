@@ -16,9 +16,13 @@ export abstract class Chord {
    * Chord.for([C, E, G])?.getName(); // C
    */
   public static for(input: string | Note[]): BaseChord | undefined {
-    const chordNotes = new InputSanitization(input).call();
+    const groups = new InputSanitization(input).call();
 
-    return this.getChord(chordNotes) || this.getInvertedChord(chordNotes);
+    return groups.map((group) => this.findChord(group)).filter(Boolean)[0];
+  }
+
+  private static findChord(notes: Note[]) {
+    return this.getChord(notes) || this.getInvertedChord(notes);
   }
 
   private static getChord(notes: Note[]): BaseChord | undefined {

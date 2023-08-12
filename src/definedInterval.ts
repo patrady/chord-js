@@ -12,6 +12,10 @@ export class DefinedInterval {
     return this.semitones;
   }
 
+  public isWithinSemitones(semitones: number) {
+    return this.semitones <= semitones;
+  }
+
   public isNone() {
     return this.semitones === Interval.isNone();
   }

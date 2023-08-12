@@ -65,6 +65,21 @@ describe('#getSemitones', () => {
   });
 });
 
+describe('#isWithinSemitones', () => {
+  describe('when the number of semitones is equal or less than', () => {
+    it('returns true', () => {
+      expect(Interval.between("C", "E").isWithinSemitones(5)).toBeTruthy();
+      expect(Interval.between("C", "F").isWithinSemitones(5)).toBeTruthy();
+    });
+  });
+
+  describe('when the number of semitones is greater than', () => {
+    it('returns false', () => {
+      expect(Interval.between("C", "F#").isWithinSemitones(5)).toBeFalsy();
+    });
+  });
+});
+
 describe('#isNone', () => {
   describe('when the notes are the same', () => {
     it('returns true', () => {
