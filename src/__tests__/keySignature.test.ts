@@ -40,8 +40,8 @@ describe('#getDegree', () => {
       const cMajor = Chord.for('C E G');
       const cMajorOctaveHigher = Chord.for('C5 E5 G5');
 
-      expect(new KeySignatureOfC().getDegree(cMajor)).toEqual("tonic");
-      expect(new KeySignatureOfC().getDegree(cMajorOctaveHigher)).toEqual("tonic");
+      expect(new KeySignatureOfC().getDegree(cMajor)).toEqual('tonic');
+      expect(new KeySignatureOfC().getDegree(cMajorOctaveHigher)).toEqual('tonic');
     });
   });
 
@@ -49,7 +49,7 @@ describe('#getDegree', () => {
     it('returns supertonic', () => {
       const dMinor = Chord.for('D F A');
 
-      expect(new KeySignatureOfC().getDegree(dMinor)).toEqual("supertonic");
+      expect(new KeySignatureOfC().getDegree(dMinor)).toEqual('supertonic');
     });
   });
 
@@ -57,7 +57,7 @@ describe('#getDegree', () => {
     it('returns mediant', () => {
       const eMinor = Chord.for('E G B');
 
-      expect(new KeySignatureOfC().getDegree(eMinor)).toEqual("mediant");
+      expect(new KeySignatureOfC().getDegree(eMinor)).toEqual('mediant');
     });
   });
 
@@ -65,7 +65,7 @@ describe('#getDegree', () => {
     it('returns subdominant', () => {
       const fMajor = Chord.for('F A C');
 
-      expect(new KeySignatureOfC().getDegree(fMajor)).toEqual("subdominant");
+      expect(new KeySignatureOfC().getDegree(fMajor)).toEqual('subdominant');
     });
   });
 
@@ -73,7 +73,7 @@ describe('#getDegree', () => {
     it('returns dominant', () => {
       const gMajor = Chord.for('G B D');
 
-      expect(new KeySignatureOfC().getDegree(gMajor)).toEqual("dominant");
+      expect(new KeySignatureOfC().getDegree(gMajor)).toEqual('dominant');
     });
   });
 
@@ -81,7 +81,7 @@ describe('#getDegree', () => {
     it('returns submediant', () => {
       const aMinor = Chord.for('A C E');
 
-      expect(new KeySignatureOfC().getDegree(aMinor)).toEqual("submediant");
+      expect(new KeySignatureOfC().getDegree(aMinor)).toEqual('submediant');
     });
   });
 
@@ -89,7 +89,7 @@ describe('#getDegree', () => {
     it('returns leading-tone', () => {
       const bMinor = Chord.for('B D F#');
 
-      expect(new KeySignatureOfC().getDegree(bMinor)).toEqual("leading-tone");
+      expect(new KeySignatureOfC().getDegree(bMinor)).toEqual('leading-tone');
     });
   });
 
