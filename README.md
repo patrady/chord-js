@@ -2,6 +2,31 @@
 
 Chord JS is a music theory package that identifies notes, chords, and key signatures on an 88-key piano.
 
+## Quick Reference
+
+```ts
+import { Note, Chord, KeySignature, KeySignatureOfD, Interval } from '@patrady/chord-js';
+
+// Create notes
+const note = new Note('C#4');           // From string (note + accidental + octave)
+const midi = Note.fromMidi(60);         // From MIDI value (60 = C4)
+
+// Identify chords
+Chord.for('C E G')?.getName();          // "C" (C major)
+Chord.for('A C E')?.getName();          // "Am" (A minor)
+Chord.for([note1, note2, note3]);       // Also accepts Note array
+
+// Work with key signatures
+KeySignature.for('D')?.getNotes();      // D major scale notes
+new KeySignatureOfD().normalize(new Note('Gb'));  // Returns F# (enharmonic)
+new KeySignatureOfD().isInKey(new Note('F#'));    // true
+
+// Calculate intervals
+Interval.between(new Note('C4'), new Note('G4')).getSemitones();  // 7 (perfect 5th)
+```
+
+## Installation
+
 To install run
 
 ```bash
@@ -19,11 +44,17 @@ yarn add @patrady/chord-js
 To translate a series of notes into a chord, use
 
 ```ts
-import { Chord } from '@patrady/chord-js';
+import { Chord, Note } from '@patrady/chord-js';
 
-const chord = new Chord.for('C E G');
-
+// From a space-separated string
+const chord = Chord.for('C E G');
 chord?.getName(); // C
+
+// From an array of Note objects (useful for MIDI input)
+const C = Note.fromMidi(60);
+const E = Note.fromMidi(64);
+const G = Note.fromMidi(67);
+Chord.for([C, E, G])?.getName(); // C
 ```
 
 This table shows the type of supported chords with examples
@@ -52,10 +83,25 @@ This table shows the type of supported chords with examples
 
 A Key Signature is a combination of sharps and flats at the beginning of each stave.
 
+You can create key signatures in two ways:
+
 ```ts
-import { Note, KeySignatureOfD } from '@patrady/chord-js';
+// Option 1: Using the factory method (dynamic)
+import { KeySignature } from '@patrady/chord-js';
+
+const key = KeySignature.for('D');
+key?.getNotes();  // D, E, F#, G, A, B, C#, D
+
+// Option 2: Using the class directly
+import { KeySignatureOfD } from '@patrady/chord-js';
 
 new KeySignatureOfD().getNotes(); // D, E, F#, G, A, B, C#, D
+```
+
+Key signatures can normalize enharmonic notes and check membership:
+
+```ts
+import { Note, KeySignatureOfD } from '@patrady/chord-js';
 
 new KeySignatureOfD().normalize(new Note('Gb')); // F#
 
@@ -141,14 +187,95 @@ new KeySignatureOfD().normalize(note); // C#
 new KeySignatureOfDb().normalize(note); // Db
 ```
 
-A chord can also be determined from the MIDI notes like so
+## Intervals
+
+Calculate the interval (distance in semitones) between two notes:
+
+```ts
+import { Interval, Note } from '@patrady/chord-js';
+
+// Using strings
+const interval = Interval.between('C4', 'G4');
+interval.getSemitones();    // 7
+interval.isPerfect5th();    // true
+interval.isMajor3rd();      // false
+
+// Using Note objects
+const c4 = new Note('C4');
+const g4 = new Note('G4');
+Interval.between(c4, g4).isPerfect5th();  // true
+```
+
+The `Interval` class also provides semitone constants:
+
+```ts
+Interval.isNone();      // 0 (unison)
+Interval.major2nd();    // 2
+Interval.major3rd();    // 4
+Interval.perfect4th();  // 5
+Interval.perfect5th();  // 7
+Interval.major6th();    // 9
+Interval.major7th();    // 11
+Interval.octave();      // 12
+```
+
+### Interval Check Methods
+
+The `DefinedInterval` object (returned by `Interval.between()`) provides these check methods:
+
+| Method              | Semitones |
+| ------------------- | --------- |
+| `isNone()`          | 0         |
+| `isMinor2nd()`      | 1         |
+| `isMajor2nd()`      | 2         |
+| `isMinor3rd()`      | 3         |
+| `isMajor3rd()`      | 4         |
+| `isDiminished4th()` | 4         |
+| `isPerfect4th()`    | 5         |
+| `isAugmented4th()`  | 6         |
+| `isDiminished5th()` | 6         |
+| `isPerfect5th()`    | 7         |
+| `isAugmented5th()`  | 8         |
+| `isMinor6th()`      | 8         |
+| `isMajor6th()`      | 9         |
+| `isDiminished7th()` | 9         |
+| `isMinor7th()`      | 10        |
+| `isMajor7th()`      | 11        |
+
+## Accidentals
+
+Notes support sharps, flats, double sharps, and double flats:
 
 ```ts
 import { Note } from '@patrady/chord-js';
 
-const C = Note.fromMidi(60);
-const E = Note.fromMidi(64);
-const G = Note.fromMidi(67);
+new Note('C#4');   // C sharp
+new Note('Db4');   // D flat
+new Note('F𝄪4');   // F double sharp (enharmonic to G)
+new Note('B𝄫4');   // B double flat (enharmonic to A)
+```
 
-Chord.for([C, E, G])?.getName(); // C
+Note: Double sharp uses the Unicode character `𝄪` (U+1D12A) and double flat uses `𝄫` (U+1D12B).
+
+## Note Comparison
+
+Notes can be compared for equality and ordering:
+
+```ts
+import { Note } from '@patrady/chord-js';
+
+const c4 = new Note('C4');
+const db4 = new Note('Db4');
+const cSharp4 = new Note('C#4');
+
+// Exact equality (same name, accidental, and octave)
+c4.equals(new Note('C4'));        // true
+cSharp4.equals(db4);              // false (different spelling)
+
+// Enharmonic equality (same pitch/MIDI value)
+cSharp4.matches(db4);             // true (same key on piano)
+
+// Ordering
+c4.isLessThan(db4);               // true
+db4.isGreaterThan(c4);            // true
 ```
