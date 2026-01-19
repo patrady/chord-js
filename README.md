@@ -71,31 +71,31 @@ new KeySignatureOfD().isInKey(new Note('F#')); // true
 
 ### Supported Key Signatures
 
-The major key signatures are supported but less popular ones are not. Check this table to see if the one you need is supported:
+All major key signatures are supported, including theoretical ones that use double sharps or double flats:
 
-| Key Signature | Supported | Name                   |
-| ------------- | --------- | ---------------------- |
-| C             | ✅        | `KeySignatureOfC`      |
-| Cb            | ❌        |                        |
-| C#            | ❌        |                        |
-| D             | ✅        | `KeySignatureOfD`      |
-| Db            | ✅        | `KeySignatureOfDb`     |
-| D#            | ❌        |                        |
-| E             | ✅        | `KeySignatureOfE`      |
-| Eb            | ✅        | `KeySignatureOfEb`     |
-| E#            | ❌        |                        |
-| F             | ✅        | `KeySignatureOfF`      |
-| Fb            | ❌        |                        |
-| F#            | ✅        | `KeySignatureOfFsharp` |
-| G             | ✅        | `KeySignatureOfG`      |
-| Gb            | ✅        | `KeySignatureOfGb`     |
-| G#            | ❌        |                        |
-| A             | ✅        | `KeySignatureOfA`      |
-| Ab            | ✅        | `KeySignatureOfAb`     |
-| A#            | ❌        |                        |
-| B             | ✅        | `KeySignatureOfB`      |
-| Bb            | ✅        | `KeySignatureOfBb`     |
-| B#            | ❌        |                        |
+| Key Signature | Name                   |
+| ------------- | ---------------------- |
+| C             | `KeySignatureOfC`      |
+| Cb            | `KeySignatureOfCb`     |
+| C#            | `KeySignatureOfCSharp` |
+| D             | `KeySignatureOfD`      |
+| Db            | `KeySignatureOfDb`     |
+| D#            | `KeySignatureOfDSharp` |
+| E             | `KeySignatureOfE`      |
+| Eb            | `KeySignatureOfEb`     |
+| E#            | `KeySignatureOfESharp` |
+| F             | `KeySignatureOfF`      |
+| Fb            | `KeySignatureOfFb`     |
+| F#            | `KeySignatureOfFSharp` |
+| G             | `KeySignatureOfG`      |
+| Gb            | `KeySignatureOfGb`     |
+| G#            | `KeySignatureOfGSharp` |
+| A             | `KeySignatureOfA`      |
+| Ab            | `KeySignatureOfAb`     |
+| A#            | `KeySignatureOfASharp` |
+| B             | `KeySignatureOfB`      |
+| Bb            | `KeySignatureOfBb`     |
+| B#            | `KeySignatureOfBSharp` |
 
 
 ## Notes
