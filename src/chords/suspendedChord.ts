@@ -1,7 +1,12 @@
 import { Interval } from '../interval';
+import { Note } from '../note';
 import { BaseChord } from './baseChord';
 
 export class SuspendedChord extends BaseChord {
+  public static isMatch(notes: Note[]) {
+    return new SuspendedChord(notes).isMatch();
+  }
+
   public getName(): string {
     return `${this.root().getName()}sus`;
   }
