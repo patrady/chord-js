@@ -60,7 +60,7 @@ Chord.for([C, E, G])?.getName(); // C
 This table shows the type of supported chords with examples
 
 | Chord                                                                                  | Example                            |
-| -------------------------------------------------------------------------------------- | ---------------------------------- |
+|----------------------------------------------------------------------------------------| ---------------------------------- |
 | [Major](https://en.wikipedia.org/wiki/Major_chord)                                     | `Chord.for("C E G"); // C`         |
 | [Minor](https://en.wikipedia.org/wiki/Minor_chord)                                     | `Chord.for("C Eb G"); // Cm`       |
 | [Suspended](https://en.wikipedia.org/wiki/Suspended_chord)                             | `Chord.for("C F G"); // Csus`      |
@@ -78,6 +78,8 @@ This table shows the type of supported chords with examples
 | [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)                     | `Chord.for("C Eb G Bb"); // Cm7`   |
 | [Minor Major Seventh](https://en.wikipedia.org/wiki/Minor_major_seventh_chord)         | `Chord.for("C Eb G B"); // Cm7+`   |
 | [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord) | `Chord.for("C Eb Gb Bb"); // Cø7`  |
+| [Seventh Suspended Fourth](https://en.wikipedia.org/wiki/Suspended_chord)              | `Chord.for("C F G Bb"); // C7sus4` |
+| [Seventh Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)              | `Chord.for("C D G Bb"); // C7sus2` |
 
 ### Key Signatures
 
