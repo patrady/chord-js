@@ -484,3 +484,21 @@ describe('Minor Ninth Chords', () => {
     expect(Chord.for('B3 D F# A C#5')?.getName()).toEqual('Bm9');
   });
 });
+
+describe('Dominant Minor Ninth Chords', () => {
+  it('returns the name of the dominant minor ninth chord', () => {
+    expect(Chord.for('C E G Bb Db5')?.getName()).toEqual('C7b9');
+    expect(Chord.for('C# E# G# B D5')?.getName()).toEqual('C#7b9');
+    expect(Chord.for('Db F Ab Cb5 E𝄫5')?.getName()).toEqual('Db7b9');
+    expect(Chord.for('D F# A C5 Eb5')?.getName()).toEqual('D7b9');
+    expect(Chord.for('Eb G Bb Db5 Fb5')?.getName()).toEqual('Eb7b9');
+    expect(Chord.for('E G# B D5 F5')?.getName()).toEqual('E7b9');
+    expect(Chord.for('F A C5 Eb5 Gb5')?.getName()).toEqual('F7b9');
+    expect(Chord.for('F# A# C#5 E5 G5')?.getName()).toEqual('F#7b9');
+    expect(Chord.for('G B D5 F5 Ab5')?.getName()).toEqual('G7b9');
+    expect(Chord.for('Ab3 C Eb Gb B𝄫')?.getName()).toEqual('Ab7b9');
+    expect(Chord.for('A3 C# E G Bb')?.getName()).toEqual('A7b9');
+    expect(Chord.for('Bb3 D F Ab Cb5')?.getName()).toEqual('Bb7b9');
+    expect(Chord.for('B3 D# F# A C5')?.getName()).toEqual('B7b9');
+  });
+});

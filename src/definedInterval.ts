@@ -83,4 +83,8 @@ export class DefinedInterval {
   public isMajor9th() {
     return this.semitones === 14;
   }
+
+  public isMinor9th() {
+    return this.semitones === 13;
+  }
 }
