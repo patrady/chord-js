@@ -59,30 +59,32 @@ Chord.for([C, E, G])?.getName(); // C
 
 This table shows the type of supported chords with examples
 
-| Chord                                                                                  | Example                              |
-|----------------------------------------------------------------------------------------|--------------------------------------|
-| [Major](https://en.wikipedia.org/wiki/Major_chord)                                     | `Chord.for("C E G"); // C`           |
-| [Minor](https://en.wikipedia.org/wiki/Minor_chord)                                     | `Chord.for("C Eb G"); // Cm`         |
-| [Suspended](https://en.wikipedia.org/wiki/Suspended_chord)                             | `Chord.for("C F G"); // Csus`        |
-| [Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)                      | `Chord.for("C D G"); // Csus2`       |
-| [Augmented](https://en.wikipedia.org/wiki/Augmented_triad)                             | `Chord.for("C E G#"); // Caug`       |
-| [Diminished](https://en.wikipedia.org/wiki/Diminished_triad)                           | `Chord.for("C Eb Gb"); // Cdim`      |
-| [Inverted](https://en.wikipedia.org/wiki/Major_chord#Inversions)                       | `Chord.for("E G C"); // C/E`         |
-| [Sixth](https://en.wikipedia.org/wiki/Sixth_chord)                                     | `Chord.for("C E G A"); // C6`        |
-| [Minor Sixth](https://en.wikipedia.org/wiki/Sixth_chord)                               | `Chord.for('C Eb G A'); // Cm6`      |
-| [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)               | `Chord.for("C E G Bb"); // C7`       |
-| [Diminished Seventh](https://en.wikipedia.org/wiki/Diminished_seventh_chord)           | `Chord.for("C Eb Gb A"); // Cdim7`   |
-| [Augmented Seventh](https://en.wikipedia.org/wiki/Augmented_seventh_chord)             | `Chord.for("C E G# Bb"); // C+7`     |
-| [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)                     | `Chord.for("C E G B"); // Cmaj7`     |
-| [Augmented Major Seventh](https://en.wikipedia.org/wiki/Augmented_major_seventh_chord) | `Chord.for("C E G# B"); // Cmaj+7`   |
-| [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)                     | `Chord.for("C Eb G Bb"); // Cm7`     |
-| [Minor Major Seventh](https://en.wikipedia.org/wiki/Minor_major_seventh_chord)         | `Chord.for("C Eb G B"); // Cm7+`     |
-| [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord) | `Chord.for("C Eb Gb Bb"); // Cø7`    |
-| [Seventh Suspended Fourth](https://en.wikipedia.org/wiki/Suspended_chord)              | `Chord.for("C F G Bb"); // C7sus4`   |
-| [Seventh Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)              | `Chord.for("C D G Bb"); // C7sus2`   |
-| [Dominant Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_ninth)             | `Chord.for("C E G Bb D5"); // C9`    |
-| [Dominant Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_minor_ninth) | `Chord.for("C E G Bb Db5"); // C7b9` |
-| [Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Minor_ninth)                   | `Chord.for("C Em G Bb D5"); // Cm9`  |
+| Chord                                                                                          | Example                              |
+|------------------------------------------------------------------------------------------------|--------------------------------------|
+| [Major](https://en.wikipedia.org/wiki/Major_chord)                                             | `Chord.for("C E G"); // C`           |
+| [Minor](https://en.wikipedia.org/wiki/Minor_chord)                                             | `Chord.for("C Eb G"); // Cm`         |
+| [Suspended](https://en.wikipedia.org/wiki/Suspended_chord)                                     | `Chord.for("C F G"); // Csus`        |
+| [Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)                              | `Chord.for("C D G"); // Csus2`       |
+| [Augmented](https://en.wikipedia.org/wiki/Augmented_triad)                                     | `Chord.for("C E G#"); // Caug`       |
+| [Diminished](https://en.wikipedia.org/wiki/Diminished_triad)                                   | `Chord.for("C Eb Gb"); // Cdim`      |
+| [Inverted](https://en.wikipedia.org/wiki/Major_chord#Inversions)                               | `Chord.for("E G C"); // C/E`         |
+| [Sixth](https://en.wikipedia.org/wiki/Sixth_chord)                                             | `Chord.for("C E G A"); // C6`        |
+| [Minor Sixth](https://en.wikipedia.org/wiki/Sixth_chord)                                       | `Chord.for('C Eb G A'); // Cm6`      |
+| [Dominant Seventh](https://en.wikipedia.org/wiki/Dominant_seventh_chord)                       | `Chord.for("C E G Bb"); // C7`       |
+| [Diminished Seventh](https://en.wikipedia.org/wiki/Diminished_seventh_chord)                   | `Chord.for("C Eb Gb A"); // Cdim7`   |
+| [Augmented Seventh](https://en.wikipedia.org/wiki/Augmented_seventh_chord)                     | `Chord.for("C E G# Bb"); // C+7`     |
+| [Major Seventh](https://en.wikipedia.org/wiki/Major_seventh_chord)                             | `Chord.for("C E G B"); // Cmaj7`     |
+| [Augmented Major Seventh](https://en.wikipedia.org/wiki/Augmented_major_seventh_chord)         | `Chord.for("C E G# B"); // Cmaj+7`   |
+| [Minor Seventh](https://en.wikipedia.org/wiki/Minor_seventh_chord)                             | `Chord.for("C Eb G Bb"); // Cm7`     |
+| [Minor Major Seventh](https://en.wikipedia.org/wiki/Minor_major_seventh_chord)                 | `Chord.for("C Eb G B"); // Cm7+`     |
+| [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord)         | `Chord.for("C Eb Gb Bb"); // Cø7`    |
+| [Seventh Suspended Fourth](https://en.wikipedia.org/wiki/Suspended_chord)                      | `Chord.for("C F G Bb"); // C7sus4`   |
+| [Seventh Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)                      | `Chord.for("C D G Bb"); // C7sus2`   |
+| [Add Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Relation_to_other_chords_with_the_ninth) | `Chord.for("C E G D5"); // Cadd9`    |
+| [Dominant Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_ninth)                     | `Chord.for("C E G Bb D5"); // C9`    |
+| [Dominant Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_minor_ninth)         | `Chord.for("C E G Bb Db5"); // C7b9` |
+| [Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Minor_ninth)                           | `Chord.for("C Eb G Bb D5"); // Cm9`  |
+| [Major Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Major_ninth)                           | `Chord.for("C E G B D5"); // Cmaj9`  |
 
 ### Key Signatures
 
