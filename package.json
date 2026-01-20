@@ -1,6 +1,6 @@
 {
   "name": "@patrady/chord-js",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/patrady/chord-js.git",
