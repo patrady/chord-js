@@ -23,6 +23,10 @@ export abstract class BaseChord {
     return this.getNotes()[3];
   }
 
+  public fifth() {
+    return this.getNotes()[4];
+  }
+
   public isTriad(): boolean {
     return this.getNotes().length === 3;
   }
@@ -31,8 +35,16 @@ export abstract class BaseChord {
     return this.getNotes().slice(0, 3);
   }
 
+  public getTetrad(): Note[] {
+    return this.getNotes().slice(0, 4);
+  }
+
   public isTetrad(): boolean {
     return this.getNotes().length === 4;
+  }
+
+  public isQuintet(): boolean {
+    return this.getNotes().length === 5;
   }
 
   public abstract isMatch(): boolean;
