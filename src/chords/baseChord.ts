@@ -27,6 +27,10 @@ export abstract class BaseChord {
     return this.getNotes()[4];
   }
 
+  public sixth() {
+    return this.getNotes()[5];
+  }
+
   public isTriad(): boolean {
     return this.getNotes().length === 3;
   }
@@ -45,6 +49,14 @@ export abstract class BaseChord {
 
   public isQuintet(): boolean {
     return this.getNotes().length === 5;
+  }
+
+  public getQuintet(): Note[] {
+    return this.getNotes().slice(0, 5);
+  }
+
+  public isSextet(): boolean {
+    return this.getNotes().length === 6;
   }
 
   public abstract isMatch(): boolean;

@@ -38,6 +38,22 @@ export class Interval {
     return 12;
   }
 
+  public static minor9th() {
+    return 13;
+  }
+
+  public static major9th() {
+    return 14;
+  }
+
+  public static perfect11th() {
+    return 17;
+  }
+
+  public static augmented11th() {
+    return 18;
+  }
+
   private static parse(note: string | Note) {
     if (typeof note === 'string') {
       return new Note(note);

@@ -81,10 +81,18 @@ export class DefinedInterval {
   }
 
   public isMajor9th() {
-    return this.semitones === 14;
+    return this.semitones === Interval.major9th();
   }
 
   public isMinor9th() {
-    return this.semitones === 13;
+    return this.semitones === Interval.minor9th();
+  }
+
+  public isPerfect11th() {
+    return this.semitones === Interval.perfect11th();
+  }
+
+  public isAugmented11th() {
+    return this.semitones === Interval.augmented11th();
   }
 }

@@ -2,17 +2,22 @@ import { AddNinthChord } from './addNinthChord';
 import { AugmentedChord } from './augmentedChord';
 import { DiminishedChord } from './diminishedChord';
 import { DiminishedSeventhChord } from './diminishedSeventhChord';
+import { DominantEleventhChord } from './dominantEleventhChord';
 import { DominantMinorNinthChord } from './dominantMinorNinthChord';
 import { DominantNinthChord } from './dominantNinthChord';
 import { DominantSeventhChord } from './dominantSeventhChord';
 import { DominantSeventhSuspendedChord } from './dominantSeventhSuspendedChord';
 import { DominantSeventhSuspendedSecondChord } from './dominantSeventhSuspendedSecondChord';
+import { DominantSharpEleventhChord } from './dominantSharpEleventhChord';
 import { HalfDiminishedSeventhChord } from './halfDiminishedSeventhChord';
 import { MajorChord } from './majorChord';
+import { MajorEleventhChord } from './majorEleventhChord';
 import { MajorNinthChord } from './majorNinthChord';
+import { MajorNinthSharpEleventhChord } from './majorNinthSharpEleventhChord';
 import { MajorSeventhChord } from './majorSeventhChord';
 import { SixthChord } from './sixthChord';
 import { MinorChord } from './minorChord';
+import { MinorEleventhChord } from './minorEleventhChord';
 import { MinorNinthChord } from './minorNinthChord';
 import { MinorSeventhChord } from './minorSeventhChord';
 import { SuspendedChord } from './suspendedChord';
@@ -46,4 +51,9 @@ export const strategies = [
   DominantMinorNinthChord,
   MinorNinthChord,
   MajorNinthChord,
+  DominantEleventhChord,
+  MinorEleventhChord,
+  MajorEleventhChord,
+  DominantSharpEleventhChord,
+  MajorNinthSharpEleventhChord,
 ];

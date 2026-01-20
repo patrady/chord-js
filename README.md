@@ -85,6 +85,11 @@ This table shows the type of supported chords with examples
 | [Dominant Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_minor_ninth)         | `Chord.for("C E G Bb Db5"); // C7b9` |
 | [Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Minor_ninth)                           | `Chord.for("C Eb G Bb D5"); // Cm9`  |
 | [Major Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Major_ninth)                           | `Chord.for("C E G B D5"); // Cmaj9`  |
+| [Dominant Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                              | `Chord.for("C E G Bb D5 F5"); // C11`      |
+| [Minor Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                                 | `Chord.for("C Eb G Bb D5 F5"); // Cm11`    |
+| [Major Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                                 | `Chord.for("C E G B D5 F5"); // Cmaj11`    |
+| [Dominant Sharp Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                        | `Chord.for("C E G Bb D5 F#5"); // C9#11`   |
+| [Major Ninth Sharp Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                     | `Chord.for("C E G B D5 F#5"); // Cmaj9#11` |
 
 ### Key Signatures
 
@@ -218,14 +223,17 @@ Interval.between(c4, g4).isPerfect5th();  // true
 The `Interval` class also provides semitone constants:
 
 ```ts
-Interval.isNone();      // 0 (unison)
-Interval.major2nd();    // 2
-Interval.major3rd();    // 4
-Interval.perfect4th();  // 5
-Interval.perfect5th();  // 7
-Interval.major6th();    // 9
-Interval.major7th();    // 11
-Interval.octave();      // 12
+Interval.isNone();        // 0 (unison)
+Interval.major2nd();      // 2
+Interval.major3rd();      // 4
+Interval.perfect4th();    // 5
+Interval.perfect5th();    // 7
+Interval.major6th();      // 9
+Interval.major7th();      // 11
+Interval.octave();        // 12
+Interval.major9th();      // 14
+Interval.perfect11th();   // 17
+Interval.augmented11th(); // 18
 ```
 
 ### Interval Check Methods
@@ -250,6 +258,10 @@ The `DefinedInterval` object (returned by `Interval.between()`) provides these c
 | `isDiminished7th()` | 9         |
 | `isMinor7th()`      | 10        |
 | `isMajor7th()`      | 11        |
+| `isMinor9th()`      | 13        |
+| `isMajor9th()`      | 14        |
+| `isPerfect11th()`   | 17        |
+| `isAugmented11th()` | 18        |
 
 ## Accidentals
 
