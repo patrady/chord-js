@@ -91,7 +91,7 @@ export class InputSanitization {
   }
 
   private isInCurrentGroup(note: Note) {
-    return Interval.between(this.currentNote(), note).isWithinSemitones(5);
+    return Interval.between(this.currentNote(), note).isWithinSemitones(7);
   }
 
   private currentNote() {
