@@ -448,3 +448,39 @@ describe('Dominant Seventh Suspended Second Chords', () => {
     expect(Chord.for('B3 C#4 F# A')?.getName()).toEqual('B7sus2');
   });
 });
+
+describe('Dominant Ninth Chords', () => {
+  it('returns the name of the dominant ninth chord', () => {
+    expect(Chord.for('C E G Bb D5')?.getName()).toEqual('C9');
+    expect(Chord.for('C# E# G# B D#5')?.getName()).toEqual('C#9');
+    expect(Chord.for('Db F Ab Cb5 Eb5')?.getName()).toEqual('Db9');
+    expect(Chord.for('D F# A C5 E5')?.getName()).toEqual('D9');
+    expect(Chord.for('Eb G Bb Db5 F5')?.getName()).toEqual('Eb9');
+    expect(Chord.for('E G# B D5 F#5')?.getName()).toEqual('E9');
+    expect(Chord.for('F A C5 Eb5 G5')?.getName()).toEqual('F9');
+    expect(Chord.for('F# A# C#5 E5 G#5')?.getName()).toEqual('F#9');
+    expect(Chord.for('G B D5 F5 A5')?.getName()).toEqual('G9');
+    expect(Chord.for('Ab3 C Eb Gb Bb')?.getName()).toEqual('Ab9');
+    expect(Chord.for('A3 C# E G B')?.getName()).toEqual('A9');
+    expect(Chord.for('Bb3 D F Ab C5')?.getName()).toEqual('Bb9');
+    expect(Chord.for('B3 D# F# A C#5')?.getName()).toEqual('B9');
+  });
+});
+
+describe('Minor Ninth Chords', () => {
+  it('returns the name of the minor ninth chord', () => {
+    expect(Chord.for('C Eb G Bb D5')?.getName()).toEqual('Cm9');
+    expect(Chord.for('C# E G# B D#5')?.getName()).toEqual('C#m9');
+    expect(Chord.for('Db Fb Ab Cb5 Eb5')?.getName()).toEqual('Dbm9');
+    expect(Chord.for('D F A C5 E5')?.getName()).toEqual('Dm9');
+    expect(Chord.for('Eb Gb Bb Db5 F5')?.getName()).toEqual('Ebm9');
+    expect(Chord.for('E G B D5 F#5')?.getName()).toEqual('Em9');
+    expect(Chord.for('F Ab C5 Eb5 G5')?.getName()).toEqual('Fm9');
+    expect(Chord.for('F# A C#5 E5 G#5')?.getName()).toEqual('F#m9');
+    expect(Chord.for('G Bb D5 F5 A5')?.getName()).toEqual('Gm9');
+    expect(Chord.for('Ab3 Cb Eb Gb Bb')?.getName()).toEqual('Abm9');
+    expect(Chord.for('A3 C E G B')?.getName()).toEqual('Am9');
+    expect(Chord.for('Bb3 Db F Ab C5')?.getName()).toEqual('Bbm9');
+    expect(Chord.for('B3 D F# A C#5')?.getName()).toEqual('Bm9');
+  });
+});

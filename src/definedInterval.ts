@@ -79,4 +79,8 @@ export class DefinedInterval {
   public isDiminished7th() {
     return this.semitones === 9;
   }
+
+  public isMajor9th() {
+    return this.semitones === 14;
+  }
 }
