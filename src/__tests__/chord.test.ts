@@ -628,3 +628,209 @@ describe('Major Ninth Sharp Eleventh Chords', () => {
     expect(Chord.for('B3 D# F# A# C#5 E#5')?.getName()).toEqual('Bmaj9#11');
   });
 });
+
+describe('Dominant Seventh Flat Five Chords', () => {
+  it('returns the name of the dominant seventh flat five chord', () => {
+    expect(Chord.for('C E Gb Bb')?.getName()).toEqual('C7b5');
+    expect(Chord.for('D F# Ab C5')?.getName()).toEqual('D7b5');
+    expect(Chord.for('E G# Bb D5')?.getName()).toEqual('E7b5');
+    expect(Chord.for('F A Cb5 Eb5')?.getName()).toEqual('F7b5');
+    expect(Chord.for('G B Db5 F5')?.getName()).toEqual('G7b5');
+    expect(Chord.for('A3 C# Eb G')?.getName()).toEqual('A7b5');
+    expect(Chord.for('Bb3 D Fb Ab')?.getName()).toEqual('Bb7b5');
+  });
+});
+
+describe('Dominant Seventh Sharp Nine Chords', () => {
+  it('returns the name of the dominant seventh sharp nine chord', () => {
+    expect(Chord.for('C E G Bb D#5')?.getName()).toEqual('C7#9');
+    expect(Chord.for('D F# A C5 E#5')?.getName()).toEqual('D7#9');
+    expect(Chord.for('E G# B D5 F𝄪5')?.getName()).toEqual('E7#9');
+    expect(Chord.for('F A C5 Eb5 G#5')?.getName()).toEqual('F7#9');
+    expect(Chord.for('G B D5 F5 A#5')?.getName()).toEqual('G7#9');
+    expect(Chord.for('A3 C# E G B#')?.getName()).toEqual('A7#9');
+    expect(Chord.for('Bb3 D F Ab C#5')?.getName()).toEqual('Bb7#9');
+  });
+});
+
+describe('Dominant Seventh Flat Five Flat Nine Chords', () => {
+  it('returns the name of the dominant seventh flat five flat nine chord', () => {
+    expect(Chord.for('C E Gb Bb Db5')?.getName()).toEqual('C7b5b9');
+    expect(Chord.for('D F# Ab C5 Eb5')?.getName()).toEqual('D7b5b9');
+    expect(Chord.for('E G# Bb D5 F5')?.getName()).toEqual('E7b5b9');
+    expect(Chord.for('F A Cb5 Eb5 Gb5')?.getName()).toEqual('F7b5b9');
+    expect(Chord.for('G B Db5 F5 Ab5')?.getName()).toEqual('G7b5b9');
+    expect(Chord.for('A3 C# Eb G Bb')?.getName()).toEqual('A7b5b9');
+  });
+});
+
+describe('Dominant Seventh Flat Five Sharp Nine Chords', () => {
+  it('returns the name of the dominant seventh flat five sharp nine chord', () => {
+    expect(Chord.for('C E Gb Bb D#5')?.getName()).toEqual('C7b5#9');
+    expect(Chord.for('D F# Ab C5 E#5')?.getName()).toEqual('D7b5#9');
+    expect(Chord.for('E G# Bb D5 F𝄪5')?.getName()).toEqual('E7b5#9');
+    expect(Chord.for('F A Cb5 Eb5 G#5')?.getName()).toEqual('F7b5#9');
+    expect(Chord.for('G B Db5 F5 A#5')?.getName()).toEqual('G7b5#9');
+    expect(Chord.for('A3 C# Eb G B#')?.getName()).toEqual('A7b5#9');
+  });
+});
+
+describe('Dominant Seventh Sharp Five Flat Nine Chords', () => {
+  it('returns the name of the dominant seventh sharp five flat nine chord', () => {
+    expect(Chord.for('C E G# Bb Db5')?.getName()).toEqual('C7#5b9');
+    expect(Chord.for('D F# A# C5 Eb5')?.getName()).toEqual('D7#5b9');
+    expect(Chord.for('E G# B# D5 F5')?.getName()).toEqual('E7#5b9');
+    expect(Chord.for('F A C# Eb5 Gb5')?.getName()).toEqual('F7#5b9');
+    expect(Chord.for('G B D# F5 Ab5')?.getName()).toEqual('G7#5b9');
+    expect(Chord.for('A3 C# E# G Bb')?.getName()).toEqual('A7#5b9');
+  });
+});
+
+describe('Dominant Seventh Sharp Five Sharp Nine Chords', () => {
+  it('returns the name of the dominant seventh sharp five sharp nine chord', () => {
+    expect(Chord.for('C E G# Bb D#5')?.getName()).toEqual('C7#5#9');
+    expect(Chord.for('D F# A# C5 E#5')?.getName()).toEqual('D7#5#9');
+    expect(Chord.for('E G# B# D5 F𝄪5')?.getName()).toEqual('E7#5#9');
+    expect(Chord.for('F A C# Eb5 G#5')?.getName()).toEqual('F7#5#9');
+    expect(Chord.for('G B D# F5 A#5')?.getName()).toEqual('G7#5#9');
+    expect(Chord.for('A3 C# E# G B#')?.getName()).toEqual('A7#5#9');
+  });
+});
+
+describe('Six Nine Chords', () => {
+  it('returns the name of the six nine chord', () => {
+    expect(Chord.for('C E G A D5')?.getName()).toEqual('C6/9');
+    expect(Chord.for('D F# A B E5')?.getName()).toEqual('D6/9');
+    expect(Chord.for('E G# B C#5 F#5')?.getName()).toEqual('E6/9');
+    expect(Chord.for('F A C5 D5 G5')?.getName()).toEqual('F6/9');
+    expect(Chord.for('G B D5 E5 A5')?.getName()).toEqual('G6/9');
+    expect(Chord.for('A3 C# E F# B')?.getName()).toEqual('A6/9');
+    expect(Chord.for('Bb3 D F G C5')?.getName()).toEqual('Bb6/9');
+  });
+});
+
+describe('Minor Six Nine Chords', () => {
+  it('returns the name of the minor six nine chord', () => {
+    expect(Chord.for('C Eb G A D5')?.getName()).toEqual('Cm6/9');
+    expect(Chord.for('D F A B E5')?.getName()).toEqual('Dm6/9');
+    expect(Chord.for('E G B C#5 F#5')?.getName()).toEqual('Em6/9');
+    expect(Chord.for('F Ab C5 D5 G5')?.getName()).toEqual('Fm6/9');
+    expect(Chord.for('G Bb D5 E5 A5')?.getName()).toEqual('Gm6/9');
+    expect(Chord.for('A3 C E F# B')?.getName()).toEqual('Am6/9');
+    expect(Chord.for('Bb3 Db F G C5')?.getName()).toEqual('Bbm6/9');
+  });
+});
+
+describe('Augmented Ninth Chords', () => {
+  it('returns the name of the augmented ninth chord', () => {
+    expect(Chord.for('C E G# Bb D5')?.getName()).toEqual('C+9');
+    expect(Chord.for('D F# A# C5 E5')?.getName()).toEqual('D+9');
+    expect(Chord.for('E G# B# D5 F#5')?.getName()).toEqual('E+9');
+    expect(Chord.for('F A C# Eb5 G5')?.getName()).toEqual('F+9');
+    expect(Chord.for('G B D# F5 A5')?.getName()).toEqual('G+9');
+    expect(Chord.for('A3 C# E# G B')?.getName()).toEqual('A+9');
+  });
+});
+
+describe('Minor Ninth Flat Five Chords', () => {
+  it('returns the name of the minor ninth flat five chord', () => {
+    expect(Chord.for('C Eb Gb Bb D5')?.getName()).toEqual('Cm9b5');
+    expect(Chord.for('D F Ab C5 E5')?.getName()).toEqual('Dm9b5');
+    expect(Chord.for('E G Bb D5 F#5')?.getName()).toEqual('Em9b5');
+    expect(Chord.for('F Ab Cb5 Eb5 G5')?.getName()).toEqual('Fm9b5');
+    expect(Chord.for('G Bb Db5 F5 A5')?.getName()).toEqual('Gm9b5');
+    expect(Chord.for('A3 C Eb G B')?.getName()).toEqual('Am9b5');
+  });
+});
+
+describe('Major Ninth Sharp Five Chords', () => {
+  it('returns the name of the major ninth sharp five chord', () => {
+    expect(Chord.for('C E G# B D5')?.getName()).toEqual('Cmaj9#5');
+    expect(Chord.for('D F# A# C#5 E5')?.getName()).toEqual('Dmaj9#5');
+    expect(Chord.for('E G# B# D#5 F#5')?.getName()).toEqual('Emaj9#5');
+    expect(Chord.for('F A C# E5 G5')?.getName()).toEqual('Fmaj9#5');
+    expect(Chord.for('G B D# F#5 A5')?.getName()).toEqual('Gmaj9#5');
+    expect(Chord.for('A3 C# E# G# B')?.getName()).toEqual('Amaj9#5');
+  });
+});
+
+describe('Major Seventh Suspended Fourth Chords', () => {
+  it('returns the name of the major seventh suspended fourth chord', () => {
+    expect(Chord.for('C F G B')?.getName()).toEqual('Cmaj7sus4');
+    expect(Chord.for('D G A C#5')?.getName()).toEqual('Dmaj7sus4');
+    expect(Chord.for('E A B D#5')?.getName()).toEqual('Emaj7sus4');
+    expect(Chord.for('F Bb C5 E5')?.getName()).toEqual('Fmaj7sus4');
+    expect(Chord.for('G3 C D F#')?.getName()).toEqual('Gmaj7sus4');
+    expect(Chord.for('A3 D E G#')?.getName()).toEqual('Amaj7sus4');
+    expect(Chord.for('Bb3 Eb F A')?.getName()).toEqual('Bbmaj7sus4');
+  });
+});
+
+describe('Major Seventh Suspended Second Chords', () => {
+  it('returns the name of the major seventh suspended second chord', () => {
+    expect(Chord.for('C D G B')?.getName()).toEqual('Cmaj7sus2');
+    expect(Chord.for('D E A C#5')?.getName()).toEqual('Dmaj7sus2');
+    expect(Chord.for('E F# B D#5')?.getName()).toEqual('Emaj7sus2');
+    expect(Chord.for('F G C5 E5')?.getName()).toEqual('Fmaj7sus2');
+    expect(Chord.for('G A D5 F#5')?.getName()).toEqual('Gmaj7sus2');
+    expect(Chord.for('A3 B E G#')?.getName()).toEqual('Amaj7sus2');
+    expect(Chord.for('Bb3 C F A')?.getName()).toEqual('Bbmaj7sus2');
+  });
+});
+
+describe('Ninth Suspended Fourth Chords', () => {
+  it('returns the name of the ninth suspended fourth chord', () => {
+    expect(Chord.for('C F G Bb D5')?.getName()).toEqual('C9sus4');
+    expect(Chord.for('D G A C5 E5')?.getName()).toEqual('D9sus4');
+    expect(Chord.for('E A B D5 F#5')?.getName()).toEqual('E9sus4');
+    expect(Chord.for('F Bb C5 Eb5 G5')?.getName()).toEqual('F9sus4');
+    expect(Chord.for('G3 C D F A')?.getName()).toEqual('G9sus4');
+    expect(Chord.for('A3 D E G B')?.getName()).toEqual('A9sus4');
+    expect(Chord.for('Bb3 Eb F Ab C5')?.getName()).toEqual('Bb9sus4');
+  });
+});
+
+describe('Suspended Fourth Add Ninth Chords', () => {
+  it('returns the name of the suspended fourth add ninth chord', () => {
+    expect(Chord.for('C F G D5')?.getName()).toEqual('Csus4add9');
+    expect(Chord.for('D G A E5')?.getName()).toEqual('Dsus4add9');
+    expect(Chord.for('E A B F#5')?.getName()).toEqual('Esus4add9');
+    expect(Chord.for('F Bb C5 G5')?.getName()).toEqual('Fsus4add9');
+    expect(Chord.for('G3 C D A')?.getName()).toEqual('Gsus4add9');
+    expect(Chord.for('A3 D E B')?.getName()).toEqual('Asus4add9');
+    expect(Chord.for('Bb3 Eb F C5')?.getName()).toEqual('Bbsus4add9');
+  });
+});
+
+describe('Dominant Seventh Sharp Eleventh Chords', () => {
+  it('returns the name of the dominant seventh sharp eleventh chord', () => {
+    expect(Chord.for('C E G Bb F#5')?.getName()).toEqual('C7#11');
+    expect(Chord.for('D F# A C5 G#5')?.getName()).toEqual('D7#11');
+    expect(Chord.for('E G# B D5 A#5')?.getName()).toEqual('E7#11');
+    expect(Chord.for('F A C5 Eb5 B5')?.getName()).toEqual('F7#11');
+    expect(Chord.for('G B D5 F5 C#6')?.getName()).toEqual('G7#11');
+    expect(Chord.for('A3 C# E G D#5')?.getName()).toEqual('A7#11');
+  });
+});
+
+describe('Major Seventh Sharp Eleventh Chords', () => {
+  it('returns the name of the major seventh sharp eleventh chord', () => {
+    expect(Chord.for('C E G B F#5')?.getName()).toEqual('Cmaj7#11');
+    expect(Chord.for('D F# A C#5 G#5')?.getName()).toEqual('Dmaj7#11');
+    expect(Chord.for('E G# B D#5 A#5')?.getName()).toEqual('Emaj7#11');
+    expect(Chord.for('F A C5 E5 B5')?.getName()).toEqual('Fmaj7#11');
+    expect(Chord.for('G B D5 F#5 C#6')?.getName()).toEqual('Gmaj7#11');
+    expect(Chord.for('A3 C# E G# D#5')?.getName()).toEqual('Amaj7#11');
+  });
+});
+
+describe('Minor Eleventh Flat Five Chords', () => {
+  it('returns the name of the minor eleventh flat five chord', () => {
+    expect(Chord.for('C Eb Gb Bb D5 F5')?.getName()).toEqual('Cm11b5');
+    expect(Chord.for('D F Ab C5 E5 G5')?.getName()).toEqual('Dm11b5');
+    expect(Chord.for('E G Bb D5 F#5 A5')?.getName()).toEqual('Em11b5');
+    expect(Chord.for('F Ab Cb5 Eb5 G5 Bb5')?.getName()).toEqual('Fm11b5');
+    expect(Chord.for('G Bb Db5 F5 A5 C6')?.getName()).toEqual('Gm11b5');
+    expect(Chord.for('A3 C Eb G B D5')?.getName()).toEqual('Am11b5');
+  });
+});

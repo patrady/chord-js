@@ -80,14 +80,32 @@ This table shows the type of supported chords with examples
 | [Half-Diminished Seventh](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord)         | `Chord.for("C Eb Gb Bb"); // Cø7`    |
 | [Seventh Suspended Fourth](https://en.wikipedia.org/wiki/Suspended_chord)                      | `Chord.for("C F G Bb"); // C7sus4`   |
 | [Seventh Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)                      | `Chord.for("C D G Bb"); // C7sus2`   |
+| [Major Seventh Suspended Fourth](https://en.wikipedia.org/wiki/Suspended_chord)                | `Chord.for("C F G B"); // Cmaj7sus4` |
+| [Major Seventh Suspended Second](https://en.wikipedia.org/wiki/Suspended_chord)                | `Chord.for("C D G B"); // Cmaj7sus2` |
+| [Sixth Ninth](https://en.wikipedia.org/wiki/Sixth_chord)                                       | `Chord.for("C E G A D5"); // C6/9`   |
+| [Minor Sixth Ninth](https://en.wikipedia.org/wiki/Sixth_chord)                                 | `Chord.for("C Eb G A D5"); // Cm6/9` |
 | [Add Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Relation_to_other_chords_with_the_ninth) | `Chord.for("C E G D5"); // Cadd9`    |
+| [Suspended Fourth Add Ninth](https://en.wikipedia.org/wiki/Suspended_chord)                    | `Chord.for("C F G D5"); // Csus4add9`|
 | [Dominant Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_ninth)                     | `Chord.for("C E G Bb D5"); // C9`    |
+| [Ninth Suspended Fourth](https://en.wikipedia.org/wiki/Suspended_chord)                        | `Chord.for("C F G Bb D5"); // C9sus4`|
 | [Dominant Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Dominant_minor_ninth)         | `Chord.for("C E G Bb Db5"); // C7b9` |
+| [Dominant Seventh Sharp Nine](https://en.wikipedia.org/wiki/Altered_chord)                     | `Chord.for("C E G Bb D#5"); // C7#9` |
 | [Minor Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Minor_ninth)                           | `Chord.for("C Eb G Bb D5"); // Cm9`  |
+| [Minor Ninth Flat Five](https://en.wikipedia.org/wiki/Half-diminished_seventh_chord)           | `Chord.for("C Eb Gb Bb D5"); // Cm9b5`|
 | [Major Ninth](https://en.wikipedia.org/wiki/Ninth_chord#Major_ninth)                           | `Chord.for("C E G B D5"); // Cmaj9`  |
+| [Major Ninth Sharp Five](https://en.wikipedia.org/wiki/Ninth_chord)                            | `Chord.for("C E G# B D5"); // Cmaj9#5`|
+| [Augmented Ninth](https://en.wikipedia.org/wiki/Ninth_chord)                                   | `Chord.for("C E G# Bb D5"); // C+9`  |
+| [Dominant Seventh Flat Five](https://en.wikipedia.org/wiki/Altered_chord)                      | `Chord.for("C E Gb Bb"); // C7b5`    |
+| [Dominant Seventh Sharp Five Sharp Nine](https://en.wikipedia.org/wiki/Altered_chord)          | `Chord.for("C E G# Bb D#5"); // C7#5#9`|
+| [Dominant Seventh Sharp Five Flat Nine](https://en.wikipedia.org/wiki/Altered_chord)           | `Chord.for("C E G# Bb Db5"); // C7#5b9`|
+| [Dominant Seventh Flat Five Sharp Nine](https://en.wikipedia.org/wiki/Altered_chord)           | `Chord.for("C E Gb Bb D#5"); // C7b5#9`|
+| [Dominant Seventh Flat Five Flat Nine](https://en.wikipedia.org/wiki/Altered_chord)            | `Chord.for("C E Gb Bb Db5"); // C7b5b9`|
 | [Dominant Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                              | `Chord.for("C E G Bb D5 F5"); // C11`      |
 | [Minor Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                                 | `Chord.for("C Eb G Bb D5 F5"); // Cm11`    |
+| [Minor Eleventh Flat Five](https://en.wikipedia.org/wiki/Eleventh_chord)                       | `Chord.for("C Eb Gb Bb D5 F5"); // Cm11b5` |
 | [Major Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                                 | `Chord.for("C E G B D5 F5"); // Cmaj11`    |
+| [Dominant Seventh Sharp Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                | `Chord.for("C E G Bb F#5"); // C7#11`      |
+| [Major Seventh Sharp Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                   | `Chord.for("C E G B F#5"); // Cmaj7#11`    |
 | [Dominant Sharp Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                        | `Chord.for("C E G Bb D5 F#5"); // C9#11`   |
 | [Major Ninth Sharp Eleventh](https://en.wikipedia.org/wiki/Eleventh_chord)                     | `Chord.for("C E G B D5 F#5"); // Cmaj9#11` |
 

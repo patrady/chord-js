@@ -54,6 +54,14 @@ export class Interval {
     return 18;
   }
 
+  public static augmented9th() {
+    return 15;
+  }
+
+  public static major13th() {
+    return 21;
+  }
+
   private static parse(note: string | Note) {
     if (typeof note === 'string') {
       return new Note(note);
