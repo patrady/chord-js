@@ -95,4 +95,12 @@ export class DefinedInterval {
   public isAugmented11th() {
     return this.semitones === Interval.augmented11th();
   }
+
+  public isAugmented9th() {
+    return this.semitones === Interval.augmented9th();
+  }
+
+  public isMajor13th() {
+    return this.semitones === Interval.major13th();
+  }
 }
